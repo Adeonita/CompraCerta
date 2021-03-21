@@ -1,0 +1,91 @@
+endereco
+    logradouro: string
+    numero: string
+    complemento: string?
+    bairro: string
+    cidade: string
+    estado: string
+    cep: string
+    clienteId: uuid foreign key
+
+cliente
+    id: uuid
+    nome: string
+    email: string
+    telefone: string
+    cpf: string
+    endereco: Address[]
+
+    Metodos
+        create(clienteData: Cliente): uuid
+        select(clienteId: uuid): Cliente
+        update(clienteId: uuid, clienteData:Cliente)
+        delete(clienteId: string)
+
+categorias 
+    id: uuid
+    name: string
+
+produtos
+    id: uuid
+    nome: string
+    descricao: string
+    preco: string
+    categoriaId: uuid foreign key
+
+    Métodos
+        getProducts(): produtos[]
+
+setores
+    id: uuid
+    name: enum[peparação, conferencia, embalagem, entrega]
+
+funcionários
+    id: uuid
+    nome: string
+    setor: string
+
+    Métodos
+        enviarParaProximaEtapaDoProcesso()
+
+compra 
+    status: enum [peparação, conferencia, embalagem, entrega, concluida?]
+    entrada: date
+    saida: date
+    avaliacao: enum [ruim, boa, otima]
+    comentário: string
+    produtos: Product[] 
+    clienteId: uuid foreign key
+    createdAt: date
+
+    Métodos
+        pagar(numeroDoCartão: string, cvv: string, dataDeExpiracao: date, nomeDoTitular: string) cpf?? - com cartão de crédito
+        visualizar() - Preparacao
+        enviar() - Preparacao
+        enviarParaEntrega() - conferencia/embalagem
+        visualizarCompras()- conferencia/embalagem
+        enviarCompraParaEntrega - embalagem
+        devolverCompraParaPreparação - embalagem
+        visualizarCompras -  entrega
+        confirmarEntrega -  entrega
+
+fabricantes
+
+transações 
+    id
+    id cliente
+    setor
+    entrada
+    saida
+
+Filtrar por categoria 
+destacar as promoções 
+Só clientes cadastrados podem realizar compras 
+Uma vez paga a compra ele entra em uma fila para seratendida. 
+O sistema possui uma fila de compras, caso seja a primeira compra exibir os produtos dela
+Considerar que já existem os funcionários, as  categorias, produtos,  fabricantes  e  as promoções já  estão  cadastrados  e  você  utilizará  obanco  de  dados deste  sistema
+É possível copiar uma compra antiga para uma nova e consultar o histórico de compras
+
+home
+cadastro, edição do dado, deletar conta(botão)
+
