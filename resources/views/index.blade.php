@@ -21,7 +21,9 @@
 <body>   
     @include('components/header')
     @include('components/categories')
-    @include('home/products')
+    <div>
+        @yield('content')
+    </div>
     @include('components/footer')
 </body>
 <script>
