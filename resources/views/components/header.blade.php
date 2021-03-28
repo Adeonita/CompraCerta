@@ -3,7 +3,7 @@
         <div></div>
         <div>
             <a href="./login.html" class="btn btn-success"> Entrar</a>
-            <a href='./criarconta.html'class="btn btn-primary"> Criar uma conta</a>
+            <a href="{{ url('/createAccount') }}"class="btn btn-primary"> Criar uma conta</a>
             <a href="{{ url('/cart') }}" class="btn btn-primary"> Meu Carrinho</a>
         </div>
         <div></div>
