@@ -38,11 +38,11 @@
                 <button class="btn main"">Buscar</button>
             </div>
         </div>
-        <div class='departamentos  w-100'>
+        <div class='departments  w-100'>
             <div class='w-75 h-100 mx-auto d-flex flex-row justify-content-center align-items-center'>
-                <a class='departamento mx-2'>Hortifruti</a>
-                <a class='departamento mx-2'>Eletronicos</a>
-                <a class='departamento mx-2'>Carnes</a>
+                <a class='department mx-2'>Hortifruti</a>
+                <a class='department mx-2'>Eletronicos</a>
+                <a class='department mx-2'>Carnes</a>
             </div>
         </div>
         <div>
@@ -61,16 +61,16 @@
         background-color: #004E98!important;
         color:white
     }
-    .departamentos{
+    .departments{
         height:50px;
         border-top: 2px solid #004E98;
         border-bottom: 2px solid #004E98;
     }
-    .departamento{
+    .department{
         color: #004E98!important; 
         height: 100%;
     }
-    .departamento:hover{
+    .department:hover{
         background-color: #004E98;
         color: white!important;
     }
