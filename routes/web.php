@@ -19,5 +19,13 @@ Route::get('/', function () {
 
 
 Route::get("/home", function() {
-    return view('index');
+    return view('home/products');
+});
+
+Route::get("/cart", function() {
+    return view('cart/cart');
+});
+
+Route::get("/createAccount", function() {
+    return view('account/createAccount');
 });
