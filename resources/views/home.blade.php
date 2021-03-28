@@ -15,8 +15,8 @@
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-
-
+    
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>   
     <header>
@@ -35,7 +35,7 @@
             </a>
             <div class='my-auto mx-2'>
                 <input type="text" name="" id="">
-                <button class="btn main"">Buscar</button>
+                <button class="btn main">Buscar</button>
             </div>
         </div>
         <div class='departments  w-100'>
@@ -56,27 +56,6 @@
             </nav>
         </footer>
 </body>
-<style>
-    .main{
-        background-color: #004E98!important;
-        color:white
-    }
-    .departments{
-        height:50px;
-        border-top: 2px solid #004E98;
-        border-bottom: 2px solid #004E98;
-    }
-    .department{
-        color: #004E98!important; 
-        height: 100%;
-    }
-    .department:hover{
-        background-color: #004E98;
-        color: white!important;
-    }
-
-</style>
-
 <script>
 </script>
 
