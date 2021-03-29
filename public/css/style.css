@@ -4,6 +4,7 @@
 }
 .departments{
     height:50px;
+    padding-top: 11px;
     border-top: 2px solid #004E98;
     border-bottom: 2px solid #004E98;
 }
@@ -14,4 +15,17 @@
 .department:hover{
     background-color: #004E98;
     color: white!important;
+}
+.product {
+    width: 100px;
+    height: 100px;
+}
+a {
+    text-decoration: none;
+}
+#next-btn {
+    padding-left: 65%;
+}
+#amount{
+    padding-left: 10px;
 }
