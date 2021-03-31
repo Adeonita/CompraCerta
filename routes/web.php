@@ -29,3 +29,7 @@ Route::get("/cart", function() {
 Route::get("/createAccount", function() {
     return view('account/createAccount');
 });
+
+Route::get("/product", function() {
+    return view('product/product');
+});
