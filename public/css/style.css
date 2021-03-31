@@ -29,3 +29,25 @@ a {
 #amount{
     padding-left: 10px;
 }
+#quant{
+    position: fixed;
+    left: 590px;
+    color: #004E98
+ 
+}
+#button-purchase{
+    position: fixed;
+    left: 800px;
+   
+}
+#productName{
+    position: fixed;
+    left: 200px;
+    color: #004E98;
+}
+#price{
+    position: fixed;
+    left: 1000px;
+    top: 370px;
+    color: #004E98;
+}
