@@ -2,11 +2,11 @@
     <nav class='navbar navbar-light main w-100 d-flex justify-content-around'>
         <div></div>
         <div>
-            <a href="" class="btn btn-success mx-1"> Entrar</a>
-            <a href="{{ url('/createAccount') }}"class="btn btn-primary mx-1"> Criar uma conta</a>
+            <a href="" class="btn btn-success mx-1"> <i class="bi bi-person-plus-fill"></i> Entrar</a>
+            <a href="{{ url('/createAccount') }}"class="btn btn-primary mx-1"> <i class="bi bi-person-plus-fill"></i> Criar uma conta</a>
         </div>
         <div>
-            <a href="{{ url('/cart') }}" class="btn btn-primary"> Meu Carrinho</a>
+            <a href="{{ url('/cart') }}" class="btn btn-secondary"> <i class="bi bi-cart"></i> </a>
         </div>
     </nav>
 </header>
@@ -16,6 +16,6 @@
     </a>
     <div class='my-auto mx-2'>
         <input type="text" name="" id="">
-        <button class="btn main">Buscar</button>
+        <button class="btn main"><i class="bi bi-search"></i> Buscar</button>
     </div>
 </div>
