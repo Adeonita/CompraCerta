@@ -1,12 +1,13 @@
 <header>
-    <nav class='navbar navbar-light main w-100'>
+    <nav class='navbar navbar-light main w-100 d-flex justify-content-around'>
         <div></div>
         <div>
-            <a href="./login.html" class="btn btn-success"> Entrar</a>
-            <a href="{{ url('/createAccount') }}"class="btn btn-primary"> Criar uma conta</a>
+            <a href="" class="btn btn-success mx-1"> Entrar</a>
+            <a href="{{ url('/createAccount') }}"class="btn btn-primary mx-1"> Criar uma conta</a>
+        </div>
+        <div>
             <a href="{{ url('/cart') }}" class="btn btn-primary"> Meu Carrinho</a>
         </div>
-        <div></div>
     </nav>
 </header>
 <div class='d-flex flex-row justify-content-center'>
