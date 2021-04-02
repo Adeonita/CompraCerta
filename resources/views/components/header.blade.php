@@ -2,7 +2,7 @@
     <nav class='navbar navbar-light main w-100 d-flex justify-content-around'>
         <div></div>
         <div>
-            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#loginModal">
                 <i class="bi bi-person-fill"></i> Entrar
             </button>
             <a href="{{ url('/createAccount') }}" class="btn btn-primary mx-1"> <i class="bi bi-person-plus-fill"></i>
@@ -24,7 +24,7 @@
 </div>
 
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -32,8 +32,8 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div class='mx-auto w-100'>
-                    <h4>Bem-vindo!</h4>
+                <div class='w-100'>
+                    <h4 class='text-success text-center'>Bem-vindo!</h4>
                 </div>
                 <form>
                     <div class="mb-3">
@@ -45,7 +45,7 @@
                         <input type="password" class="form-control" id="senhaUser" placeholder="">
                     </div>
                     <div class="mb-3 mx-auto">
-                        <a href="">Esqueci minha senha</a>
+                        <a href="{{ url('/recover') }}">Esqueci minha senha</a>
                     </div>
                     <div class=" w-100">
 
@@ -55,8 +55,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <a href="./criarconta.html" class='w-100'>
-                    <button type="button" class="btn btn-secondary w-100">Cadastrar</button>
+                <a href={{ url('/createAccount') }} class='w-100'>
+                    <button type="button" class="btn btn-outline-secondary w-100">Cadastrar</button>
                 </a>
             </div>
         </div>
