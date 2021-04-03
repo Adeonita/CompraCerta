@@ -42,7 +42,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="senhaUser" class="form-label">Senha</label>
-                        <input type="password" class="form-control" id="senhaUser" placeholder="">
+                        <input type="password" class="form-control" id="passwordUser" placeholder="">
                     </div>
                     <div class="mb-3 mx-auto">
                         <a href="{{ url('/recover') }}">Esqueci minha senha</a>
