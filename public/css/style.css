@@ -1,24 +1,33 @@
-.main{
-    background-color: #004E98!important;
-    color:white
+:root {
+    --main-color: #004e98;
 }
-.departments{
-    height:50px;
+
+.main {
+    background-color: var(--main-color);
+    color: white;
+}
+.departments {
+    height: 50px;
     padding-top: 11px;
-    border-top: 2px solid #004E98;
-    border-bottom: 2px solid #004E98;
+    border-top: 2px solid var(--main-color);
+    border-bottom: 2px solid var(--main-color);
 }
-.department{
-    color: #004E98!important; 
+.department {
+    color: var(--main-color) !important;
     height: 100%;
 }
-.department:hover{
-    background-color: #004E98;
-    color: white!important;
+.department:hover {
+    background-color: var(--main-color);
+    color: white !important;
 }
 .product {
     width: 100px;
     height: 100px;
+}
+.container {
+    width: 100%;
+    max-width: 1200px;
+    min-width: 200px;
 }
 a {
     text-decoration: none;
@@ -26,7 +35,7 @@ a {
 #next-btn {
     padding-left: 65%;
 }
-#amount{
+#amount {
     padding-left: 10px;
 }
 #quant{

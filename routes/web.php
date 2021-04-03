@@ -13,23 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-Route::get("/home", function() {
+Route::get("/", function () {
     return view('home/products');
 });
 
-Route::get("/cart", function() {
+Route::get("/cart", function () {
     return view('cart/cart');
 });
 
-Route::get("/createAccount", function() {
+Route::get("/createAccount", function () {
     return view('account/createAccount');
 });
 
 Route::get("/product", function() {
     return view('product/product');
+});
+
+Route::get("/recover", function () {
+    return view('recover/recover');
 });
