@@ -38,3 +38,7 @@ a {
 #amount {
     padding-left: 10px;
 }
+.subtitle-form {
+    color: var(--main-color);
+    border-bottom: 1px solid #cccccc;
+}
