@@ -82,13 +82,13 @@
                     </div>
 
 
-                    <div class='row mb-3 me-2'>
-                        <div class="col-12 col-sm-9 mr-1">
+                    <div class='row mb-3 '>
+                        <div class="col-12 col-sm-10 ">
                             <label for="streetUserRegister" class="form-label">Rua</label><br>
                             <input type="text" class="form-control" id="streetUserRegister">
                         </div>
 
-                        <div class="col-12 col-sm-3">
+                        <div class="col-12 col-sm">
                             <label for="numberUserRegister" class="form-label">Número</label><br>
                             <input type="text" class="form-control" id="numberUserRegister">
                         </div>
