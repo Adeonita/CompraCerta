@@ -1,6 +1,10 @@
 <header>
     <nav class='navbar navbar-light main w-100 d-flex justify-content-around'>
-        <div></div>
+        <div>
+            <a class='mx-2 col-sm-2 d-block d-sm-none logo-header' href="{{ url('/') }}">
+                <img src="./images/logo-sm.png" alt="CompraCerta" width="38" height="40">
+            </a>
+        </div>
         <div>
             <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#loginModal">
                 <i class="bi bi-person-fill"></i> Entrar
@@ -13,13 +17,14 @@
         </div>
     </nav>
 </header>
-<div class='d-flex flex-row justify-content-center'>
-    <a class='mx-2' href="{{ url('/') }}">
+
+<div class='d-flex flex-row justify-content-center  my-4 mx-2 my-sm-1'>
+    <a class='mx-2 col-sm-2 d-sm-block d-none' href="{{ url('/') }}">
         <img src="./images/logo.png" alt="CompraCerta">
     </a>
-    <div class='my-auto mx-2'>
-        <input type="text" name="" id="">
-        <button class="btn main"><i class="bi bi-search"></i> Buscar</button>
+    <div class='my-auto mx-2 row  col-sm-4 col-12'>
+        <input type="text" class='form-control col' name="" id="">
+        <button class="btn main main-btn col-4 col-sm-4"><i class="bi bi-search"></i> Buscar</button>
     </div>
 </div>
 
