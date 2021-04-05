@@ -8,8 +8,8 @@ use App\Models\Category;
 class CategoryController extends Controller
 {
     public function show(){
-        return [
-            "categories" => Category::get()
-        ];
+        $categories = Category::all("name");
+
+        return $categories;
     }
 }
