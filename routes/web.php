@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,3 +28,5 @@ Route::get("/createAccount", function () {
 Route::get("/recover", function () {
     return view('recover/recover');
 });
+
+Route::get("/categories", [CategoryController::class, 'show']);
