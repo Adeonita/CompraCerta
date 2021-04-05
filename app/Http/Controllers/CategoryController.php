@@ -9,7 +9,11 @@ class CategoryController extends Controller
 {
     public function show(){
         $categories = Category::all("name");
+        $categoriesName = [];
 
-        return $categories;
+        foreach($categories as $value){
+            array_push($categoriesName, $value["name"]);
+        }
+        return $categoriesName;
     }
 }
