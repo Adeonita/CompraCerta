@@ -100,12 +100,12 @@
                             <input type="text" class="form-control" id="districtUserRegister">
                         </div>
 
-                        <div class="col-12 col-sm mx-1">
+                        <div class="col-12 col-sm">
                             <label for="cityUserRegister" class="form-label">Cidade</label><br>
                             <input type="text" class="form-control" id="cityUserRegister">
                         </div>
 
-                        <div class="col-12 col-sm mx-1">
+                        <div class="col-12 col-sm">
                             <label for="stateUserRegister" class="form-label">Estado</label><br>
                             <input type="text" class="form-control" id="stateUserRegister">
                         </div>
@@ -120,7 +120,8 @@
 
                 <div class='d-flex flex-row-reverse'>
                     <button class='btn btn-success mx-2'> <i class="bi bi-check"></i> Cadastrar</button>
-                    <button class='btn btn-outline-danger'> <i class="bi bi-x"></i> Cancelar</button>
+                    <a class='btn btn-outline-danger' a href="{{ url('/') }}"> <i class=" bi bi-x"></i>
+                        Cancelar</a>
                 </div>
             </form>
         </div>
