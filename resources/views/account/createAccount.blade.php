@@ -63,7 +63,10 @@
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="legalTerm">
                             <label class="form-check-label" for="legalTerm">
-                                Li e concordo com os termos de uso
+                                Li e concordo com os
+                                <a href='' data-bs-toggle="modal" data-bs-target="#termsModal">
+                                    termos de uso
+                                </a>
                             </label>
                         </div>
                     </div>
@@ -124,6 +127,50 @@
                         Cancelar</a>
                 </div>
             </form>
+        </div>
+    </div>
+
+    <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="termsModalLabel">Termos de Uso</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor a risus vitae bibendum. Donec at
+                    turpis ac tellus convallis ornare id in diam. Vestibulum non enim in mauris interdum vulputate. Integer
+                    non egestas dolor. Nulla iaculis luctus felis mollis aliquet. Etiam at consequat quam. Fusce vitae porta
+                    mauris, non finibus ante. Sed vitae urna gravida leo tempor venenatis sit amet quis ipsum. Vivamus sit
+                    amet posuere velit. Proin feugiat venenatis lectus ac accumsan. Vestibulum et velit blandit, tempus dui
+                    pretium, fringilla neque. Ut rhoncus ligula et fermentum auctor. Fusce nec lorem ex.
+
+                    Donec sed vulputate nulla. Praesent vel turpis pretium arcu consectetur iaculis. Nulla dictum interdum
+                    eros, at volutpat lectus tincidunt a. Mauris in porttitor justo. Cras hendrerit tempor leo, sed
+                    dignissim metus iaculis ac. Pellentesque bibendum et sem sed consectetur. Nunc arcu tellus, dapibus nec
+                    laoreet vel, efficitur a odio. Sed vel pharetra arcu. Nunc nec mattis diam. Duis odio nisi, ultricies
+                    nec dui semper, elementum porta ante. Duis lacinia commodo luctus. Mauris tristique purus quis justo
+                    sagittis volutpat. Ut rutrum, massa sed varius laoreet, enim nunc ultricies orci, sit amet pulvinar
+                    turpis nibh sit amet leo.
+
+                    Aenean cursus ante ligula, in ullamcorper est gravida quis. Aenean eget varius nisi. Nullam euismod
+                    laoreet fermentum. Morbi in augue rutrum lorem pretium convallis vel id eros. Nullam quam risus, finibus
+                    suscipit dapibus nec, ullamcorper sit amet nunc. Fusce mollis rutrum volutpat. Orci varius natoque
+                    penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed pulvinar semper volutpat.
+                    Curabitur iaculis erat ac massa lacinia pharetra. Nunc lacus neque, euismod at augue ac, pretium sodales
+                    sapien. Suspendisse ut ultricies lorem. In lacinia tempor nisi, et blandit ex laoreet sit amet.
+                    Pellentesque vitae libero magna.
+
+                    Aliquam erat volutpat. In nec tortor at nulla accumsan rutrum sed ut tellus. Mauris id malesuada magna.
+                    Ut efficitur velit eget justo euismod dictum. Morbi aliquam sed urna vitae ultricies. Nullam venenatis
+                    varius nisi, eu accumsan lacus rutrum quis. Vivamus sed odio non neque consectetur iaculis. Mauris
+                    viverra metus risus, non volutpat nisl eleifend non.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i
+                            class=" bi bi-x"></i>Fechar</button>
+                </div>
+            </div>
         </div>
     </div>
 

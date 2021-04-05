@@ -32,7 +32,7 @@
     width: 100px;
     height: 100px;
 }
-a {
+.departments a {
     text-decoration: none;
 }
 #next-btn {
