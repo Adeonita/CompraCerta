@@ -1,20 +1,26 @@
-.main{
-    background-color: #004E98!important;
-    color:white
+:root {
+    --main-color: #004e98;
 }
-.departamentos{
-    height:50px;
-    border-top: 2px solid #004E98;
-    border-bottom: 2px solid #004E98;
+
+.main {
+    background-color: var(--main-color);
+    color: white;
 }
-.departamento{
-    color: #004E98!important; 
+.departments {
+    height: 50px;
+    padding-top: 11px;
+    border-top: 2px solid var(--main-color);
+    border-bottom: 2px solid var(--main-color);
+}
+.department {
+    color: var(--main-color) !important;
     height: 100%;
 }
-.departamento:hover{
-    background-color: #004E98;
-    color: white!important;
+.department:hover {
+    background-color: var(--main-color);
+    color: white !important;
 }
+
 
 #buttonHome{
     position: absolute;
@@ -25,7 +31,7 @@
 #buttonWithdrawal{
     position: absolute;
     left: 990px;
-       
+
 }
 
 #DeliveryQuestion{
@@ -34,19 +40,25 @@
     border-bottom: 2px solid gray;
     color: #004E98;
     text-align: center;
+    font-size: larger;
+    font-weight: 700;
     
 }
 
 #AdressQuestion{
     
+    position: relative;
     color: #004E98;
     border-top: 2px solid gray;
     border-bottom: 2px solid gray;
-
+    font-size: larger;
+    font-weight: 700;
+    top: 130px;
+    
 }
 
 #RegistredAdress{
-    bottom: 110px;
+    bottom: 200px;
     position: absolute;
     left: 43%;
     background-color: white;
@@ -55,14 +67,19 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    border: 1px solid black;
+    border: 2px solid black;
+}
+
+#selectAdress{
+    position: relative;
+    top: 15px;
 }
 
 #NewAdress{
     
     position: absolute;
-    bottom: 50px;
-    left: 45.5%;
+    bottom: 140px;
+    left: 44.5%;
 
 }
 
@@ -71,3 +88,4 @@
     bottom: 45px;
     left: 5%;
 }
+
