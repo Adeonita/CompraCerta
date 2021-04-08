@@ -45,3 +45,14 @@
     color: var(--main-color);
     border-bottom: 1px solid #cccccc;
 }
+.product-card {
+    align-items: center; 
+    border: none;
+}
+.buttons-product-card {
+    justify-content: center;
+    display: inline;
+}
+a {
+    text-decoration: none;
+}
