@@ -4,7 +4,12 @@
             <a href="#">
                 <div>
                     <img class="card-img-top" src="{{ asset('images/feijao.png') }}" alt="Imagem de capa do card">
-                    <p class="badge price-tag main">R$ 10,99</p>
+                    <div class='price-tags d-flex flex-column align-items-start'>
+                        @if ($i < 5)
+                            <p class='badge bg-secondary text-decoration-line-through off'>R$ 15,99</p>
+                        @endif
+                        <p class="badge main">R$ 10,99</p>
+                    </div>
                 </div>
             </a>
             <div class="card-body">
