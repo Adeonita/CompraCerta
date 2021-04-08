@@ -45,10 +45,23 @@
     color: var(--main-color);
     border-bottom: 1px solid #cccccc;
 }
+
 .product-card {
-    align-items: center; 
+    align-items: center;
     border: none;
 }
+
+.price-tag {
+    z-index: 100;
+    position: absolute;
+    left: 0px;
+    top: 60%;
+}
+
+.product-card:hover {
+    border: 3px solid var(--main-color);
+}
+
 .buttons-product-card {
     justify-content: center;
     display: inline;
