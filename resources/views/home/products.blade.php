@@ -1,4 +1,4 @@
 @extends('index')
 @section('content')
-        Produtos ...
+        @include('../components/productCard')
 @endsection
