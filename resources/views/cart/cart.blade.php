@@ -33,10 +33,10 @@
         <div class="col-2">29,90</div>
     </div>
     <div class="row mb-5">
-        <div class="col"> 
-            <a href="{{ url('/home') }}" class="btn btn-outline-primary btn-sm">Continuar comprando</a>
+        <div class="col">
+            <a href="{{ url('/') }}" class="btn btn-outline-primary btn-sm">Continuar comprando</a>
         </div>
-        <div class="col" id="next-btn"> 
+        <div class="col" id="next-btn">
             <a href="#" class="btn btn-primary btn-sm">Próximo</a>
         </div>
     </div>

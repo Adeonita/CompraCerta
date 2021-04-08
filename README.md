@@ -33,6 +33,19 @@
 
 <br>
 
+## Algus comandos...
+- Criando um model e sua migração 
+    `php artisan make:model NameModel -m`
+
+- Executando uma migração 
+    `php artisan migrate`
+
+- Criando um seeder 
+    `php artisan make:seeder NameModelSeeder`
+
+-Criando um controller 
+    `php artisan make:controller NameControllerController`
+
 ## Padrão de commit 
 
 - `chore`: se refere à alguma implementação que não impacta diretamente o usuário. Por exemplo, uma mudança no `Readme.md`.

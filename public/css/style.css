@@ -6,9 +6,17 @@
     background-color: var(--main-color);
     color: white;
 }
+
+.main-btn:hover {
+    color: white;
+    background-color: #014382;
+}
+.logo-header {
+    height: 38px;
+    width: 20px;
+}
 .departments {
     height: 50px;
-    padding-top: 11px;
     border-top: 2px solid var(--main-color);
     border-bottom: 2px solid var(--main-color);
 }
@@ -24,12 +32,7 @@
     width: 100px;
     height: 100px;
 }
-.container {
-    width: 100%;
-    max-width: 1200px;
-    min-width: 200px;
-}
-a {
+.departments a {
     text-decoration: none;
 }
 #next-btn {
@@ -59,4 +62,8 @@ a {
     left: 1000px;
     top: 370px;
     color: #004E98;
+}
+.subtitle-form {
+    color: var(--main-color);
+    border-bottom: 1px solid #cccccc;
 }
