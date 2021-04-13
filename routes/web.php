@@ -29,4 +29,8 @@ Route::get("/recover", function () {
     return view('recover/recover');
 });
 
+Route::get("/adressSelection", function () {
+    return view('adressOption/adressSelection');
+});
+
 Route::get("/categories", [CategoryController::class, 'show']);
