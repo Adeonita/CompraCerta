@@ -59,5 +59,5 @@
         </div>
     </div>
     <script src="{{ asset('js/helpers.js') }}"></script>
-    <script src="{{ asset('js/creditCard.js') }}"></script>
+    <!-- <script src="{{ asset('js/creditCard.js') }}"></script> -->
 @endsection
