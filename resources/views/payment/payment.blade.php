@@ -9,22 +9,22 @@
                 <div class="row mb-3 ">
                     <div class='col-12 col-sm mx-2'>
                         <label for="name-credit-card" class="form-label">Nome no cartão</label>
-                        <input type="text" class="form-control" id="name-credit-card">
+                        <input required type="text" class="form-control only-letter" id="name-credit-card">
                     </div>
                     <div class="col-12 col-sm  mx-2">
                         <label for="credit-card-number" class="form-label">Número do cartão</label><br>
-                        <input type="text" class="form-control" id="credit-card-number">
+                        <input required type="text" class="form-control only-number" id="credit-card-number">
                     </div>
                 </div>
                 <div class='row mb-3 '>
                     <div class="col-12 col-sm mx-2">
                         <label for="due-date-creditcard" class="form-label">Data de vencimento</label><br>
-                        <input type="date" class="form-control" id="due-date-creditcard" placeholder="dd/mm/aaaa">
+                        <input required type="month" class="form-control" id="due-date-creditcard" placeholder="mm/aaaa">
                     </div>
 
                     <div class="col-12 col-sm mx-2">
                         <label for="credit-card-code" class="form-label">Código do cartão</label><br>
-                        <input type="text" class="form-control" id="credit-card-code" placeholder="">
+                        <input required type="text" class="form-control only-number" id="credit-card-code" placeholder="">
                     </div>
                 </div>
                 
@@ -46,4 +46,7 @@
             </div>
         </form>
     </div>
+    <script src="{{ asset('js/helpers.js') }}"></script>
+    <script src="{{ asset('js/creditCard.js') }}"></script>
+
 @endsection
