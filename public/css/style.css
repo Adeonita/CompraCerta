@@ -46,69 +46,16 @@
     border-bottom: 1px solid #cccccc;
 }
 
-.buttonHome{
-    position: absolute;
-    left: 830px;
+.DeliveryQuestion{
+    
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+    color: #004E98;
+    text-align: center;
+    font-size: larger;
+    font-weight: 700;
    
-}
-
-.buttonWithdrawal{
-    position: absolute;
-    left: 990px;
-
-}
-
-#DeliveryQuestion{
-    
-    border-top: 2px solid gray;
-    border-bottom: 2px solid gray;
-    color: #004E98;
-    text-align: center;
-    font-size: larger;
-    font-weight: 700;
     
 }
 
-#AdressQuestion{
-    
-    position: relative;
-    color: #004E98;
-    border-top: 2px solid gray;
-    border-bottom: 2px solid gray;
-    font-size: larger;
-    font-weight: 700;
-    top: 130px;
-    
-}
 
-.RegistredAdress{
-    bottom: 200px;
-    position: absolute;
-    left: 43%;
-    background-color: white;
-    color: black;
-    padding: 50px 30px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    border: 2px solid black;
-}
-
-#selectAdress{
-    position: relative;
-    top: 15px;
-}
-
-.NewAdress{
-    
-    position: absolute;
-    bottom: 140px;
-    left: 44.5%;
-
-}
-
-.BackToHome{
-    position: absolute;
-    bottom: 45px;
-    left: 5%;
-}

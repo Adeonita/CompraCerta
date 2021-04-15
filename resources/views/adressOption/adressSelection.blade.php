@@ -1,44 +1,62 @@
 @extends('index')
 @section('content')
 
-<p id="DeliveryQuestion">Como deseja receber sua compra ?<p>
-
-    <div class="buttonHome">
-        <button type="button" class="btn btn-outline-primary">
-            <img src="icons/truck.svg" alt="" width="75" height="60">
-            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-            <p>Entrega</p>
-        </button>
-    </div>
-
-    <div class="buttonWithdrawal">
-        <button type="button" class="btn btn-outline-warning">
-            <img src="icons/shop.svg" alt="" width="75" height="60">
-            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-            <p>Retirada</p>
-        </button>
-    </div>
-    
-    <p id="AdressQuestion" class="text-center">Qual endereço para a entrega ?</p>
-  
-    <div class="RegistredAdress">
-        <p style="font-size:larger;">Principal - (Endereço)</p>
-
-        <div class="form-group">
-            <label for="formGroupExampleInput"></label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Dados do endereço">
+    <div class="mt-4">
+        <div class="DeliveryQuestion">
+            <p>Em qual endereço você deseja receber sua compra ?<p>
         </div>
-       
-        <button id="selectAdress" type="button" class="btn btn-outline-success">Selecionar</button>
-    </div>
-    
-    <div class="NewAdress">
-        <button type="button" class="btn btn-outline-primary">Adicionar novo endereço</button>
     </div>
 
-    <div class="BackToHome">
+    <div class='container'>
+
+        <div class='col-12 col-sm-3 mb-3 me-2'>
+            <label for="cepUserRegister" class="form-label">CEP</label><br>
+            <input type="text" class="form-control" id="cepUserRegister" value="123456789-09">
+        </div>
+
+
+        <div class='row mb-3 '>
+            <div class="col-12 col-sm-10 ">
+                <label for="streetUserRegister" class="form-label">Rua</label><br>
+                <input type="text" class="form-control" id="streetUserRegister" value="Rua oliveiras verdes">
+            </div>
+
+            <div class="col-12 col-sm">
+                <label for="numberUserRegister" class="form-label">Número</label><br>
+                <input type="text" class="form-control" id="numberUserRegister" value="32">
+            </div>
+        </div>
+
+        <div class='row mb-3'>
+            <div class="col-12 col-sm ">
+                <label for="districtUserRegister" class="form-label">Bairro</label><br>
+                <input type="text" class="form-control" id="districtUserRegister" value="Bairro Lunar">
+            </div>
+
+            <div class="col-12 col-sm">
+                <label for="cityUserRegister" class="form-label">Cidade</label><br>
+                <input type="text" class="form-control" id="cityUserRegister" value="Salvador">
+            </div>
+
+            <div class="col-12 col-sm">
+                <label for="stateUserRegister" class="form-label">Estado</label><br>
+                <input type="text" class="form-control" id="stateUserRegister" value="Bahia">
+            </div>
+        </div>
+
+        <div class='mb-3 w-100'>
+            <label for="complementUserRegister" class="form-label">Complemento</label><br>
+            <input type="text" class="form-control" id="complementUserRegister" value="Próximo a padaria cheiro de oliveira">
+        </div>
+
+        <div class='d-flex flex-row-reverse'>
+            <button class='btn btn-success mx-2'> <i class="bi bi-check"></i> Cadastrar</button>
+        </div>
+
+    </div>
+    <div class="ms-2 my-4">
         <button type="button" class="btn btn-primary">
-            <img src="icons/bag.svg" alt="" width="40" height="30">
+            <i class="bi bi-bag"></i>
             <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
             Continuar Comprando
         </button>
