@@ -1,4 +1,6 @@
 @extends('index')
 @section('content')
-        Produtos ...
+    <div class='container py-2 mb-2'>
+        @include('../components/productCard')
+    </div>
 @endsection
