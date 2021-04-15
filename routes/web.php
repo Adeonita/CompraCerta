@@ -33,4 +33,8 @@ Route::get("/adressSelection", function () {
     return view('adressOption/adressSelection');
 });
 
+Route::get("/productPage", function () {
+    return view('productPage/productPage');
+});
+
 Route::get("/categories", [CategoryController::class, 'show']);
