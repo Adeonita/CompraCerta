@@ -26,9 +26,7 @@
     @include('components/header')
     @include('components/categories')
     <div class="container">
-        <div>
             @yield('content')
-        </div>
     </div>
     @include('components/footer')
 </body>
