@@ -3,9 +3,9 @@
     
 <div class="container">
     <div class="row">
-        <div class="col-md-8"><p class="productName">Feijão Camil</p></div>
+        <div class="col-md-8"><p class="product-name">Feijão Camil</p></div>
 
-    <div class="col-md-4 mt-6"><p class="productPrice">Por apenas <br> R$ 2,25 a un.</p></div>
+    <div class="col-md-4 mt-6"><p class="product-price">Por apenas <br> R$ 2,25 a un.</p></div>
     </div>
 </div>
 
