@@ -2,7 +2,7 @@
 @section('content')
 
     <div class="mt-4">
-        <p class="DeliveryQuestion">Em qual endereço você deseja receber sua compra ?<p>
+        <p class="delivery-question">Em qual endereço você deseja receber sua compra ?<p>
     </div>
 
     <div class='container'>
