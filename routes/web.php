@@ -29,4 +29,8 @@ Route::get("/recover", function () {
     return view('recover/recover');
 });
 
+Route::get("/evaluate-purchase", function () {
+    return view('evaluate-purchase/index');
+});
+
 Route::get("/categories", [CategoryController::class, 'show']);
