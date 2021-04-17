@@ -1,7 +1,7 @@
-const onlyNuber = document.querySelectorAll(".only-number");
+const onlyNumber = document.querySelectorAll(".only-number");
 const onlyLetter = document.querySelectorAll(".only-letter");
 
-onlyNuber.forEach(input => {
+onlyNumber.forEach(input => {
     input.onkeypress = function (e) {
         const charCode = e.charCode;
         if( charCode < 48 || charCode > 57) {
