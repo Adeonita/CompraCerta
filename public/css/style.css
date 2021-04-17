@@ -86,3 +86,19 @@
 a {
     text-decoration: none;
 }
+.star {
+    font-size: 91px !important;    
+}
+#avaliation{
+    text-align: center;
+}
+.evaluate-purchase input[type=radio] {
+    display: none;
+  }
+.evaluate-purchase label i.fa:before {
+content:'\f005';
+color: #FC0;
+}
+.evaluate-purchase input[type=radio]:checked ~ label i.fa:before {
+color: #CCC;
+}
