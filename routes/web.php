@@ -30,3 +30,7 @@ Route::get("/recover", function () {
 });
 
 Route::get("/categories", [CategoryController::class, 'show']);
+
+Route::get("/payment", function() {
+    return view('/payment/payment');
+});
