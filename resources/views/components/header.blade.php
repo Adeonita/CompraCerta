@@ -43,25 +43,27 @@
                 <form>
                     <div class="mb-3">
                         <label for="emailInput" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="emailInput" placeholder="seuemail@examplo.com">
+                        <input type="email" class="form-control" id="emailInput" placeholder="seuemail@examplo.com"
+                            required>
                     </div>
                     <div class="mb-3">
                         <label for="senhaUser" class="form-label">Senha</label>
-                        <input type="password" class="form-control" id="passwordUser" placeholder="">
+                        <input type="password" class="form-control" id="passwordUser" placeholder="" required
+                            minlength="6" maxlength="20">
                     </div>
                     <div class="mb-3 mx-auto">
                         <a href="{{ url('/recover') }}">Esqueci minha senha</a>
                     </div>
                     <div class=" w-100">
 
-                        <button type="button" class="btn btn-primary w-100" data-bs-dismiss="modal">Login</button>
+                        <button type="submit" class="btn btn-primary w-100">Login</button>
                     </div>
 
                 </form>
             </div>
             <div class="modal-footer">
-                <a href={{ url('/createAccount') }} class='w-100'>
-                    <button type="button" class="btn btn-outline-secondary w-100">Cadastrar</button>
+                <a href={{ url('/createAccount') }} class="btn btn-outline-secondary w-100">
+                    Cadastrar
                 </a>
             </div>
         </div>
