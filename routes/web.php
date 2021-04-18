@@ -30,11 +30,19 @@ Route::get("/recover", function () {
 });
 
 Route::get("/purchasing-management", function () {
-    return(view('employee/purchasingManagement'));
+    return (view('employee/purchasingManagement'));
 });
 
 Route::get("/separate-purchasing", function () {
-    return(view('employee/separatePurchase'));
+    return (view('employee/separatePurchase'));
+});
+
+Route::get("/evaluate-purchase", function () {
+    return view('evaluate-purchase/index');
 });
 
 Route::get("/categories", [CategoryController::class, 'show']);
+
+Route::get("/payment", function () {
+    return view('/payment/payment');
+});
