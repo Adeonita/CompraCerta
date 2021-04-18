@@ -29,6 +29,14 @@ Route::get("/recover", function () {
     return view('recover/recover');
 });
 
+Route::get("/purchasing-management", function () {
+    return (view('employee/purchasingManagement'));
+});
+
+Route::get("/separate-purchasing", function () {
+    return (view('employee/separatePurchase'));
+});
+
 Route::get("/evaluate-purchase", function () {
     return view('evaluate-purchase/index');
 });

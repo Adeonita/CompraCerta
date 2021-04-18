@@ -107,6 +107,10 @@ a {
     text-decoration: none;
 }
 
+#view-purchase {
+    color: #808080;
+}
+
 .star {
     font-size: 91px !important;
 }
