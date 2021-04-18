@@ -2,21 +2,29 @@ const onlyNumber = document.querySelectorAll(".only-number");
 const onlyLetter = document.querySelectorAll(".only-letter");
 
 onlyNumber.forEach(input => {
-    input.onkeypress = function(e) {
-        const charCode = e.charCode;
-        if (charCode < 48 || charCode > 57) {
-            e.preventDefault();
+    input.addEventListener(
+        "keypress", 
+        function(e){
+            const isDigit = /\d/u.test(e.key);
+            
+            if (!isDigit) {
+                e.preventDefault();
+            }
         }
-    }
+    );
 });
 
 onlyLetter.forEach(input => {
-    input.onkeypress = function(e) {
-        const charCode = e.charCode;
-        if ((charCode < 65 || charCode > 90) && (charCode < 97 || charCode > 122)) {
-            e.preventDefault();
+    input.addEventListener(
+        "keypress", 
+        function(e){
+            const isLetter = /[A-Za-z]/u.test(e.key);   
+            
+            if (!isLetter) {
+                e.preventDefault();
+            }
         }
-    }
+    );
 });
 
 function checkFieldsById(field, fieldControl) {
