@@ -1,5 +1,6 @@
 const creditCardCode = document.getElementById('credit-card-code');
 const creditCardNumber = document.getElementById('credit-card-number');
+const paymentForm = document.getElementById('payment-form');
 
 creditCardCode.addEventListener(
     "keypress",
@@ -22,3 +23,8 @@ creditCardNumber.addEventListener(
         }
     }
 );
+
+paymentForm.onsubmit = function() {
+    //TODO: Personalizar alert 
+    alert('Cartão Cadastrado');
+}

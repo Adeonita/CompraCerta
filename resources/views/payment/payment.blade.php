@@ -2,7 +2,7 @@
 @section('content')
     <div class="row mb-3">
         <div class="col-6">
-            <form class='form-control p-4 mt-5 mb-5'>
+            <form class='form-control p-4 mt-5 mb-5' id="payment-form">
                 <h4 class='subtitle-form'>
                     Dados de pagamento
                 </h4>
