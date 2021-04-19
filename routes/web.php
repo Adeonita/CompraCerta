@@ -41,6 +41,10 @@ Route::get("/evaluate-purchase", function () {
     return view('evaluate-purchase/index');
 });
 
+Route::get("/trackingPage", function () {
+    return view('tracking/trackingPage');
+});
+
 Route::get("/categories", [CategoryController::class, 'show']);
 
 Route::get("/payment", function () {
