@@ -12,11 +12,13 @@
             @for ($i = 0; $i < 5; $i++)
                 <tr class="align-middle line-cart">
                     <td>
-                        <input type="number" min="1" max="10" id="product-quantity">
+                        <input type="number" min="1" max="10">
                     </td>
-                    <td scope="row"><img src="{{ asset('images/product.svg') }}" class="rounded float-left product"
-                            alt="Produto"> Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
-                    <td class="unity-value">5.90</td>
+                    <td scope="row">
+                        <img src="{{ asset('images/product.svg') }}" class="rounded float-left product" alt="Produto"> 
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    </td>
+                    <td>5.90</td>
                 </tr>
             @endfor
         </tbody>
