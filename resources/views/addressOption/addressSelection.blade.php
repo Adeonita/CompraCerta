@@ -48,16 +48,13 @@
         </div>
 
         <div class='d-flex flex-row-reverse'>
-            <button class='btn btn-success mx-2'> <i class="bi bi-check"></i> Cadastrar</button>
+            <a href="{{ url('/payment') }}" class="btn btn-success btn-sm"><i class="bi bi-check"></i> Continuar para pagamento</a>
         </div>
-
+    
     </div>
+
     <div class="ms-2 my-4">
-        <button type="button" class="btn btn-primary">
-            <i class="bi bi-bag"></i>
-            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-            Continuar Comprando
-        </button>
+         <a href="{{ url('/') }}" class="btn btn-primary btn-sm"><i class="bi bi-bag"></i> Continuar Comprando</a>    
     </div>
 
 @endsection
