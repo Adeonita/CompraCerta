@@ -8,7 +8,7 @@
         </div>
         <div>
 
-            <form class='form-control p-4'>
+            <form class='form-control p-4' onSubmit="return(validateRegister())">
                 <h4 class='subtitle-form'>
                     Informações Pessoais
                 </h4>
@@ -16,52 +16,65 @@
                     <div class="row mb-3 ">
                         <div class='col-12 col-sm mx-2'>
                             <label for="nameUserRegister" class="form-label">Nome</label>
-                            <input type="text" class="form-control" id="nameUserRegister">
+                            <input type="text" class="form-control only-letter" id="nameUserRegister" required
+                                minlength="3">
                         </div>
                         <div class="col-12 col-sm  mx-2">
                             <label for="lastNameUserRegister" class="form-label">Sobrenome</label><br>
-                            <input type="text" class="form-control" id="lastNameUserRegister">
+                            <input type="text" class="form-control only-letter" id="lastNameUserRegister" required
+                                minlength="3">
                         </div>
                     </div>
                     <div class='row mb-3 '>
                         <div class="col-12 col-sm mx-2">
                             <label for="birthUserRegister" class="form-label">Data de Nascimento</label><br>
-                            <input type="date" class="form-control" id="birthUserRegister" placeholder="dd/mm/aaaa">
+                            <input type="date" class="form-control" id="birthUserRegister" placeholder="dd/mm/aaaa"
+                                required>
                         </div>
 
                         <div class="col-12 col-sm mx-2">
                             <label for="cpfUserRegister" class="form-label">CPF</label><br>
-                            <input type="text" class="form-control" id="cpfUserRegister" placeholder="___.___.___-__">
+                            <input type="text" class="form-control only-number" id="cpfUserRegister"
+                                placeholder="___.___.___-__" required minlength='11' maxlength="11">
+                            <div id="cpfHelp" class="form-text">* Apenas números.</div>
+
                         </div>
                     </div>
                     <div class='row mb-3 '>
                         <div class="col-12 col-sm mx-2">
                             <label for="emailUserRegister" class="form-label">Email</label><br>
                             <input type="email" class="form-control" id="emailUserRegister"
-                                placeholder="seuemail@exemplo.com">
+                                placeholder="seuemail@exemplo.com" required>
                         </div>
                         <div class="col-12 col-sm mx-2">
                             <label for="emailControlUserRegister" class="form-label">Confirme seu Email</label><br>
                             <input type="email" class="form-control" id="emailControlUserRegister"
-                                placeholder="seuemail@exemplo.com">
+                                placeholder="seuemail@exemplo.com" required>
                         </div>
                     </div>
                     <div class='row mb-3 '>
 
                         <div class="col-12 col-sm mx-2">
                             <label for="passwordUserRegister" class="form-label">Senha</label><br>
-                            <input type="password" class="form-control" id="passwordUserRegister">
+                            <input type="password" class="form-control" id="passwordUserRegister" minlength="6"
+                                maxlength="20" required>
+                            <div id="passwordHelp" class="form-text">* Senha precisa ter no mínimo 6 caracteres e no máximo
+                                20.</div>
+                            <div class="invalid-feedback">
+                                Please choose a username.
+                            </div>
                         </div>
 
                         <div class="col-12 col-sm mx-2">
                             <label for="passwordControlUserRegister" class="form-label">Confirmar senha</label><br>
-                            <input type="password" class="form-control" id="passwordControlUserRegister">
+                            <input type="password" class="form-control" id="passwordControlUserRegister" minlength="6"
+                                maxlength="20" required>
                         </div>
 
                     </div>
                     <div class='mx-2'>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="legalTerm">
+                            <input class="form-check-input" type="checkbox" value="" id="legalTerm" required>
                             <label class="form-check-label" for="legalTerm">
                                 Li e concordo com os
                                 <a href='' data-bs-toggle="modal" data-bs-target="#termsModal">
@@ -126,3 +139,6 @@
     </div>
 
 @endsection
+
+<script src="{{ asset('js/createAccount.js') }}"></script>
+<script src="{{ asset('js/helpers.js') }}"></script>
