@@ -2,7 +2,7 @@
 @section('content')
     <div class="row mb-3">
         <div class="col-6">
-            <form class='form-control p-4 mt-5 mb-5'>
+            <form class='form-control p-4 mt-5 mb-5' id="payment-form">
                 <h4 class='subtitle-form'>
                     Dados de pagamento
                 </h4>
@@ -16,7 +16,7 @@
                     <div class="row mb-3">
                         <div class="col-12 col-sm  mx-2">
                             <label for="credit-card-number" class="form-label">Número do cartão</label><br>
-                            <input required type="text" class="form-control only-number" id="credit-card-number">
+                            <input required type="text" class="form-control only-number" id="credit-card-number" maxlength="16">
                         </div>
                     </div>
                     <div class='row mb-3 '>
@@ -28,7 +28,7 @@
                     <div class='row mb-3 '>
                         <div class="col-12 col-sm mx-2">
                             <label for="credit-card-code" class="form-label">Código do cartão</label><br>
-                            <input required type="text" class="form-control only-number" id="credit-card-code" placeholder="">
+                            <input required type="text" class="form-control only-number" id="credit-card-code" maxlength="3">
                         </div>
                     </div>            
                     <div class='mx-2 mt-5'>
@@ -59,5 +59,5 @@
         </div>
     </div>
     <script src="{{ asset('js/helpers.js') }}"></script>
-    <!-- <script src="{{ asset('js/creditCard.js') }}"></script> -->
+    <script src="{{ asset('js/creditCard.js') }}"></script>
 @endsection

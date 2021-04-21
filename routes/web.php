@@ -45,6 +45,10 @@ Route::get("/productPage", function () {
     return view('productPage/productPage');
 });
 
+Route::get("/trackingPage", function () {
+    return view('tracking/trackingPage');
+});
+
 Route::get("/categories", [CategoryController::class, 'show']);
 
 Route::get("/payment", function () {
