@@ -1,7 +1,7 @@
 <div class="row justify-content-around">
     @for ($i = 0; $i < 20; $i++)
         <div class="card product-card col-xs-6 col-sm-4 col-md-4 col-lg-4 px-auto mb-4 mx-2 " style="width: 15rem;">
-            <a href="#">
+            <a href="{{ url('/product') }}">
                 <div>
                     <img class="card-img-top" src="{{ asset('images/feijao.png') }}" alt="Imagem de capa do card">
                     <div class='price-tags d-flex flex-column align-items-start'>
@@ -16,7 +16,7 @@
                 <p class="card-text">Produto de teste</p>
             </div>
             <div class="row buttons-product-card">
-                <a href="#" class="btn main main-btn">Comprar</a>
+                <a href="{{ url('/product') }}" class="btn btn-primary btn-sm">Comprar</a>
             </div>
         </div>
     @endfor

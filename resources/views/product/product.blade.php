@@ -11,6 +11,8 @@
         <div class="col-md-8 mt-3"><p class="product-name">Feijão Camil</p></div>
       </div>
       <div class="row">
+        &nbsp; &nbsp;
+        <h3><del>De 15,99</del></h3>
         <p class="product-price">Por apenas <br> R$ 10,99 a un.</p>
       </div>
       <div class="row mt-4">
