@@ -5,7 +5,7 @@
         <p class="delivery-question">Em qual endereço você deseja receber sua compra ?<p>
     </div>
 
-    <form class='form-control p-4' onSubmit="return(validateRegister())">
+    <form class='form-control p-4'>
         <div class='container'>
 
             <div class='col-12 col-sm-3 mb-3 me-2'>
