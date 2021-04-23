@@ -16,7 +16,7 @@
                 <p class="card-text">Produto de teste</p>
             </div>
             <div class="row buttons-product-card">
-                <a href="{{ url('/product') }}" class="btn btn-primary btn-sm">Comprar</a>
+                <a href="{{ url('/product') }}" class="btn main main-btn">Comprar</a>               
             </div>
         </div>
     @endfor
