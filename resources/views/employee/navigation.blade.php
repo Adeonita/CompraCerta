@@ -17,11 +17,6 @@
             </a>
         </div>
         <div class="col-12 col-sm-4">
-            <a href="#" class="badge bg-info col-12">
-                <p>Entrega</p>
-            </a>
-        </div>
-        <div class="col-12 col-sm-4">
             <a href="{{ url('/evaluate-purchase') }}" class="badge bg-secondary col-12">
                 <p>Avalição do Cliente</p>
             </a>
