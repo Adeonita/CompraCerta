@@ -132,6 +132,34 @@ a {
     justify-content: space-around;
 }
 
+.quant{
+    font-size: 20px;
+    font-style: unset;
+    color: black;
+}
+
+.quantBox{
+    padding: 3px; 
+    border-radius: initial;
+    
+}
+
+.product-name{
+    font-size: 35px;
+    font-style: unset;
+    color: #004E98;
+}
+
+.product-price{
+    font-size: 30px;
+    color: #004E98;
+}
+
+.product-img {     
+    width: 65%;
+
+}
+
 .date {
     font-size: 11px
 }
