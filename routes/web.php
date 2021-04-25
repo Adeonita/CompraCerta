@@ -59,6 +59,11 @@ Route::get("/payment", function () {
     return view('/payment/payment');
 });
 
+Route::get("/packaging", function () {
+    return view('/employee/packaging');
+});
+
+
 Route::get("/navigation", function () {
     return view('/employee/navigation');
 });

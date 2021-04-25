@@ -3,7 +3,7 @@
     <div class="mb-5">
         <div class="my-3">
             <h3>
-                <i class="bi bi-clipboard"></i> Separação
+                <i class="bi bi-box-seam"></i> Empacotamento
             </h3>
         </div>
         <form action="" class="form-control p-4">
@@ -20,8 +20,8 @@
                             <td>
                                 <p>1 un</p>
                             </td>
-                            <td scope="row"><img src="{{ asset('images/product.svg') }}"
-                                    class="rounded float-left product" alt="Produto">
+                            <td scope="row"><img src="{{ asset('images/feijao.png') }}" class="rounded float-left product"
+                                    alt="Produto">
                                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                             </td>
                         </tr>
@@ -29,7 +29,8 @@
                 </tbody>
             </table>
             <div class="d-flex flex-row-reverse">
-                <button class="btn btn-success mx-2"> <i class="bi bi-check"></i> Finalizar</button>
+                <a href="{{ url('/purchasing-management') }}" class="btn btn-success mx-2"> <i class="bi bi-check"></i>
+                    Finalizar</a>
             </div>
         </form>
     </div>
