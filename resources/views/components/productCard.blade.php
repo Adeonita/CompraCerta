@@ -13,7 +13,7 @@
                 </div>
             </a>
             <div class="card-body">
-                <p class="card-text">Produto de teste</p>
+                <p class="card-text">Feijão Camil tipo 1</p>
             </div>
             <div class="row buttons-product-card">
                 <a href="{{ url('/product') }}" class="btn main main-btn">Comprar</a>               
