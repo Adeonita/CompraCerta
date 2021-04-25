@@ -12,8 +12,10 @@
             <a href="{{ url('/createAccount') }}" class="btn btn-primary mx-1"> <i class="bi bi-person-plus-fill"></i>
                 Criar uma conta</a>
         </div>
-        <div>
-            <a href="{{ url('/cart') }}" class="btn btn-secondary"> <i class="bi bi-cart"></i> </a>
+        <div class='d-inline'>
+            <a href="{{ url('/navigation') }}" class="btn btn-warning d-sm-inline d-none mx-1"> <i
+                    class="bi bi-cone"></i></i> </a>
+            <a href="{{ url('/cart') }}" class="btn btn-secondary d-inline"> <i class="bi bi-cart"></i> </a>
         </div>
     </nav>
 </header>

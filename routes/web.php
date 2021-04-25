@@ -45,6 +45,10 @@ Route::get("/evaluate-purchase", function () {
     return view('evaluate-purchase/index');
 });
 
+Route::get("/product", function () {
+    return view('product/product');
+});
+
 Route::get("/trackingPage", function () {
     return view('tracking/trackingPage');
 });
@@ -53,4 +57,8 @@ Route::get("/categories", [CategoryController::class, 'show']);
 
 Route::get("/payment", function () {
     return view('/payment/payment');
+});
+
+Route::get("/navigation", function () {
+    return view('/employee/navigation');
 });
