@@ -25,7 +25,7 @@
 
 <body>
     @include('components/header')
-    @include('components/categories')
+    @include('components/menu')
     <div class="container my-4">
         @yield('content')
     </div>

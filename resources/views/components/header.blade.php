@@ -64,7 +64,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <a href={{ url('/createAccount') }} class="btn btn-outline-secondary w-100">
+                <a href="{{ url('/createAccount') }}" class="btn btn-outline-secondary w-100">
                     Cadastrar
                 </a>
             </div>
