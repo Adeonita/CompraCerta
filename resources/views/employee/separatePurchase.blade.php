@@ -14,8 +14,8 @@
                     <td>
                         <p>1 un</p>
                     </td>
-                    <td scope="row"><img src="{{ asset('images/product.svg') }}" class="rounded float-left product" alt="Produto"> 
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    <td scope="row"><img src="{{ asset('images/feijao.png') }}" class="rounded float-left product" alt="Produto"> 
+                        Feijão Camil tipo 1
                     </td>
                     <td>
                         <input type="checkbox" class="form-check-input check-separate-purchase" name="check-separate-purchase">
