@@ -28,7 +28,7 @@
             <a href="{{ url('/') }}" class="btn btn-outline-primary btn-sm">Continuar comprando</a>
         </div>
         <div class="col" id="next-btn">
-            <a href="{{ url('/payment') }}" class="btn btn-primary btn-sm">Continuar para o pagamento</a>
+            <a href="{{ url('/addressSelection') }}" class="btn btn-primary btn-sm">Continuar para o endereço</a>
         </div>
     </div>
 @endsection
