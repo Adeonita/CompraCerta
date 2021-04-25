@@ -21,10 +21,10 @@
                                     <input type="number" min="1" max="10" value="1">
                                 </td>
                                 <td scope="row">
-                                    <img src="{{ asset('images/product.svg') }}" class="rounded float-left product" alt="Produto"> 
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                    <img src="{{ asset('images/feijao.png') }}" class="rounded float-left product" alt="Produto"> 
+                                    Feijao Camil tipo 1
                                 </td>
-                                <td>5.90</td>
+                                <td>10.99</td>
                             </tr>
                         @endfor
                     </tbody>
