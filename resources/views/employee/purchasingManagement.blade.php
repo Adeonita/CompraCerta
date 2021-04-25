@@ -3,7 +3,7 @@
     <div class="mb-5">
         <div class="my-3">
             <h3>
-                Separação de compra
+                Painel de compra
             </h3>
         </div>
         <form action="" class="form-control p-4">
