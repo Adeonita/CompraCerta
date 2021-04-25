@@ -6,31 +6,40 @@
                 <i class="bi bi-box-seam"></i> Empacotamento
             </h3>
         </div>
-        <form action="" class="form-control p-4">
-            <table id="my-cart" class="table table-hover">
-                <thead>
+
+        <form action="">
+            <table id="my-cart" class="table table-hover mt-5">
+                <thead class="text-center">
                     <tr>
                         <th scope="col">Quantidade</th>
                         <th scope="col">Produto</th>
+                        <th scope="col">Separado</th>
                     </tr>
                 </thead>
                 <tbody>
                     @for ($i = 0; $i < 5; $i++)
-                        <tr class="align-middle">
+                        <tr class="text-center">
                             <td>
                                 <p>1 un</p>
                             </td>
                             <td scope="row"><img src="{{ asset('images/feijao.png') }}" class="rounded float-left product"
                                     alt="Produto">
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                Feijão Camil tipo 1
+                            </td>
+                            <td>
+                                <input type="checkbox" class="form-check-input check-separate-purchase"
+                                    name="check-separate-purchase">
                             </td>
                         </tr>
                     @endfor
                 </tbody>
             </table>
             <div class="d-flex flex-row-reverse">
-                <a href="{{ url('/purchasing-management') }}" class="btn btn-success mx-2"> <i class="bi bi-check"></i>
-                    Finalizar</a>
+                <a href="{{ asset('purchasing-management') }}" class="btn btn-success btn-sm disabled"
+                    id="complete-separate-purchase">
+                    <i class="bi bi-check"></i>
+                    Finalizar
+                </a>
             </div>
         </form>
     </div>
