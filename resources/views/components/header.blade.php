@@ -45,7 +45,7 @@
                 <form>
                     <div class="mb-3">
                         <label for="emailInput" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="emailInput" placeholder="seuemail@examplo.com"
+                        <input type="email" class="form-control" id="emailInput" placeholder="seuemail@exemplo.com"
                             required>
                     </div>
                     <div class="mb-3">
