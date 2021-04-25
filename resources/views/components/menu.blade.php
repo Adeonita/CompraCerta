@@ -8,7 +8,7 @@
                 $categories = $categoryController->show();
             @endphp
             @foreach ($categories as $category)
-                <a class=' swiper-item department px-3 py-2'>{{ $category }}</a>
+                <a href="#" class="swiper-item department px-3 py-2">{{ $category }}</a>
             @endforeach
         </div>
     </div>
