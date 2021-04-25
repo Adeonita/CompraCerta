@@ -29,6 +29,10 @@ Route::get("/recover", function () {
     return view('recover/recover');
 });
 
+Route::get("/addressSelection", function () {
+    return view('addressOption/addressSelection');
+});
+
 Route::get("/purchasing-management", function () {
     return (view('employee/purchasingManagement'));
 });
@@ -39,6 +43,10 @@ Route::get("/separate-purchasing", function () {
 
 Route::get("/evaluate-purchase", function () {
     return view('evaluate-purchase/index');
+});
+
+Route::get("/product", function () {
+    return view('product/product');
 });
 
 Route::get("/trackingPage", function () {
