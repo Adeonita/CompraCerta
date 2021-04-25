@@ -138,7 +138,7 @@
         </div>
     </div>
 
-@endsection
 
-<script src="{{ asset('js/createAccount.js') }}"></script>
-<script src="{{ asset('js/helpers.js') }}"></script>
+    <script src="{{ asset('js/createAccount.js') }}"></script>
+    <script src="{{ asset('js/helpers.js') }}"></script>
+@endsection
