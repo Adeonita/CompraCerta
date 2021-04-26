@@ -52,7 +52,7 @@ Caso ao subir a aplicação apresente o erro de permissão siga os passos abaixo
 &nbsp;
 
 ### port already in use
-___
+
 A aplicação utiliza as portas 8000, 3306, 4444, 6379, 1025, 7700.
 Caso as esteja utilizando para outras finalidades, encerre o processo ou modifique as portas no arquivo docker-compose.yml
 
