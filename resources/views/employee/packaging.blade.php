@@ -43,4 +43,5 @@
             </div>
         </form>
     </div>
+    <script src="{{ asset('js/separatePurchase.js') }}"></script>
 @endsection
