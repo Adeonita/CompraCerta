@@ -1,56 +1,58 @@
 <center>
-    <img src="./logo.jpeg">
+    <img src="./public/images/logo.png">
 </center>
 <br><br>
 
-## Sobre
-<p>
-    Para os passos abaixo considere uma máquina que o 
-    <a href="https://docs.docker.com/engine/install/ubuntu/">
-        docker
-    </a> esteja instalado.
-</p>
-<br>
+# Sobre
 
-## Configurações iniciais
+Trabalho da disciplina linguagem de programação III do curso Sistemas de informação da Universidade Estadual da Bahia 2021.1
 
-<p>
-    Caso não tenha instalado anteriormente adicione o repositório abaixo ao seu sistema
-</p>
+&nbsp;
 
-- `sudo add-apt-repository ppa:ondrej/php`
-- `sudo apt-get update`
-<br><br>
 
-## Subindo a aplicação
-<p>
-    Dentro da pasta do projeto rode o comando 
-        <code>./vendor/bin/sail up</code>
-    para que os containers sejam construídos em sua máquina.
-    Depois que os contêineres do Docker do aplicativo forem iniciados, 
-    você pode acessar o aplicativo em seu navegador da web em: <code>http://localhost</code>
-</p>
+# Requisitos
 
-<br>
+- [php ^7.3 *](https://www.php.net/)
+- [composer ^1.10 *](https://getcomposer.org/download/)
+- [docker](https://docs.docker.com/docker-for-windows/install/)
+- [wsl2 **](https://docs.microsoft.com/pt-br/windows/wsl/install-win10)
+- *Ou docker 
+- ** Para windows
 
-## Algus comandos...
-- Criando um model e sua migração 
-    `php artisan make:model NameModel -m`
+&nbsp;
 
-- Executando uma migração 
-    `php artisan migrate`
 
-- Criando um seeder 
-    `php artisan make:seeder NameModelSeeder`
 
--Criando um controller 
-    `php artisan make:controller NameControllerController`
+# Subindo a aplicação
+- Insira o arquivo .env enviado por e-mail na raiz do projeto
+- Dentro da pasta do projeto rode o comando  `composer install`
+- Em seguida `./vendor/bin/sail up` , esse processo demora um pouco pois  os containers serão construídos em sua máquina
+- Após os contêineres do Docker do aplicativo forem iniciados acesse o aplicativo em seu navador em: http://localhost
+&nbsp;
 
-## Padrão de commit 
 
-- `chore`: se refere à alguma implementação que não impacta diretamente o usuário. Por exemplo, uma mudança no `Readme.md`.
-- `feat`: se refere à implementação de features
-- `fix`: se refere à uma correção
-- `refactor`: se refere à refatoração de uma feature previamente implementada
-- `style`: se refere à uma mudança estética no código. Por exemplo: alterar a indentação de espaço para tab
-- `test`: se refere à uma implementação de teste
+&nbsp;
+
+
+# Observações
+
+### Possíveis situações 
+
+&nbsp;
+
+### permission denied
+
+Caso ao subir a aplicação apresente o erro de permissão siga os passos abaixo:
+
+1. Liste todos os containers com `docker ps`
+2. Copie o id do container do sail
+3. E acesse-o com o comando `docker exec -it {idDoContainer} bash`
+4. Execute o comando `chmod -R 777 .`
+
+&nbsp;
+
+### port already in use
+
+A aplicação utiliza as portas 8000, 3306, 4444, 6379, 1025, 7700.
+Caso as esteja utilizando para outras finalidades, encerre o processo ou modifique as portas no arquivo docker-compose.yml
+
