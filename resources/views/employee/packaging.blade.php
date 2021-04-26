@@ -3,9 +3,10 @@
     <div class="mb-5">
         <div class="my-3">
             <h3>
-                <i class="bi bi-clipboard"></i> Separação
+                <i class="bi bi-box-seam"></i> Empacotamento
             </h3>
         </div>
+
         <form action="">
             <table id="my-cart" class="table table-hover mt-5">
                 <thead class="text-center">
@@ -42,5 +43,4 @@
             </div>
         </form>
     </div>
-    <script src="{{ asset('js/separatePurchase.js') }}"></script>
 @endsection

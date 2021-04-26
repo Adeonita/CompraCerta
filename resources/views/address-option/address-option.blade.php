@@ -1,8 +1,10 @@
 @extends('index')
 @section('content')
 
-    <div class="mt-4">
-        <p class="delivery-question">Em qual endereço você deseja receber sua compra ?<p>
+    <div class="my-3">
+            <h3>
+                <i class="bi bi-house"></i> Endereço
+            </h3>
     </div>
 
     <form class='form-control p-4' id="address-form">
@@ -21,19 +23,19 @@
 
                 <div class="col-12 col-sm">
                     <label for="numberUserRegister" class="form-label">Número</label><br>
-                    <input required type="text" class="form-control only-number" id="numberUserRegister" required>
+                    <input required type="text" class="form-control only-number" id="numberUserRegister">
                 </div>
             </div>
 
             <div class='row mb-3'>
                 <div class="col-12 col-sm ">
                     <label for="districtUserRegister" class="form-label">Bairro</label><br>
-                    <input required type="text" class="form-control" id="districtUserRegister" required>
+                    <input required type="text" class="form-control" id="districtUserRegister">
                 </div>
 
                 <div class="col-12 col-sm">
                     <label for="cityUserRegister" class="form-label">Cidade</label><br>
-                    <input required type="text" class="form-control only-letter" id="cityUserRegister" required>
+                    <input required type="text" class="form-control only-letter" id="cityUserRegister">
                 </div>
 
                 <div class="col-12 col-sm">

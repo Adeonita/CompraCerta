@@ -26,7 +26,8 @@
             </div>
         </form>
     </div>
-@endsection
 
-<script src="{{ asset('js/recoverPassword.js') }}"></script>
-<script src="{{ asset('js/helpers.js') }}"></script>
+    <script src="{{ asset('js/recoverPassword.js') }}"></script>
+    <script src="{{ asset('js/helpers.js') }}"></script>
+
+@endsection
