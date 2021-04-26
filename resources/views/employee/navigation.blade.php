@@ -21,5 +21,10 @@
                 <p>Avalição do Cliente</p>
             </a>
         </div>
+        <div class="col-12 col-sm-4">
+            <a href="{{ url('/trackingPage') }}" class="badge bg-info col-12">
+                <p>Reastreio da Compra do Cliente</p>
+            </a>
+        </div>
     </div>
 @endsection
