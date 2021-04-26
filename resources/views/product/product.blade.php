@@ -25,9 +25,8 @@
                     </div>
                 </div>
                 <div class="row mt-4">
-                    <div><button type="button" class="btn btn-success">
-                            <i class="bi bi-cart-check"></i> Comprar
-                        </button>
+                    <div>
+                        <a href="{{ url('/') }}" class="btn btn-success"><i class="bi bi-cart-plus"></i> Comprar</a>             
                     </div>
                 </div>
             </div>
