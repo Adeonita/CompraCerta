@@ -1,6 +1,7 @@
 @extends('index')
 @section('content')
-
+    
+<div class='mb-5'>
     <div class="my-3">
             <h3>
                 <i class="bi bi-house"></i> Endereço
@@ -87,6 +88,7 @@
     <div class="ms-2 my-4">
          <a href="{{ url('/') }}" class="btn btn-primary btn-sm"><i class="bi bi-bag"></i> Continuar Comprando</a>    
     </div>
+</div>
 
 <script src="{{ asset('js/helpers.js') }}"></script>
 
