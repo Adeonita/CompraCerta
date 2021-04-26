@@ -29,8 +29,8 @@ Route::get("/recover", function () {
     return view('recover/recover');
 });
 
-Route::get("/addressSelection", function () {
-    return view('addressOption/addressSelection');
+Route::get("/address-option", function () {
+    return view('address-option/address-option');
 });
 
 Route::get("/purchasing-management", function () {
