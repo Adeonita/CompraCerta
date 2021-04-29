@@ -63,6 +63,9 @@ Route::get("/packaging", function () {
     return view('/employee/packaging');
 });
 
+Route::get("/dashboard", function () {
+    return view('/employee/dashboard');
+});
 
 Route::get("/navigation", function () {
     return view('/employee/navigation');
