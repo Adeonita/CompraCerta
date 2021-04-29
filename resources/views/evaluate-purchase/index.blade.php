@@ -3,7 +3,7 @@
     <div class='mb-5'>
         <div class='my-3'>
             <h3>
-                Avaliar Compra
+                <i class="bi bi-star-fill"></i> Avaliar Compra
             </h3>
         </div>
         <form class='form-control p-4'>
