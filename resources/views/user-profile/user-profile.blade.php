@@ -63,12 +63,12 @@
                                     <div class='d-flex flex-row'>
                                         <a class='btn btn-success mx-2' id="btnProfileConfi" >Confirmar alterações</a>
 
-                                        <a class='btn btn-danger mx-2' id="btnProfileConfi" onclick="myFunction()">Cancelar</a>
+                                        <a class='btn btn-danger mx-2' id="btnProfileConfi" onclick="disableForm()">Cancelar</a>
                                     </div>
                             </fieldset>
 
                         <div class='d-flex flex-row-reverse'>
-                            <a class='btn btn-warning mx-2' id="btnProfile" onclick="myFunction()"><i class="bi bi-bootstrap-reboot"></i>
+                            <a class='btn btn-warning mx-2' id="btnProfile" onclick="disableForm()"><i class="bi bi-bootstrap-reboot"></i>
                             Alterar Dados</a>
                         </div>  
                 </form>    
