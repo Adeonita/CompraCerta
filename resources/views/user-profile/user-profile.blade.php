@@ -6,7 +6,7 @@
 		<div class="col-md-3">
 			<div class="profile-sidebar">
 				<div class="profile-userpic mt-3">
-					<img src="https://static.change.org/profile-img/default-user-profile.svg" class="img-responsive" alt="">
+					<img src="./images/user.png" class="img-responsive" alt="">
 				</div>
 
                 <div class="profile-usertitle-name mt-2">
