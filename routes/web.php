@@ -45,6 +45,10 @@ Route::get("/evaluate-purchase", function () {
     return view('evaluate-purchase/index');
 });
 
+Route::get("/user-profile", function () {
+    return view('user-profile/user-profile');
+});
+
 Route::get("/product", function () {
     return view('product/product');
 });

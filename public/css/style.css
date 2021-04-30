@@ -195,8 +195,29 @@ a {
     display: inline-block
 }
 
-.big-dot i {
-    font-size: 12px
+.profile-usertitle-name{
+    color: var(--main-color);
+    font-size: 17px
+}
+  
+.profile-userpic img {
+    
+    width: 50%;
+    height: 50%;
+    -webkit-border-radius: 50% !important;
+    -moz-border-radius: 50% !important;
+    border-radius: 50% !important;
+}
+  
+.profile-usertitle{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.profile-content{
+    padding: 20px;
+    background: #fff;
+    min-height: 460px;
 }
 
 input {
