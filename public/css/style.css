@@ -195,6 +195,10 @@ a {
     display: inline-block
 }
 
+.big-dot i {
+    font-size: 12px
+}
+
 .profile-usertitle-name{
     color: var(--main-color);
     font-size: 17px
