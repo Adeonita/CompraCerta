@@ -25,12 +25,12 @@
                                     <div class="row mb-3 ">
                                         <div class='col-12 col-sm mx-2'>
                                             <label for="nameUserProfile" class="form-label">Nome</label>
-                                            <input type="text" class="form-control only-letter" id="nameUserProfile">
+                                            <input type="text" class="form-control only-letter" id="nameUserProfile" value="João das Neves">
                                         </div>
                                         <div class="col-12 col-sm  mx-2">
                                             <label for="lastNameUserProfile" class="form-label">Sobrenome</label><br>
                                             <input type="text" class="form-control only-letter" id="lastNameUserProfile" required
-                                                minlength="3">
+                                                minlength="3" value="Vulgo Targaryen">
                                         </div>
                                     </div>
                                     <div class='row mb-3 '>
@@ -43,20 +43,20 @@
                                         <div class="col-12 col-sm mx-2">
                                             <label for="cpfUserProfile" class="form-label">CPF</label><br>
                                             <input type="text" class="form-control only-number" id="cpfUserProfile"
-                                                placeholder="___.___.___-__" required minlength='11' maxlength="11">
+                                                placeholder="___.___.___-__" required minlength='11' maxlength="11" value="12345678910">
                                         </div>
                                     </div>
                                     <div class='row mb-3 '>
                                         <div class="col-12 col-sm mx-2">
                                             <label for="emailUserProfile" class="form-label">Email</label><br>
                                             <input type="email" class="form-control" id="emailUserProfile"
-                                                placeholder="seuemail@exemplo.com" required>
+                                                placeholder="seuemail@exemplo.com" required value="JoãodeNadaSabe@gmail.com">
                                         </div>
                                         
                                         <div class="col-12 col-sm mx-2">
                                             <label for="passwordUserRegister" class="form-label">Senha</label><br>
                                             <input type="password" class="form-control" id="passwordUserRegister" minlength="6"
-                                                maxlength="20" required>
+                                                maxlength="20" required value="123123123213">
                                         </div>
                                     </div>
 
@@ -77,5 +77,6 @@
 	</div>
 
 <script src="{{ asset('js/alterProfile.js') }}"></script>
+<script src="{{ asset('js/helpers.js') }}"></script>
 
 @endsection
