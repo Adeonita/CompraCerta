@@ -2,6 +2,11 @@
 @section('content')
 
     <div class="container mt-5">
+        <div class="my-3">
+            <h3>
+                <i class="bi bi-truck"></i> Rastreio
+            </h3>
+        </div>
         <div class="row">
             <div class="col-md-12">
                 <div class="bg-white p-2 border rounded px-3">
