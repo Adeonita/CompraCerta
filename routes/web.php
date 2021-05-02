@@ -64,7 +64,11 @@ Route::get("/packaging", function () {
 });
 
 Route::get("/dashboard", function () {
-    return view('/employee/dashboard');
+    return view('/dashboard/index');
+});
+
+Route::get("/dashboard-purchases", function () {
+    return view('/dashboard/purchases');
 });
 
 Route::get("/navigation", function () {
