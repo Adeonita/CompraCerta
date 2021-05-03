@@ -4,12 +4,12 @@
    <div class="container">
     <div class="row profile">
 		<div class="col-md-3">
-			<div class="profile-sidebar">
+			<div>
 				<div class="profile-userpic mt-3">
-					<img src="./images/user.png" class="img-responsive" alt="">
+					<img src="./images/user.png" class="img-responsive" alt="">           
 				</div>
 
-                <div class="profile-usertitle-name mt-2">
+                <div class="profile-usertitle-name pl-4 mt-2">
 					Usuário Compra Certa
 				</div>
 			</div>
@@ -37,7 +37,7 @@
                                         <div class="col-12 col-sm mx-2">
                                             <label for="birthUserProfile" class="form-label">Data de Nascimento</label><br>
                                             <input type="date" class="form-control" id="birthUserProfile" placeholder="dd/mm/aaaa"
-                                                required>
+                                                required value='2017-06-01'>
                                         </div>
 
                                         <div class="col-12 col-sm mx-2">
@@ -51,12 +51,6 @@
                                             <label for="emailUserProfile" class="form-label">Email</label><br>
                                             <input type="email" class="form-control" id="emailUserProfile"
                                                 placeholder="seuemail@exemplo.com" required value="JoãodeNadaSabe@gmail.com">
-                                        </div>
-                                        
-                                        <div class="col-12 col-sm mx-2">
-                                            <label for="passwordUserRegister" class="form-label">Senha</label><br>
-                                            <input type="password" class="form-control" id="passwordUserRegister" minlength="6"
-                                                maxlength="20" required value="123123123213">
                                         </div>
                                     </div>
 

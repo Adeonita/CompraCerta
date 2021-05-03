@@ -201,7 +201,8 @@ a {
 
 .profile-usertitle-name{
     color: var(--main-color);
-    font-size: 17px
+    font-size: 17px;
+    text-align: center;
 }
   
 .profile-userpic img {
@@ -211,11 +212,8 @@ a {
     -webkit-border-radius: 50% !important;
     -moz-border-radius: 50% !important;
     border-radius: 50% !important;
-}
-  
-.profile-usertitle{
-    text-align: center;
-    margin-top: 20px;
+    display: block;
+    margin: 0 auto;
 }
 
 .profile-content{
