@@ -1,7 +1,7 @@
 @extends('index')
 @section('content')
 
-   <div class="container">
+   
     <div class="row profile">
 		<div class="col-md-3">
 			<div>
@@ -55,7 +55,7 @@
                                     </div>
 
                                     <div class='d-flex flex-row'>
-                                        <a class='btn btn-success mx-2' id="btnProfileConfi" >Confirmar alterações</a>
+                                        <a class='btn btn-success mx-2' id="btnProfileConfi">Confirmar</a>
 
                                         <a class='btn btn-danger mx-2' id="btnProfileConfi" onclick="disableForm()">Cancelar</a>
                                     </div>
