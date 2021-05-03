@@ -199,6 +199,29 @@ a {
     font-size: 12px
 }
 
+.profile-usertitle-name{
+    color: var(--main-color);
+    font-size: 17px;
+    text-align: center;
+}
+  
+.profile-userpic img {
+    
+    width: 50%;
+    height: 50%;
+    -webkit-border-radius: 50% !important;
+    -moz-border-radius: 50% !important;
+    border-radius: 50% !important;
+    display: block;
+    margin: 0 auto;
+}
+
+.profile-content{
+    padding: 20px 0px;
+    background: #fff;
+    min-height: 460px;
+}
+
 input {
     padding-left: 10px;
     border: none;
