@@ -222,6 +222,41 @@ a {
     min-height: 460px;
 }
 
+.panel-historico .painel-usuario .imagem-historico{
+	text-align: center;
+	padding-top: 15px;
+}
+
+.panel-historico .painel-usuario .col-md-11 img {
+	width: 70px;
+	max-height: 80px;
+}
+
+.panel-historico .painel-usuario {
+	border-bottom: 0;
+}
+
+.panel-historico .painel-usuario .col-md-11 {
+	border-left: 1px solid #ccc;
+}
+
+.panel-historico .painel-usuario .data-historico:last-child {
+	font-size: 17px;
+    font-weight: 700; 
+	color: #555;  
+	background: #efefef;
+}
+
+.panel-historico .btn-group {
+	margin: 0px;
+	padding: 0px;
+}
+
+.panel-historico .panel-historic-body {
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+             
 input {
     padding-left: 10px;
     border: none;
