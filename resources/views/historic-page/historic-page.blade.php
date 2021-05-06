@@ -2,15 +2,15 @@
 @section('content')
 
  <div class="container bootdey mb-5">
-    <div class="panel panel-default panel-historico">
-        <div class="panel-heading mb-4">
+    <div class="painel painel-default painel-historico">
+        <div class="painel-heading mb-4">
            <h3>
                 <i class="bi bi-hourglass-split"></i> Historico de Compras
            </h3>
         </div>
         <table id="meu-historico" class="table table">
             @for ($i = 0; $i < 4; $i++)
-                    <div class="panel-historic-body mt-3">
+                    <div class="painel-historic-body mt-3">
                         <div class="row painel-usuario">
                             <div class="col-md-11">
                                 <div class="row painel-usuario">
