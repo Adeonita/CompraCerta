@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ClientController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,8 +24,10 @@ Route::get("/cart", function () {
 });
 
 Route::get("/createAccount", function () {
-    return view('account/createAccount');
+    return view('account/createAccount',);
 });
+
+Route::post("client/create", [ClientController::class, 'create']);
 
 Route::get("/recover", function () {
     return view('recover/recover');
