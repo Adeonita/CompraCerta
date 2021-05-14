@@ -14,15 +14,15 @@ class DepartamentsSeeder extends Seeder
      */
     public function run()
     {
-        $departaments = [
+        $departments = [
             "Adminstracao",
             "Empacotamento",
             "Separacao",
             "Entrega",
         ];
 
-        foreach ($departaments as $key =>  $value) {
-            DB::table('departaments')->insert([
+        foreach ($departments as $key =>  $value) {
+            DB::table('departments')->insert([
                 "name" => $value,
             ]);
         }
