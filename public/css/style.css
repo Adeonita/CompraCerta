@@ -132,30 +132,29 @@ a {
     justify-content: space-around;
 }
 
-.quant{
+.quant {
     font-size: 20px;
     font-style: unset;
     color: black;
 }
 
-.quantBox{
-    padding: 3px; 
+.quantBox {
+    padding: 3px;
     border-radius: initial;
-    
 }
 
-.product-name{
+.product-name {
     font-size: 35px;
     font-style: unset;
     color: #004E98;
 }
 
-.product-price{
+.product-price {
     font-size: 30px;
     color: #004E98;
 }
 
-.product-img {     
+.product-img {
     width: 65%;
 }
 
@@ -245,4 +244,18 @@ input[type=number]::-webkit-inner-spin-button {
     background-image: linear-gradient(to top, transparent 0px, transparent 16px, #fff 16px, #fff 26px, transparent 26px, transparent 35px, #0d6efd 35px, #0d6efd 36px, transparent 36px, transparent 40px), linear-gradient(to right, transparent 0px, transparent 10px, #0d6efd 10px, #0d6efd 11px, transparent 11px, transparent 21px);
     transform: rotate(90deg) scale(0.8, 0.9);
     cursor: pointer;
+}
+
+.card-dashboard {
+    border-bottom: 10px solid #198754;
+    max-width: 285px;
+}
+
+.card-dashboard .card-dashboard-badge {
+    height: 100px;
+}
+
+.card-dashboard .card-dashboard-text {
+    font-weight: bold;
+    font-size: 2em;
 }

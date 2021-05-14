@@ -26,5 +26,10 @@
                 <p>Reastreio da Compra do Cliente</p>
             </a>
         </div>
+        <div class="col-12 col-sm-4">
+            <a href="{{ url('/dashboard') }}" class="badge bg-danger col-12">
+                <p>Dashboard</p>
+            </a>
+        </div>
     </div>
 @endsection
