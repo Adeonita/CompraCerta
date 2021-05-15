@@ -26,6 +26,11 @@
     você pode acessar o aplicativo em seu navegador da web em: <code>http://localhost</code>
 </p>
 
+## Alguns Comandos 
+Executar um seed específico
+- `php artisan db:seed --class=ClassNameSeeder`
+
+
 <br>
 
 ## Padrão de commit 
