@@ -71,6 +71,13 @@ Route::get("/packaging", function () {
     return view('/employee/packaging');
 });
 
+Route::get("/dashboard", function () {
+    return view('/dashboard/index');
+});
+
+Route::get("/dashboard-purchases", function () {
+    return view('/dashboard/purchases');
+});
 
 Route::get("/navigation", function () {
     return view('/employee/navigation');
