@@ -221,37 +221,37 @@ a {
     min-height: 460px;
 }
 
-.painel-historico .painel-usuario .imagem-historico{
+.history-screen .user-panel-historic .img-historic{
 	text-align: center;
 	padding-top: 15px;
 }
 
-.painel-historico .painel-usuario .col-md-11 img {
+.history-screen .user-panel-historic .control-panel img {
 	width: 70px;
 	max-height: 80px;
 }
 
-.painel-historico .painel-usuario {
+.history-screen .user-panel-historic {
 	border-bottom: 0;
 }
 
-.painel-historico .painel-usuario .col-md-11 {
+.history-screen .user-panel-historic .control-panel {
 	border-left: 1px solid #ccc;
 }
 
-.painel-historico .painel-usuario .data-historico:last-child {
+.history-screen .user-panel-historic .historic-date:last-child {
 	font-size: 17px;
     font-weight: 700; 
 	color: #555;  
 	background: #efefef;
 }
 
-.painel-historico .btn-group {
+.history-screen .btn-group {
 	margin: 0px;
 	padding: 0px;
 }
 
-.painel-historico .painel-historic-body {
+.history-screen .historic-body {
 	padding-top: 0px;
 	padding-bottom: 0px;
 }
