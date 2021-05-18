@@ -221,6 +221,41 @@ a {
     min-height: 460px;
 }
 
+.history-screen .user-panel-historic .img-historic{
+	text-align: center;
+	padding-top: 15px;
+}
+
+.history-screen .user-panel-historic .control-panel img {
+	width: 70px;
+	max-height: 80px;
+}
+
+.history-screen .user-panel-historic {
+	border-bottom: 0;
+}
+
+.history-screen .user-panel-historic .control-panel {
+	border-left: 1px solid #ccc;
+}
+
+.history-screen .user-panel-historic .historic-date:last-child {
+	font-size: 17px;
+    font-weight: 700; 
+	color: #555;  
+	background: #efefef;
+}
+
+.history-screen .btn-group {
+	margin: 0px;
+	padding: 0px;
+}
+
+.history-screen .historic-body {
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+             
 input {
     padding-left: 10px;
     border: none;
