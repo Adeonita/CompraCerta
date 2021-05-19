@@ -12,7 +12,6 @@
                 <div class="profile-usertitle-name pl-4 mt-2">
 					Usuário Compra Certa
 				</div>
-
                 <nav class="navbar navbar-light bg-light">
                     <div class="container-fluid">
                         <a class="navbar-brand" href="{{ url('/historic-page') }}">Historico</a>
