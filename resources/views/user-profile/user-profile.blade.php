@@ -12,6 +12,13 @@
                 <div class="profile-usertitle-name pl-4 mt-2">
 					Usuário Compra Certa
 				</div>
+
+                <nav class="navbar navbar-light bg-light">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="{{ url('/historic-page') }}">Historico</a>
+                        <a class="navbar-brand" href="" data-bs-toggle="modal" data-bs-target="#pChagingModal">Trocar Senha</a>
+                    </div>
+                </nav>
 			</div>
 		</div>
 		<div class="col-md-9">
@@ -70,7 +77,44 @@
 		</div>
 	</div>
 
+    <div class="modal fade" id="pChagingModal" tabindex="-1" aria-labelledby="pChagingModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="pChagingModalLabel">Trocar Senha</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="passActual" class="form-label">Senha Atual</label>
+                            <input type="password" class="form-control" id="passActual" placeholder="Senha Atual"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="newPass" class="form-label">Nova Senha</label>
+                            <input type="password" class="form-control" id="newPass" placeholder="Senha" required
+                                minlength="6" maxlength="20">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="newPassR" class="form-label">Repita a Nova Senha</label>
+                            <input type="password" class="form-control" id="newPassR" placeholder="Confirme Senha" required
+                                minlength="6" maxlength="20">
+                        </div>
+                
+                        <div class=" w-100">
+
+                            <button type="submit" class="btn btn-success w-100" onclick="validatePassoword()">Cadastrar Nova Senha</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
 <script src="{{ asset('js/alterProfile.js') }}"></script>
 <script src="{{ asset('js/helpers.js') }}"></script>
+<script src="{{ asset('js/createAccount.js') }}"></script>
 
 @endsection
