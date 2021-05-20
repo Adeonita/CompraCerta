@@ -18,11 +18,11 @@ async function validateRegister(formData) {
     };
 
     res = await createClient(clientData);
-
-    alert(res);
-    // if (res) {
-    //     document.getElementById("formRegister").reset();
-    // }
+    if (res) {
+        if (res) {
+            document.getElementById("formRegister").reset();
+        }
+    }
 
     return false;
 }
