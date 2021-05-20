@@ -7,8 +7,8 @@
             </h3>
         </div>
         <div>
-
-            <form class='form-control p-4' onSubmit="return(validateRegister())">
+            <form class='form-control p-4' onSubmit="return(validateRegister(this))" id='formRegister'>
+                @csrf
                 <h4 class='subtitle-form'>
                     Informações Pessoais
                 </h4>
@@ -30,6 +30,7 @@
                             <label for="birthUserRegister" class="form-label">Data de Nascimento</label><br>
                             <input type="date" class="form-control" id="birthUserRegister" placeholder="dd/mm/aaaa"
                                 required>
+
                         </div>
 
                         <div class="col-12 col-sm mx-2">

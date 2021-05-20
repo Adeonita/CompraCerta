@@ -15,6 +15,8 @@ use App\Http\Controllers\ClientController;
 |
 */
 
+##  VIEWS
+
 Route::get("/", function () {
     return view('home/products');
 });
@@ -24,10 +26,9 @@ Route::get("/cart", function () {
 });
 
 Route::get("/createAccount", function () {
-    return view('account/createAccount',);
+    return view('account/createAccount');
 });
 
-Route::post("client/create", [ClientController::class, 'create']);
 
 Route::get("/recover", function () {
     return view('recover/recover');
@@ -61,7 +62,6 @@ Route::get("/trackingPage", function () {
     return view('tracking/trackingPage');
 });
 
-Route::get("/categories", [CategoryController::class, 'show']);
 
 Route::get("/payment", function () {
     return view('/payment/payment');
@@ -75,3 +75,10 @@ Route::get("/packaging", function () {
 Route::get("/navigation", function () {
     return view('/employee/navigation');
 });
+
+
+##ROUTES BACKEND
+
+Route::get("/categories", [CategoryController::class, 'show']);
+
+Route::post("/client/create", [ClientController::class, 'create']);
