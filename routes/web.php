@@ -49,6 +49,10 @@ Route::get("/user-profile", function () {
     return view('user-profile/user-profile');
 });
 
+Route::get("/historic-page", function () {
+    return view('historic-page/historic-page');
+});
+
 Route::get("/product", function () {
     return view('product/product');
 });
