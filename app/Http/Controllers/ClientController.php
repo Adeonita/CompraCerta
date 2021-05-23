@@ -14,9 +14,17 @@ class ClientController extends Controller
     //
     public function index()
     {
-        $clients = Client::all();
+        try {
 
-        return $clients;
+            $clients = Client::all();
+
+            return $clients;
+        } catch (Throwable $e) {
+            return response()->json([
+                'status' => '500',
+                'message' => $e
+            ]);
+        }
     }
 
     public function create(Request $request)
@@ -42,19 +50,47 @@ class ClientController extends Controller
 
     public function getById(Request $request, $id)
     {
-        $client = Client::where('id', $id)->get();
+        try {
 
-        return response($client);
+            $client = Client::where('id', $id)->get();
+
+            if (count($client) == 0) {
+                return response()->json([
+                    'status' => '404',
+                    'message' => 'User not Found'
+                ]);
+            }
+
+            return response($client);
+        } catch (Throwable $e) {
+            return response()->json([
+                'status' => '500',
+                'message' => $e
+            ]);
+        }
     }
 
     public function getByEmail(Request $request)
     {
         $data = $request->all();
 
+        try {
 
-        $client = Client::where('email', '=', $data)->get();
+            $client = Client::where('email', '=', $data)->get();
 
-        return  response($client);
+            if (count($client) == 0) {
+                return response()->json([
+                    'status' => '404',
+                    'message' => 'User not Found'
+                ]);
+            }
+            return  response($client);
+        } catch (Throwable $e) {
+            return response()->json([
+                'status' => '500',
+                'message' => $e
+            ]);
+        }
     }
 
     public function updateClientByEmail(Request $request)
