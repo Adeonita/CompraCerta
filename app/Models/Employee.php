@@ -11,8 +11,9 @@ class Employee extends Model
 
     protected $fillale = [
         "name",
+        "lastName",
         "email",
         "cpf",
         "password"
-    ]
+    ];
 }
