@@ -77,8 +77,11 @@ Route::get("/navigation", function () {
 });
 
 
-##ROUTES BACKEND
+## BACKEND ROUTES
 
 Route::get("/categories", [CategoryController::class, 'show']);
 
 Route::post("/client/create", [ClientController::class, 'create']);
+Route::get("/client", [ClientController::class, 'index']);
+Route::get("/client/{id}", [ClientController::class, 'getById']);
+Route::post("/client/email", [ClientController::class, 'getByEmail']);

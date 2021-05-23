@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Exceptions\InvalidOrderException;
+use Throwable;
+
 use Illuminate\Http\Request;
 use App\Models\Client;
 use App;
@@ -11,8 +14,7 @@ class ClientController extends Controller
     //
     public function index()
     {
-        $clients = Client::all()->paginate(5);
-
+        $clients = Client::all();
 
         return $clients;
     }
@@ -27,33 +29,31 @@ class ClientController extends Controller
             "password" => "required",
             "birth_date" => "required",
         ]);
-        $newClient = Client::create($request->all());
-
-        if (!$newClient->save()) {
+        try {
+            $newClient = Client::create($request->all());
+        } catch (Throwable $e) {
             return response()->json([
                 'status' => '400',
-                'message' => 'Erro ao criar cliente no banco '
+                'message' => $e
             ]);
         }
-        return ('success');
+        return response($newClient);
     }
 
-    public function getClient(Request $request)
+    public function getById(Request $request, $id)
     {
-        $request->validate([
-            "id" => "required"
-        ]);
+        $client = Client::where('id', $id)->get();
 
-        $id = $request->id;
+        return $client;
+    }
 
-        $client = DB::table('clients')->where('id', $id)->first();
+    public function getByEmail(Request $request)
+    {
+        $data = $request->all();
 
-        if ($client) {
-            return $client;
-        }
-        return ([
-            404,
-            'Not Found'
-        ]);
+
+        $client = Client::where('email', '=', $data)->get();
+
+        return  response($client);
     }
 }
