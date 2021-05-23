@@ -51,6 +51,10 @@ Executar um seed específico
  - Executando uma migração
 
     `php artisan migrate`
+ 
+ - Atualizando as migrações
+ 
+    `php artisan migrate:refresh`
 
 - Criando seeder 
 
