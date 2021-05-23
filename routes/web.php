@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\StateController;
 
@@ -100,3 +101,5 @@ Route::get("/client/{id}", [ClientController::class, 'getById']);
 Route::get("/categories", [CategoryController::class, 'show']);
 
 Route::get("/states", [StateController::class, 'show']);
+
+Route::get("/employees", [EmployeeController::class, 'show']);
