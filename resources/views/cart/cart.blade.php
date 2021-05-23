@@ -37,6 +37,9 @@
                         <a href="{{ url('/address-option') }}" class="btn btn-primary btn-sm">Continuar para o endereço</a>
                     </div>
                 </div>
+                <div class="col mt-5">
+                        <a href="{{ url('/historic-page') }}" class="btn btn-outline-warning btn-sm">Salvar Carrinho</a>
+                </div>
             </form>
         </div>
     </div>

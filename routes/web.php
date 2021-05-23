@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\StateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +15,6 @@ use App\Http\Controllers\ClientController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 ##  VIEWS
 
 Route::get("/", function () {
@@ -54,6 +54,10 @@ Route::get("/user-profile", function () {
     return view('user-profile/user-profile');
 });
 
+Route::get("/historic-page", function () {
+    return view('historic-page/historic-page');
+});
+
 Route::get("/product", function () {
     return view('product/product');
 });
@@ -61,7 +65,6 @@ Route::get("/product", function () {
 Route::get("/trackingPage", function () {
     return view('tracking/trackingPage');
 });
-
 
 Route::get("/payment", function () {
     return view('/payment/payment');
@@ -71,6 +74,13 @@ Route::get("/packaging", function () {
     return view('/employee/packaging');
 });
 
+Route::get("/dashboard", function () {
+    return view('/dashboard/index');
+});
+
+Route::get("/dashboard-purchases", function () {
+    return view('/dashboard/purchases');
+});
 
 Route::get("/navigation", function () {
     return view('/employee/navigation');
@@ -79,8 +89,6 @@ Route::get("/navigation", function () {
 
 ## BACKEND ROUTES
 
-Route::get("/categories", [CategoryController::class, 'show']);
-
 Route::post("/client/create", [ClientController::class, 'create']);
 Route::post("/client/email", [ClientController::class, 'getByEmail']);
 Route::post("/client/update", [ClientController::class, 'updateClientByEmail']);
@@ -88,3 +96,7 @@ Route::post("/client/update/password", [ClientController::class, 'updateClientPa
 
 Route::get("/client", [ClientController::class, 'index']);
 Route::get("/client/{id}", [ClientController::class, 'getById']);
+
+Route::get("/categories", [CategoryController::class, 'show']);
+
+Route::get("/states", [StateController::class, 'show']);
