@@ -12,12 +12,12 @@ function validateRegister() {
 }
 
 function validatePassoword(){
-    var pw1 = document.getElementById("newPass");  
-    var pw2 = document.getElementById("newPassR");
+    let isValid = true;
+    let isPasswordsValid = checkFieldsById('newPassword', 'newPasswordCheck');
     
-    if(pw1.value != pw2.value) {
-        pw2.setCustomValidity("Senhas diferentes!");
-      } else {
-        pw2.setCustomValidity('');
-      }
+    if (!(isPasswordsValid)) {
+      isValid = false;
+    }
+
+    return isValid;
 }

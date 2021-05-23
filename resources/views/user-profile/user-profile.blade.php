@@ -84,28 +84,28 @@
                     <h5 class="modal-title" id="pChagingModalLabel">Trocar Senha</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" onSubmit="return(validatePassoword())">
                     <form>
                         <div class="mb-3">
-                            <label for="passActual" class="form-label">Senha Atual</label>
-                            <input type="password" class="form-control" id="passActual" placeholder="Senha Atual"
+                            <label for="passwordActual" class="form-label">Senha Atual</label>
+                            <input type="password" class="form-control" id="passwordActual" placeholder="Senha Atual"
                                 required>
                         </div>
                         <div class="mb-3">
-                            <label for="newPass" class="form-label">Nova Senha</label>
-                            <input type="password" class="form-control" id="newPass" placeholder="Senha" required
+                            <label for="newPassword" class="form-label">Nova Senha</label>
+                            <input type="password" class="form-control" id="newPassword" placeholder="Senha" required
                                 minlength="6" maxlength="20">
                         </div>
 
                         <div class="mb-3">
-                            <label for="newPassR" class="form-label">Repita a Nova Senha</label>
-                            <input type="password" class="form-control" id="newPassR" placeholder="Confirme Senha" required
+                            <label for="newPasswordCheck" class="form-label">Repita a Nova Senha</label>
+                            <input type="password" class="form-control" id="newPasswordCheck" placeholder="Confirme Senha" required
                                 minlength="6" maxlength="20">
                         </div>
                 
                         <div class=" w-100">
 
-                            <button type="submit" class="btn btn-success w-100" onclick="validatePassoword()">Cadastrar Nova Senha</button>
+                            <button type="submit" class="btn btn-success w-100">Cadastrar Nova Senha</button>
                         </div>
                     </form>
                 </div>
