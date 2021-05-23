@@ -7,8 +7,8 @@
             </h3>
         </div>
         <div>
-
-            <form class='form-control p-4' onSubmit="return(validateRegister())">
+            <form class='form-control p-4' id='formRegister'>
+                @csrf
                 <h4 class='subtitle-form'>
                     Informações Pessoais
                 </h4>
@@ -30,6 +30,7 @@
                             <label for="birthUserRegister" class="form-label">Data de Nascimento</label><br>
                             <input type="date" class="form-control" id="birthUserRegister" placeholder="dd/mm/aaaa"
                                 required>
+
                         </div>
 
                         <div class="col-12 col-sm mx-2">
@@ -78,7 +79,7 @@
                             <label class="form-check-label" for="legalTerm">
                                 Li e concordo com os
                                 <a href='' data-bs-toggle="modal" data-bs-target="#termsModal">
-                                    termos de uso
+                                    termos de usos
                                 </a>
                             </label>
                         </div>
@@ -86,7 +87,8 @@
                 </div>
 
                 <div class='d-flex flex-row-reverse'>
-                    <button class='btn btn-success mx-2'> <i class="bi bi-check"></i> Cadastrar</button>
+                    <button class='btn btn-success mx-2' id='btnRegister' type='submit'> <i class="bi bi-check"></i>
+                        Cadastrar</button>
                     <a class='btn btn-outline-danger' a href="{{ url('/') }}"> <i class=" bi bi-x"></i>
                         Cancelar</a>
                 </div>
