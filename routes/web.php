@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\StateController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +16,7 @@ use App\Http\Controllers\EmployeeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+##  VIEWS
 
 Route::get("/categories", [CategoryController::class, 'show']);
 Route::get("/employees", [EmployeeController::class, 'show']);
@@ -28,6 +32,7 @@ Route::get("/cart", function () {
 Route::get("/createAccount", function () {
     return view('account/createAccount');
 });
+
 
 Route::get("/recover", function () {
     return view('recover/recover');
@@ -65,7 +70,6 @@ Route::get("/trackingPage", function () {
     return view('tracking/trackingPage');
 });
 
-
 Route::get("/payment", function () {
     return view('/payment/payment');
 });
@@ -85,3 +89,18 @@ Route::get("/dashboard-purchases", function () {
 Route::get("/navigation", function () {
     return view('/employee/navigation');
 });
+
+
+## BACKEND ROUTES
+
+Route::post("/client/create", [ClientController::class, 'create']);
+Route::post("/client/email", [ClientController::class, 'getByEmail']);
+Route::post("/client/update", [ClientController::class, 'updateClientByEmail']);
+Route::post("/client/update/password", [ClientController::class, 'updateClientPassword']);
+
+Route::get("/client", [ClientController::class, 'index']);
+Route::get("/client/{id}", [ClientController::class, 'getById']);
+
+Route::get("/categories", [CategoryController::class, 'show']);
+
+Route::get("/states", [StateController::class, 'show']);

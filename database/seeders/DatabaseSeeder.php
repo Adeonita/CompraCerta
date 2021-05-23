@@ -22,7 +22,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             DepartamentsSeeder::class,
             EmployeeSeeder::class,
+            CategorySeeder::class,
+            ClientSeeder::class,
         ]);
-
     }
 }
