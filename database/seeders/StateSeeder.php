@@ -18,7 +18,7 @@ class StateSeeder extends Seeder
         $states = [
             "Acre" => "AC",
             "Alagoas" => "AL",
-            "Amapa" => "AP",
+            "Amapá" => "AP",
             "Amazonas" => "AM",
             "Bahia" => "BA",
             "Ceará" => "CE",
@@ -29,25 +29,25 @@ class StateSeeder extends Seeder
             "Mato Grosso" => "MT",
             "Mato Grosso do Sul" => "MS",
             "Minas Gerais" => "MG",
-            "Para" => "PA",
-            "Paraiba" => "PB",
-            "Parana" => "PR",
+            "Pará" => "PA",
+            "Paraíba" => "PB",
+            "Paraná" => "PR",
             "Pernambuco" => "PE",
-            "Piaui" => "PI",
+            "Piauí" => "PI",
             "Roraima" => "RR",
             "Rondônia" => "RO",
             "Rio de Janeiro" => "RJ",
             "Rio Grande do Norte" => "RN",
             "Rio Grande do Sul" => "RS",
             "Santa Catarina" => "SC",
-            "Sao Paulo" => "SP",
+            "São Paulo" => "SP",
             "Sergipe" => "SE",
             "Tocantins" => "TO",
         ];
 
         foreach ($states as $key => $value) {
             DB::table('states')->insert([
-                "name" => $key, 
+                "name" => $key,
                 "initials" => $value
             ]);
         }
