@@ -1,13 +1,16 @@
-async function validateRegister(formData) {
+function validateRegister() {
 
-    let isValid = true;
     let isPasswordsValid = checkFieldsById('passwordUserRegister', 'passwordControlUserRegister');
     let isEmailsValid = checkFieldsById('emailUserRegister', 'emailControlUserRegister');
 
     if (!(isPasswordsValid && isEmailsValid)) {
+        alert('Emails não conferem');
         return false;
     }
+    return true;
+}
 
+async function postForm() {
     clientData = {
         name: document.getElementById("nameUserRegister").value,
         last_name: document.getElementById("lastNameUserRegister").value,
@@ -17,24 +20,30 @@ async function validateRegister(formData) {
         birth_date: document.getElementById("birthUserRegister").value,
     };
 
-    res = await createClient(clientData);
-    if (res) {
-        if (res) {
-            document.getElementById("formRegister").reset();
-        }
-    }
+    let res = await createClient(clientData);
 
-    return false;
+    return res;
+
 }
 
 function createClient(data) {
     let response = $.post("http://localhost/client/create",
-        data,
-        (data, status, xhr) => {
-            if (status == 'success') {
-                alert('Usuário criado com sucesso!');
-                return data;
-            }
-        });
+        data).done((response) => {
+        if (response.status == 400) {
+            alert('Erro ao criar usuário, email já existe');
+        } else {
+            alert("Usuário criado com sucesso!");
+            return false;
+        }
+    });
     return response;
 }
+
+$('#formRegister').on('submit', function(e) {
+    if (validateRegister()) {
+        postForm();
+        return true;
+    } else {
+        e.preventDefault();
+    }
+});
