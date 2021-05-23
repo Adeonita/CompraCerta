@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\StateController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +14,9 @@ use App\Http\Controllers\CategoryController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get("/categories", [CategoryController::class, 'show']);
+
+Route::get("/states", [StateController::class, 'show']);
 
 Route::get("/", function () {
     return view('home/products');
@@ -60,8 +65,6 @@ Route::get("/product", function () {
 Route::get("/trackingPage", function () {
     return view('tracking/trackingPage');
 });
-
-Route::get("/categories", [CategoryController::class, 'show']);
 
 Route::get("/payment", function () {
     return view('/payment/payment');
