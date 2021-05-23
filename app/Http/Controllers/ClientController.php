@@ -44,7 +44,7 @@ class ClientController extends Controller
     {
         $client = Client::where('id', $id)->get();
 
-        return $client;
+        return response($client);
     }
 
     public function getByEmail(Request $request)
@@ -55,5 +55,57 @@ class ClientController extends Controller
         $client = Client::where('email', '=', $data)->get();
 
         return  response($client);
+    }
+
+    public function updateClientByEmail(Request $request)
+    {
+
+        $request->validate([
+            "name" => "required",
+            "last_name" => "required",
+            "cpf" => "required",
+            "email" => "required",
+            "birth_date" => "required",
+        ]);
+
+        try {
+
+            $client = Client::where('email', $request->email)->first();
+
+            $client->name = $request->name;
+            $client->cpf = $request->cpf;
+            $client->last_name = $request->last_name;
+            $client->birth_date = $request->birth_date;
+
+            $client->save();
+
+            return response($client);
+        } catch (Throwable $e) {
+            return response()->json([
+                'status' => '400',
+                'message' => $e
+            ]);
+        }
+    }
+
+    public function updateClientPassword(Request $request)
+    {
+        $request->validate([
+            "password" => "required",
+            "email" => 'required'
+        ]);
+        try {
+
+            $client = Client::where('email', $request->email)->first();
+            $client->password = $request->password;
+
+            $client->save();
+            return $client;
+        } catch (Throwable $e) {
+            return response()->json([
+                'status' => '400',
+                'message' => $e
+            ]);
+        }
     }
 }
