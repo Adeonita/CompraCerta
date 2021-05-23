@@ -18,9 +18,6 @@ use App\Http\Controllers\StateController;
 */
 ##  VIEWS
 
-Route::get("/categories", [CategoryController::class, 'show']);
-Route::get("/employees", [EmployeeController::class, 'show']);
-
 Route::get("/", function () {
     return view('home/products');
 });
@@ -104,3 +101,5 @@ Route::get("/client/{id}", [ClientController::class, 'getById']);
 Route::get("/categories", [CategoryController::class, 'show']);
 
 Route::get("/states", [StateController::class, 'show']);
+
+Route::get("/employees", [EmployeeController::class, 'show']);
