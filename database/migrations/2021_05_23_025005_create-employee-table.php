@@ -36,5 +36,11 @@ class CreateEmployeeTable extends Migration
     public function down()
     {
         Schema::dropIfExists('employees');
+
+        if (Schema::hasColumn("employees", "departments_id")) {
+            Schema::table("employees", function (Blueprint $table) {
+                $table->dropColumn("departments_id");
+            });
+        }
     }
 }
