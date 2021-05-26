@@ -12,12 +12,7 @@ function validateRegister() {
 }
 
 function validatePassoword(){
-    let isValid = true;
-    let isPasswordsValid = checkFieldsById('newPassword', 'newPasswordCheck');
-    
-    if (!(isPasswordsValid)) {
-      isValid = false;
-    }
 
-    return isValid;
+    let isPasswordsEqual = checkFieldsById('newPassword', 'newPasswordCheck');
+    return isPasswordsEqual;
 }
