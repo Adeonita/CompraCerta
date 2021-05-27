@@ -12,7 +12,7 @@
                 <div class="profile-usertitle-name pl-4 mt-2">
 					Usuário Compra Certa
 				</div>
-                <p class = "mt-4 menuUser">
+                <p class = "mt-4 menu-user">
                     <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseUser" aria-expanded="false" aria-controls="collapseUser">
                         Painel do Usuario
                     </button>
