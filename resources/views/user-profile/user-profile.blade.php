@@ -12,7 +12,7 @@
                 <div class="profile-usertitle-name pl-4 mt-2">
 					Usuário Compra Certa
 				</div>
-                <div class="menuUser mt-3">
+                <div class="menu-user mt-3">
                     <a class="navbar-brand" href="" data-bs-toggle="modal" data-bs-target="#pChagingModal">Trocar Senha</a><br>
                     <a class="navbar-brand" href="{{ url('/historic-page') }}">Historico</a>
                 </div>
