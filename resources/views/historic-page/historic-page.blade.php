@@ -11,7 +11,7 @@
                 <div class="profile-usertitle-name pl-4 mt-2">
 					Usuário Compra Certa
 				</div>
-                <div class="menuUser mt-3">
+                <div class="menu-user mt-3">
                     <a class="navbar-brand" href="{{ url('/user-profile') }}">Pagina Usuario</a>
                 </div>
 			</div>
