@@ -12,16 +12,9 @@
                 <div class="profile-usertitle-name pl-4 mt-2">
 					Usuário Compra Certa
 				</div>
-                <p class = "mt-4 menuUser">
-                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseUser" aria-expanded="false" aria-controls="collapseUser">
-                        Painel do Usuario
-                    </button>
-                </p>
-                <div class="collapse" id="collapseUser">
-                    <div class="card card-body">
-                        <a class="navbar-brand" href="{{ url('/historic-page') }}">Historico</a>
-                        <a class="navbar-brand" href="" data-bs-toggle="modal" data-bs-target="#pChagingModal">Trocar Senha</a>
-                    </div>
+                <div class="menuUser mt-3">
+                    <a class="navbar-brand" href="" data-bs-toggle="modal" data-bs-target="#pChagingModal">Trocar Senha</a><br>
+                    <a class="navbar-brand" href="{{ url('/historic-page') }}">Historico</a>
                 </div>
 			</div>
 		</div>
