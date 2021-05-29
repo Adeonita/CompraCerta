@@ -26,6 +26,12 @@ async function postForm() {
 
 }
 
+function validatePassoword(){
+
+    let isPasswordsEqual = checkFieldsById('newPassword', 'newPasswordCheck');
+    return isPasswordsEqual;
+}
+
 function createClient(data) {
     let response = $.post("http://localhost/client/create",
         data).done((response) => {
