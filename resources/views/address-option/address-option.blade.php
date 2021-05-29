@@ -8,35 +8,41 @@
             </h3>
     </div>
 
-    <form class='form-control p-4' id="address-form">
+    <form class='form-control p-4' id="address-form" method="post" action="{{ route('address.save') }}">
+    @csrf
         <div class='container'>
             <div class='col-12 col-sm-3 mb-3 me-2'>   
                 <label for="cepUserRegister" class="form-label">CEP</label>
-                <input required type="text" class="form-control only-number" id="cepUserRegister" maxlength="8">
+                <input name= "userCep" class="form-control only-number" id="cepUserRegister" maxlength="8">
+                <span class = "text-danger error-text userCep_error"></span>
             </div>
 
 
             <div class='row mb-3'>
                 <div class="col-12 col-sm-10 ">
                     <label for="streetUserRegister" class="form-label">Rua</label><br>
-                    <input required type="text" class="form-control" id="streetUserRegister">
+                    <input name= "userRua" class="form-control" id="streetUserRegister">
+                    <span class = "text-danger error-text userRua_error"></span>
                 </div>
 
                 <div class="col-12 col-sm">
                     <label for="numberUserRegister" class="form-label">Número</label><br>
-                    <input required type="text" class="form-control only-number" id="numberUserRegister">
+                    <input name= "userNumero" class="form-control only-number" id="numberUserRegister">
+                    <span class = "text-danger error-text userNumero_error"></span>
                 </div>
             </div>
 
             <div class='row mb-3'>
                 <div class="col-12 col-sm ">
                     <label for="districtUserRegister" class="form-label">Bairro</label><br>
-                    <input required type="text" class="form-control" id="districtUserRegister">
+                    <input name= "userBairro" class="form-control" id="districtUserRegister">
+                    <span class = "text-danger error-text userBairro_error"></span>
                 </div>
 
                 <div class="col-12 col-sm">
                     <label for="cityUserRegister" class="form-label">Cidade</label><br>
-                    <input required type="text" class="form-control only-letter" id="cityUserRegister">
+                    <input name= "userCidade" class="form-control only-letter" id="cityUserRegister">
+                    <span class = "text-danger error-text userCidade_error"></span>
                 </div>
 
                 <div class="col-12 col-sm">
@@ -77,11 +83,8 @@
                 <label for="complementUserRegister" class="form-label">Complemento</label><br>
                 <input type="text" class="form-control" id="complementUserRegister">
             </div>
-    
-
-            <div class='d-flex flex-row-reverse'>
-                <a href="{{ url('/payment') }}" class="btn btn-success btn-sm"><i class="bi bi-check"></i> Continuar para pagamento</a>
-            </div>
+            
+            <button type="submit" class="btn btn-block btn-primary"><i class="bi bi-check"></i> Salvar Endereço</button>
         </div>
     </form>
 
@@ -91,5 +94,6 @@
 </div>
 
 <script src="{{ asset('js/helpers.js') }}"></script>
+<script src="{{ asset('js/addressCheck.js') }}"></script>
 
 @endsection

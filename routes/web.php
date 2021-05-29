@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\StateController;
+use App\Http\Controllers\AddressController;
 
 /*
 |--------------------------------------------------------------------------
@@ -103,3 +104,7 @@ Route::get("/categories", [CategoryController::class, 'show']);
 Route::get("/states", [StateController::class, 'show']);
 
 Route::get("/employees", [EmployeeController::class, 'show']);
+
+Route::get('add_new', [AddressController::class, 'index']);
+
+Route::post('save',[AddressController::class, 'save'])->name('address.save');
