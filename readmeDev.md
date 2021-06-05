@@ -67,6 +67,6 @@ Executar um seed específico
 
     `php artisan db:seed --class=nameSeeder`
 
--   Atualizar e rodar seeds
+-   Atualizar migrações e rodar seeds
 
     `php artisan migrate:refresh --seed`
