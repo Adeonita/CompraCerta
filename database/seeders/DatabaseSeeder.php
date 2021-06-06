@@ -24,6 +24,8 @@ class DatabaseSeeder extends Seeder
             EmployeeSeeder::class,
             CategorySeeder::class,
             ClientSeeder::class,
+            StateSeeder::class,
+
         ]);
     }
 }
