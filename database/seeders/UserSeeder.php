@@ -56,7 +56,7 @@ class UserSeeder extends Seeder
                 "password" => "123456789",
                 "user_type" => "CLIENT",
                 "birth_date" => Carbon::create('2000', '01', '01'),
-                "department_id" => "1"
+                "department_id" => NULL
             ],
             [
                 "name" => "Lea",
@@ -66,7 +66,7 @@ class UserSeeder extends Seeder
                 "password" => "123456789",
                 "user_type" => "CLIENT",
                 "birth_date" => Carbon::create('2000', '01', '01'),
-                "department_id" => "1"
+                "department_id" => NULL
             ]
         ];
 

@@ -25,8 +25,8 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
 
-            $table->unsignedBigInteger("department_id");
-            $table->foreign("department_id")->references("id")->on("departments")->onDelete('cascade');
+            $table->unsignedBigInteger("department_id")->nullable()->default(NULL);
+            $table->foreign("department_id")->references("id")->on("departments")->nullable()->default(NULL)->onDelete('cascade');
         });
     }
 
