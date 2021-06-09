@@ -13,7 +13,8 @@ class Category extends Model
         "name",
     ];
 
-    public function employee(){
-        return $this->hasMany(Employee::class);
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }
