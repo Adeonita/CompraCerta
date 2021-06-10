@@ -17,19 +17,13 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
+        "name",
+        "last_name",
+        "email",
+        "cpf",
+        "birth_date",
+        "user_type",
+        "password",
     ];
 
     /**
@@ -40,4 +34,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function department()
+    {
+        return $this->hasOne(Department::class);
+    }
 }
