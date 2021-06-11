@@ -18,4 +18,13 @@ class Address extends Model
         "cep",
         "userId",
     ];
+
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
+    public function state()
+    {
+        return $this->hasOne(State::class);
+    }
 }

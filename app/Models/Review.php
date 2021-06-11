@@ -13,4 +13,10 @@ class Review extends Model
         "score",
         "comment",
     ];
+
+
+    public function cart()
+    {
+        return $this->hasOne(Cart::class);
+    }
 }

@@ -13,4 +13,9 @@ class State extends Model
         'name',
         'initials'
     ];
+
+    public function address()
+    {
+        return $this->belongsTo(Address::class);
+    }
 }

@@ -16,4 +16,12 @@ class Product extends Model
         "image",
         "quantity",
     ];
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+    public function promotion()
+    {
+        return $this->belongsTo(Promotion::class);
+    }
 }

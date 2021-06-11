@@ -16,4 +16,19 @@ class Cart extends Model
         "status",
         "amount",
     ];
+
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
+
+    public function payment()
+    {
+        return $this->belongsTo(Payment::class);
+    }
+
+    public function review()
+    {
+        return $this->belongsTo(Review::class);
+    }
 }
