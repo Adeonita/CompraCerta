@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('cpf');
             $table->string('password');
             $table->date("birth_date");
-            $table->string("user_type");
+            $table->string("user_type")->default('CLIENT');
             $table->rememberToken();
             $table->timestamps();
 
