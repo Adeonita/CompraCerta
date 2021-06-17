@@ -17,8 +17,8 @@ class Promotion extends Model
         "categoryId",
     ];
 
-    public function product()
+    public function category()
     {
-        return $this->hasMany(Product::class);
+        return $this->hasOne(Category::class);
     }
 }

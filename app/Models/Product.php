@@ -14,14 +14,10 @@ class Product extends Model
         "description",
         "price",
         "image",
-        "quantity",
+        "cartID",
     ];
     public function category()
     {
         return $this->belongsTo(Category::class);
-    }
-    public function promotion()
-    {
-        return $this->belongsTo(Promotion::class);
     }
 }
