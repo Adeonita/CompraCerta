@@ -14,5 +14,6 @@ class enterOut extends Model
         "department",
         "entrance",
         "exit",
+        "cartID",
     ];
 }
