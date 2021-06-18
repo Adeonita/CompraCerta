@@ -6,6 +6,7 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\StateController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\DepartmentsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -114,3 +115,5 @@ Route::get("/categories", [CategoryController::class, 'show']);
 Route::get("/states", [StateController::class, 'show']);
 
 Route::get("/employees", [EmployeeController::class, 'show']);
+
+Route::get("/departments", [DepartmentsController::class, 'index']);
