@@ -22,8 +22,7 @@ class CategorySeeder extends Seeder
             "Cereais",
             "Congelados",
             "Frios e laticínios",
-            "Limpeza",
-            "Higiene",
+            "Limpeza e Higiene",
             "Alimentos",
         ];
 
