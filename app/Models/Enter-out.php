@@ -10,11 +10,9 @@ class enterOut extends Model
     use HasFactory;
 
     protected $fillable = [
-        "cart",
         "department",
         "entrance",
         "exit",
-        "cartID",
     ];
 
     public function cart()
