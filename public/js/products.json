@@ -54,6 +54,48 @@
         "price": 22.99,
         "image": "sobrecoxa-frango.jpg"
     },
+    {
+        "cat_id": 5,
+        "name": "Amendoin Crocante",
+        "description": "Amendoin Crocante, Dacolônia Pacote 350g",
+        "price": 6.9,
+        "image": "amendoin-croncante.jpg"
+    },
+    {
+        "cat_id": 5,
+        "name": "Amendoin sem pele",
+        "description": "Amendoin sem pele, Elma Chips",
+        "price": 4.9,
+        "image": "amendoin-sem-pele-elmachips.jpg"
+    },
+    {
+        "cat_id": 5,
+        "name": "Canjica",
+        "description": "Canjica, Yoki",
+        "price": 2.9,
+        "image": "canjica.jpg"
+    },
+    {
+        "cat_id": 5,
+        "name": "Farinha de rosca",
+        "description": "Farinha de rosca, Yoki",
+        "price": 3.49,
+        "image": "farinha-de-rosca.jpg"
+    },
+    {
+        "cat_id": 5,
+        "name": "Grão de bico",
+        "description": "Grão de bico",
+        "price": 5.99,
+        "image": "grao-de-bico.jpg"
+    },
+    {
+        "cat_id": 5,
+        "name": "Proteína Texturizada de Soja",
+        "description": "Proteína Texturizada de Soja, Camil",
+        "price": 4.99,
+        "image": "proteina-texturizada-soja.jpg"
+    },
 
     {
         "cat_id": 7,
