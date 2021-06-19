@@ -1,54 +1,114 @@
 [{
-    "name": "exemplo",
-    "description": "exemplo descricao",
-    "price": 13.2,
-    "image": "feijao-camil.png"
-},{
-    "id": 8,
-    "name": "Detergente Ypê",
-    "description": "Detergente Ypê rende mais limpa mais!!",
-    "price": 1.59,
-    "image": "detergente-ype.png"
-},{
-    "id": 9,
-    "name": "File De Peito Sadia",
-    "description": "Carnes para churrasco ou pratos do dia a dia, como Filé de Frango. Compre agora Filé de Peito de Frango Sadia Congelado 1kg",
-    "price": 16.5,
-    "image": "fileDePeito-sadia.png"
-},{
-    "id": 9,
-    "name": "Hamburguer Seara Tradicional",
-    "description": "Tradicional Burger Seara Gourmet",
-    "price": 17.28,
-    "image": "hamburguer-seara.png"
-},{
-    "id": 7,
-    "name": "Leite Itambé",
-    "description": "Leite Itambé padronizado, vitamina A, C e D, ferro. NÃO CONTÉM GLÚTEN.",
-    "price": 15.00,
-    "image": "leiteItambe-po.png"
-},{
-    "id": 8,
-    "name": "Papel Higienico Cotton",
-    "description": "Papel Higiênico Folha Dupla Cotton Neutro 12 Unidades",
-    "price": 13.5,
-    "image": "papel-cotton.png"
-},{
-    "id": 8,
-    "name": "OMO Lavagem Perfeita 3L",
-    "description": "OMO Lavagem perfeita 3 litros, poder de limpeza para roupas delicadas e pesadas, remove as manchas na primeira lavagem.",
-    "price": 23.75,
-    "image": "sabao-omo.jpg"
-},{
-    "id": 9,
-    "name": "Bisteca Sadia",
-    "description": "Bisteca Suina Cong.Sadia Bdj.700g",
-    "price": 17.49,
-    "image": "bisteca-sadia.png"
-},{
-    "id": 7,
-    "name": "Sorvete Sundae KIBON",
-    "description": "Sorvete Sundae Chocolate 1L KIBON",
-    "price": 25.00,
-    "image": "sorvete-kibon.png"
-}]
+        "cat_id": 1,
+        "name": "exemplo",
+        "description": "exemplo descricao",
+        "price": 13.2,
+        "image": "feijao-camil.png"
+    },
+    {
+        "cat_id": 4,
+        "name": "Acém Bovino",
+        "description": "Acém Bovino, 500g",
+        "price": 30.99,
+        "image": "acém-bovina.jpg"
+    },
+    {
+        "cat_id": 4,
+        "name": "Bacon Defumado",
+        "description": "Bacon Defumado, 350g",
+        "price": 17.99,
+        "image": "bacon-defumado.jpg"
+    },
+    {
+        "cat_id": 4,
+        "name": "Carne Moída Fazenda Futuro",
+        "description": "Carne Moída Fazenda Futuro, 500g",
+        "price": 22.99,
+        "image": "carne-moida-fazendafutura.jpg"
+    },
+    {
+        "cat_id": 4,
+        "name": "Coração de Frango",
+        "description": "Coração de Frango, 500g",
+        "price": 26.99,
+        "image": "coracao-frango.jpg"
+    },
+    {
+        "cat_id": 4,
+        "name": "Coxa de Frango",
+        "description": "Coxa de frango, 1kg",
+        "price": 22.99,
+        "image": "coxa-frango.jpg"
+    },
+    {
+        "cat_id": 4,
+        "name": "Peito de Frango",
+        "description": "Peito de frango, 1kg",
+        "price": 20.99,
+        "image": "peito-frango.jpg"
+    },
+    {
+        "cat_id": 4,
+        "name": "Sobrecoxa de Frango",
+        "description": "Sobrecoxa de frango, 1kg",
+        "price": 22.99,
+        "image": "sobrecoxa-frango.jpg"
+    },
+
+    {
+        "cat_id": 7,
+        "name": "Sorvete Sundae KIBON",
+        "description": "Sorvete Sundae Chocolate 1L KIBON",
+        "price": 25.0,
+        "image": "sorvete-kibon.png"
+    },
+    {
+        "cat_id": 7,
+        "name": "Leite Itambé",
+        "description": "Leite Itambé padronizado, vitamina A, C e D, ferro. NÃO CONTÉM GLÚTEN.",
+        "price": 15.0,
+        "image": "leiteItambe-po.png"
+    },
+    {
+        "cat_id": 8,
+        "name": "Detergente Ypê",
+        "description": "Detergente Ypê rende mais limpa mais!!",
+        "price": 1.59,
+        "image": "detergente-ype.png"
+    },
+    {
+        "cat_id": 8,
+        "name": "Papel Higienico Cotton",
+        "description": "Papel Higiênico Folha Dupla Cotton Neutro 12 Uncat_idades",
+        "price": 13.5,
+        "image": "papel-cotton.png"
+    },
+    {
+        "cat_id": 8,
+        "name": "OMO Lavagem Perfeita 3L",
+        "description": "OMO Lavagem perfeita 3 litros, poder de limpeza para roupas delicadas e pesadas, remove as manchas na primeira lavagem.",
+        "price": 23.75,
+        "image": "sabao-omo.jpg"
+    },
+    {
+        "cat_id": 9,
+        "name": "Hamburguer Seara Tradicional",
+        "description": "Tradicional Burger Seara Gourmet",
+        "price": 17.28,
+        "image": "hamburguer-seara.png"
+    },
+    {
+        "cat_id": 9,
+        "name": "File De Peito Sadia",
+        "description": "Carnes para churrasco ou pratos do dia a dia, como Filé de Frango. Compre agora Filé de Peito de Frango Sadia Congelado 1kg",
+        "price": 16.5,
+        "image": "fileDePeito-sadia.png"
+    },
+    {
+        "cat_id": 9,
+        "name": "Bisteca Sadia",
+        "description": "Bisteca Suina Cong.Sadia Bdj.700g",
+        "price": 17.49,
+        "image": "bisteca-sadia.png"
+    }
+]
