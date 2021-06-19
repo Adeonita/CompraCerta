@@ -68,21 +68,6 @@ class UserController extends Controller
             "password" => "required",
             "birth_date" => "required|date_format:Y-m-d",
         ]);
-
-        // $validator = Validator::make($request->all(), [
-        //     "name" => "required",
-        //     "last_name" => "required",
-        //     "cpf" => "required",
-        //     "email" => "required",
-        //     "password" => "required",
-        //     "birth_date" => "required|date_format:Y-m-d|before:today",
-        // ]);
-
-        // if ($validator->fails()) {
-        //     return redirect('post/create')
-        //         ->withErrors($validator)
-        //         ->withInput();
-        // }
         try {
             $newuser = User::create($request->all());
         } catch (Throwable $e) {

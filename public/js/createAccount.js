@@ -14,8 +14,7 @@ function validateRegister() {
 
 function checkDate(date_id) {
     let date = document.getElementById(date_id);
-    let today = new Date().toISOString().split('T')[0];;
-    console.log(today, date.value);
+    let today = new Date().toISOString().split('T')[0];
     if (date.value >= today) {
         date.classList.add("is-invalid");
         return false;
