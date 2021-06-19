@@ -1,4 +1,5 @@
 ## Sobre
+
 <p>
     Para os passos abaixo considere uma máquina que o 
     <a href="https://docs.docker.com/engine/install/ubuntu/">
@@ -13,11 +14,12 @@
     Caso não tenha instalado anteriormente adicione o repositório abaixo ao seu sistema
 </p>
 
-- `sudo add-apt-repository ppa:ondrej/php`
-- `sudo apt-get update`
-<br><br>
+-   `sudo add-apt-repository ppa:ondrej/php`
+-   `sudo apt-get update`
+    <br><br>
 
 ## Subindo a aplicação
+
 <p>
     Dentro da pasta do projeto rode o comando 
         <code>./vendor/bin/sail up</code>
@@ -26,40 +28,45 @@
     você pode acessar o aplicativo em seu navegador da web em: <code>http://localhost</code>
 </p>
 
-## Alguns Comandos 
-Executar um seed específico
-- `php artisan db:seed --class=ClassNameSeeder`
+## Alguns Comandos
 
+Executar um seed específico
+
+-   `php artisan db:seed --class=ClassNameSeeder`
 
 <br>
 
-## Padrão de commit 
+## Padrão de commit
 
-- `chore`: se refere à alguma implementação que não impacta diretamente o usuário. Por exemplo, uma mudança no `Readme.md`.
-- `feat`: se refere à implementação de features
-- `fix`: se refere à uma correção
-- `refactor`: se refere à refatoração de uma feature previamente implementada
-- `style`: se refere à uma mudança estética no código. Por exemplo: alterar a indentação de espaço para tab
-- `test`: se refere à uma implementação de teste
+-   `chore`: se refere à alguma implementação que não impacta diretamente o usuário. Por exemplo, uma mudança no `Readme.md`.
+-   `feat`: se refere à implementação de features
+-   `fix`: se refere à uma correção
+-   `refactor`: se refere à refatoração de uma feature previamente implementada
+-   `style`: se refere à uma mudança estética no código. Por exemplo: alterar a indentação de espaço para tab
+-   `test`: se refere à uma implementação de teste
 
+## Alguns comandos
 
-## Alguns comandos 
-- Criando uma migração
+-   Criando uma migração
 
     `php artisan make:migration name-migration`
 
- - Executando uma migração
+-   Executando uma migração
 
     `php artisan migrate`
- 
- - Atualizando as migrações
- 
+
+-   Atualizando as migrações
+
     `php artisan migrate:refresh`
 
-- Criando seeder 
+-   Criando seeder
 
     `php artisan make:seeder nameSeeder`
 
-- Executando um seeder 
+-   Executando um seeder
 
     `php artisan db:seed --class=nameSeeder`
+
+-   Resetando o banco e executando as seeds
+
+    `php artisan migrate:refresh --seed`
