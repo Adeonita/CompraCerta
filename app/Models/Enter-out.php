@@ -16,4 +16,9 @@ class enterOut extends Model
         "exit",
         "cartID",
     ];
+
+    public function cart()
+    {
+        return $this->hasOne(Cart::class);
+    }
 }
