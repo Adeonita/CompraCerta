@@ -18,14 +18,15 @@ class CreateProductTable extends Migration
             $table->string("name");
             $table->string("description");
             $table->float("price");
-            $table->string("image");
-            $table->integer("quantity");
+            $table->string("imagePath");
             $table->unsignedBigInteger("category_id");
+            $table->foreign("category_id")->references("id")->on("categories")->onDelete("cascade");
+
         });
 
-        Schema::table('products', function (Blueprint $table) {
-            $table->foreign("category_id")->references("id")->on("categories");
-        });
+        // Schema::table('products', function (Blueprint $table) {
+        //     $table->foreign("category_id")->references("id")->on("categories");
+        // });
     }
 
     /**
