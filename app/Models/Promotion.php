@@ -5,20 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Promotion extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         "name",
+        "dateStart",
+        "dateEnd",
+        "sale",
+        "categoryId",
     ];
 
-    public function products(){
-        return $this->hasMany(Product::class);
-    }
-
-    public function promotion()
+    public function category()
     {
-        return $this->belongsTo(Promotion::class);
+        return $this->hasOne(Category::class);
     }
 }

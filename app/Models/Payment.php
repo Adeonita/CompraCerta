@@ -5,17 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class State extends Model
+class Payment extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'name',
-        'initials'
+        "date",
+        "number",
+        "cvv",
+        "name",
+        "dueDate",
     ];
 
-    public function address()
+    public function cart()
     {
-        return $this->belongsTo(Address::class);
+        return $this->hasOne(Cart::class);
     }
 }

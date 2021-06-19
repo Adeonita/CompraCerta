@@ -5,17 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class State extends Model
+class enterOut extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'name',
-        'initials'
+        "department",
+        "entrance",
+        "exit",
     ];
 
-    public function address()
+    public function cart()
     {
-        return $this->belongsTo(Address::class);
+        return $this->hasOne(Cart::class);
     }
 }
