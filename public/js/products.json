@@ -96,6 +96,76 @@
         "price": 4.99,
         "image": "proteina-texturizada-soja.jpg"
     },
+    {
+        "cat_id": 6,
+        "name": "Hamburguer Bovino Sadia",
+        "description": "Hamburguer Bovino Sadia",
+        "price": 9.99,
+        "image": "hambuguer-bovino-sadia.jpg"
+    },
+    {
+        "cat_id": 6,
+        "name": "Hamburguer Bovino Perdigão",
+        "description": "Hamburguer Bovino Perdigão",
+        "price": 11.99,
+        "image": "hamburguer-bovino-perdigao.jpg"
+    },
+    {
+        "cat_id": 6,
+        "name": "Hamburguer de soja",
+        "description": "Hamburguer de soja e quinoa, Ecobras",
+        "price": 15.99,
+        "image": "hamburguer-soja-quinua.jpg"
+    },
+    {
+        "cat_id": 6,
+        "name": "Kibe Sadia",
+        "description": "Kibe Sadia",
+        "price": 10.99,
+        "image": "kibe-sadia.jpg"
+    },
+    {
+        "cat_id": 6,
+        "name": "Pizza frango com requeijão",
+        "description": "Pizza frango com requeijão, Rezende",
+        "price": 12.99,
+        "image": "pizza-frango-requeijao-rezende.jpg"
+    },
+    {
+        "cat_id": 6,
+        "name": "Pizza mussarela",
+        "description": "Pizza mussarela, Rezende",
+        "price": 12.99,
+        "image": "pizza-mussarela-rezende.jpg"
+    },
+    {
+        "cat_id": 6,
+        "name": "Soverte de chocolate",
+        "description": "Soverte de chocolate, Garoto",
+        "price": 15.99,
+        "image": "sorvete-chocolate-garoto.jpg"
+    },
+    {
+        "cat_id": 6,
+        "name": "Steak empanado de frango",
+        "description": "Steak empanado de frango, Perdigão",
+        "price": 9.99,
+        "image": "steak-empanado-frango.jpg"
+    },
+    {
+        "cat_id": 6,
+        "name": "Tekitos de frango",
+        "description": "Tekitos de frango, Aurora",
+        "price": 10.99,
+        "image": "tekitos-aurora.jpg"
+    },
+    {
+        "cat_id": 6,
+        "name": "Tekitos de frango",
+        "description": "Tekitos de frango, Seara",
+        "price": 12.99,
+        "image": "tekitos-seara.jpg"
+    },
 
     {
         "cat_id": 7,
