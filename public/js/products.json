@@ -263,6 +263,21 @@
         "description": "Direto do Rio, pupunha em conserva",
         "price": 6.50,
         "image": "palmito.png"
+    },
+    {
+        "cat_id": 9,
+        "name": "Maionese Helmans",
+        "description": "A verdadeira maiosene",
+        "price": 5.50,
+        "image": "maionese.png"
+    },
+    {
+        "cat_id": 9,
+        "name": "Ketchup Heinz",
+        "description": "O verdadeio Ketchup",
+        "price": 6.20,
+        "image": "ketchup.jpg"
     }
+
 
 ]
