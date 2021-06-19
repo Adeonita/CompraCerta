@@ -15,7 +15,7 @@ class CategorySeeder extends Seeder
     public function run()
     {
         $categories = [
-            "Hortifruti", 
+            "Hortifruti",
             "Bebidas",
             "Biscoitos",
             "Carnes",
@@ -23,7 +23,7 @@ class CategorySeeder extends Seeder
             "Congelados",
             "Frios e laticínios",
             "Limpeza e Higiene",
-            "Alimentos",
+            "Mercearia",
         ];
 
         foreach ($categories as $key =>  $value) {
@@ -31,6 +31,5 @@ class CategorySeeder extends Seeder
                 "name" => $value,
             ]);
         }
-
     }
 }
