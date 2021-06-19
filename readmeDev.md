@@ -26,6 +26,11 @@
     você pode acessar o aplicativo em seu navegador da web em: <code>http://localhost</code>
 </p>
 
+## Alguns Comandos 
+Executar um seed específico
+- `php artisan db:seed --class=ClassNameSeeder`
+
+
 <br>
 
 ## Padrão de commit 
@@ -36,3 +41,25 @@
 - `refactor`: se refere à refatoração de uma feature previamente implementada
 - `style`: se refere à uma mudança estética no código. Por exemplo: alterar a indentação de espaço para tab
 - `test`: se refere à uma implementação de teste
+
+
+## Alguns comandos 
+- Criando uma migração
+
+    `php artisan make:migration name-migration`
+
+ - Executando uma migração
+
+    `php artisan migrate`
+ 
+ - Atualizando as migrações
+ 
+    `php artisan migrate:refresh`
+
+- Criando seeder 
+
+    `php artisan make:seeder nameSeeder`
+
+- Executando um seeder 
+
+    `php artisan db:seed --class=nameSeeder`
