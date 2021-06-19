@@ -30,6 +30,9 @@
                             <label for="birthUserRegister" class="form-label">Data de Nascimento</label><br>
                             <input type="date" class="form-control" id="birthUserRegister" placeholder="dd/mm/aaaa"
                                 required>
+                            <div class="invalid-feedback">
+                                Data superior a data atual.
+                            </div>
 
                         </div>
 
