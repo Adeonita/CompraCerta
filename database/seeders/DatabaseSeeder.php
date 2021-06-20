@@ -22,7 +22,6 @@ class DatabaseSeeder extends Seeder
             DepartamentsSeeder::class,
             UserSeeder::class,
             CategorySeeder::class,
-            EmploleeSeeder::class,
             ProductSeeder::class,
             StateSeeder::class,
         ]);
