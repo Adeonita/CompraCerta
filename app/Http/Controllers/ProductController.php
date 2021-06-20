@@ -16,7 +16,7 @@ class ProductController extends Controller
             "category_id" => "required"
         ]);
         
-        return Product::where('category_id', $request->categoryId)->get();
+        return Product::where('category_id', $request->category_id)->get();
     }
 
     public function getByName(Request $request) {
