@@ -7,6 +7,7 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\StateController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DepartmentsController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -95,8 +96,8 @@ Route::get("/navigation", function () {
 Route::get("/users", [UserController::class, 'index']);
 Route::get("/users/clients", [UserController::class, 'getClients']);
 Route::get("/users/employees", [UserController::class, 'getEmployees']);
-Route::post("/users", [UserController::class, 'create']);
 Route::get("/users/{id}", [UserController::class, 'getById']);
+Route::post("/users", [UserController::class, 'create']);
 Route::post("/users/email", [UserController::class, 'getByEmail']);
 Route::post("/users/update", [UserController::class, 'updateUserByEmail']);
 Route::post("/users/password", [UserController::class, 'updateUserPassword']);
@@ -109,4 +110,8 @@ Route::get("/states", [StateController::class, 'show']);
 
 Route::get("/employees", [EmployeeController::class, 'show']);
 
-Route::get("/departments", [DepartmentsController::class, 'index']);
+Route::get("/departments", [DepartmentsController::class, 'show']);
+
+Route::get("/products", [ProductController::class, 'show']);
+Route::post("/products", [ProductController::class, 'getByCategory']);
+Route::post("/products/find", [ProductController::class, 'getByName']);
