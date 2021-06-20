@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Exceptions\InvalidOrderException;
 use Throwable;
+use Illuminate\Support\Facades\Validator;
 
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -65,7 +66,7 @@ class UserController extends Controller
             "cpf" => "required",
             "email" => "required",
             "password" => "required",
-            "birth_date" => "required",
+            "birth_date" => "required|date_format:Y-m-d",
         ]);
         try {
             $newuser = User::create($request->all());
