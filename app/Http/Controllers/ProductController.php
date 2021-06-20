@@ -1,0 +1,25 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\Product;
+
+class ProductController extends Controller
+{
+    public function show() {
+        return Product::all();
+    }
+
+    public function getByCategory(Request $request) {
+        $request->validate([
+            "category_id" => "required"
+        ]);
+        
+        return Product::where('category_id', $request->category_id)->get();
+    }
+
+    public function getByName(Request $request) {
+        return Product::where('name', 'like', '%' . $request->name . '%')->get();
+    }
+}
