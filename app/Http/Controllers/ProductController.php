@@ -14,4 +14,8 @@ class ProductController extends Controller
     public function getByCategory(Request $request) {
         return Product::where('category_id', $request->categoryId)->get();
     }
+
+    public function getByName(Request $request) {
+        return Product::where('name', 'like', '%' . $request->name . '%')->get();
+    }
 }
