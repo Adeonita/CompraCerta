@@ -92,13 +92,6 @@ Route::get("/navigation", function () {
 
 ## BACKEND ROUTES
 
-// Route::post("/client/create", [ClientController::class, 'create']);
-// Route::post("/client/email", [ClientController::class, 'getByEmail']);
-// Route::post("/client/update", [ClientController::class, 'updateClientByEmail']);
-// Route::post("/client/update/password", [ClientController::class, 'updateClientPassword']);
-// Route::get("/client", [ClientController::class, 'index']);
-// Route::get("/client/{id}", [ClientController::class, 'getById']);
-
 Route::get("/users", [UserController::class, 'index']);
 Route::get("/users/clients", [UserController::class, 'getClients']);
 Route::get("/users/employees", [UserController::class, 'getEmployees']);

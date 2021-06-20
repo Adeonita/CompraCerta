@@ -105,7 +105,7 @@
 
                         <div class=" w-100">
 
-                            <button type="submit" class="btn btn-success w-100">Cadastrar Nova Senha</button>
+                            <button class="btn btn-success w-100" onclick='updatePassword()'>Cadastrar Nova Senha</button>
                         </div>
                     </form>
                 </div>

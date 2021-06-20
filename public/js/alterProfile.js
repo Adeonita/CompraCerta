@@ -29,11 +29,10 @@ async function updateData() {
 function updateUser(userData) {
     let response = $.post("http://localhost/users/update/",
         userData).done((response) => {
-        if (response.status == 400) {
+        if (response.success == false) {
             alert('Erro ao atualizar usuário');
         } else {
             alert("Usuário atualizao com sucesso!");
-            return false;
         }
     });
     return response;
@@ -51,4 +50,35 @@ function checkFields(data) {
     }
     return true;
 
+}
+
+
+async function updatePassword() {
+    let passwordData = {
+        password: document.getElementById("passwordActual").value,
+        new_password: document.getElementById("newPassword").value,
+        control_password: document.getElementById("newPasswordCheck").value,
+        email: "teste@gmail.com"
+    }
+    console.log(passwordData);
+    let isCorrectPassword = checkFieldsById("newPassword", "newPasswordCheck");
+    let response;
+    let feedback = ''
+    if (passwordData.password.length > 5 && isCorrectPassword) {
+        response = await updateUserPassword(passwordData);
+        if (response.success) {
+            feedback = "Senha Alterada com sucesso";
+        } else {
+            feedback = response.message;
+        }
+    } else {
+        feedback = "Dados incorretos";
+    }
+    alert(feedback);
+}
+
+function updateUserPassword(data) {
+    let response = $.post("http://localhost/users/password",
+        data);
+    return response;
 }

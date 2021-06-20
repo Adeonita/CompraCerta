@@ -50,7 +50,7 @@ function validatePassoword() {
 function createClient(data) {
     let response = $.post("http://localhost/users/",
         data).done((response) => {
-        if (response.status == 400) {
+        if (response.success == false) {
             alert('Erro ao criar usuário, email já existe');
         } else {
             alert("Usuário criado com sucesso!");
