@@ -9,7 +9,7 @@ use App\Models\Departments;
 
 class DepartmentsController extends Controller
 {
-    public function index()
+    public function show()
     {
         return Departments::all("name");
     }
