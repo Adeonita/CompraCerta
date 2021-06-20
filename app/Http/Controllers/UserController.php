@@ -22,7 +22,7 @@ class UserController extends Controller
             return $users;
         } catch (Throwable $e) {
             return response()->json([
-                'status' => '500',
+                'success' => false,
                 'message' => $e
             ]);
         }
@@ -34,10 +34,13 @@ class UserController extends Controller
 
             $users = User::where('user_type', '=', 'CLIENT')->get();
 
-            return $users;
+            return response()->json([
+                'success' => true,
+                'message' => $users
+            ]);
         } catch (Throwable $e) {
             return response()->json([
-                'status' => '500',
+                'success' => false,
                 'message' => $e
             ]);
         }
@@ -49,10 +52,13 @@ class UserController extends Controller
 
             $users = User::where('user_type', '=', 'EMPLOYEE')->get();
 
-            return $users;
+            return response()->json([
+                'success' => true,
+                'message' => $users
+            ]);
         } catch (Throwable $e) {
             return response()->json([
-                'status' => '500',
+                'success' => false,
                 'message' => $e
             ]);
         }
@@ -72,11 +78,14 @@ class UserController extends Controller
             $newuser = User::create($request->all());
         } catch (Throwable $e) {
             return response()->json([
-                'status' => '400',
+                'success' => false,
                 'message' => $e
             ]);
         }
-        return response($newuser);
+        return response()->json([
+            'success' => true,
+            'message' => $newuser
+        ]);
     }
 
     public function getById(Request $request, $id)
@@ -87,15 +96,18 @@ class UserController extends Controller
 
             if (count($user) == 0) {
                 return response()->json([
-                    'status' => '404',
+                    'success' => false,
                     'message' => 'User not Found'
                 ]);
             }
 
-            return response($user);
+            return response()->json([
+                'success' => true,
+                'message' => $user
+            ]);
         } catch (Throwable $e) {
             return response()->json([
-                'status' => '500',
+                'success' => false,
                 'message' => $e
             ]);
         }
@@ -107,18 +119,21 @@ class UserController extends Controller
 
         try {
 
-            $user = User::where('email', '=', $request->email)->get();
+            $user = User::where('email', $request->email)->get();
 
             if (count($user) == 0) {
                 return response()->json([
-                    'status' => '404',
+                    'success' => false,
                     'message' => 'User not Found'
                 ]);
             }
-            return  response($user);
+            return response()->json([
+                'success' => true,
+                'message' => $user
+            ]);
         } catch (Throwable $e) {
             return response()->json([
-                'status' => '500',
+                'success' => false,
                 'message' => $e
             ]);
         }
@@ -149,7 +164,7 @@ class UserController extends Controller
             return response($user);
         } catch (Throwable $e) {
             return response()->json([
-                'status' => '400',
+                'success' => false,
                 'message' => $e
             ]);
         }
@@ -159,18 +174,28 @@ class UserController extends Controller
     {
         $request->validate([
             "password" => "required",
-            "email" => 'required'
+            "email" => 'required',
+            "new_password" => "required"
         ]);
         try {
 
             $user = User::where('email', $request->email)->first();
-            $user->password = $request->password;
-
-            $user->save();
-            return $user;
+            if ($user->password == $request->password) {
+                $user->password = $request->new_password;
+                $user->save();
+                return response()->json([
+                    'success' => true,
+                    'message' => 'Senha alterada',
+                ]);
+            } else {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Senha incorreta'
+                ]);
+            }
         } catch (Throwable $e) {
             return response()->json([
-                'status' => '400',
+                'success' => false,
                 'message' => $e
             ]);
         }
