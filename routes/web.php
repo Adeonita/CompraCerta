@@ -120,3 +120,4 @@ Route::get("/employees", [EmployeeController::class, 'show']);
 Route::get("/departments", [DepartmentsController::class, 'show']);
 
 Route::get("/products", [ProductController::class, 'show']);
+Route::post("/products", [ProductController::class, 'getByCategory']);
