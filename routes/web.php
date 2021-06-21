@@ -121,7 +121,7 @@ Route::get("/employees", [EmployeeController::class, 'show']);
 Route::get("/departments", [DepartmentsController::class, 'show']);
 
 Route::get("/products", [ProductController::class, 'show']);
-Route::post("/products", [ProductController::class, 'getByCategory']);
+Route::get("/products/{category_id}", [ProductController::class, 'getByCategory']);
 Route::post("/products/find", [ProductController::class, 'getByName']);
 
 Route::post("/address", [AddressController::class, 'setAddress']);
