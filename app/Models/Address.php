@@ -10,18 +10,19 @@ class Address extends Model
     use HasFactory;
 
     protected $fillable = [
-        "publicArea",
+        "public_area",
         "number",
         "district",
         "complement",
         "cep",
-        "userId",
+        "user_id",
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class);
     }
+    
     public function state()
     {
         return $this->hasOne(State::class);
