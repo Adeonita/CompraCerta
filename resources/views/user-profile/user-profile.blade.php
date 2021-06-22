@@ -31,7 +31,7 @@
                                 <div class='col-12 col-sm mx-2'>
                                     <label for="nameUserProfile" class="form-label">Nome</label>
                                     <input type="text" class="form-control only-letter" id="nameUserProfile"
-                                        value="João das Neves">
+                                        value="João das Neves" minlength="5">
                                 </div>
                                 <div class="col-12 col-sm  mx-2">
                                     <label for="lastNameUserProfile" class="form-label">Sobrenome</label><br>
@@ -48,21 +48,20 @@
 
                                 <div class="col-12 col-sm mx-2">
                                     <label for="cpfUserProfile" class="form-label">CPF</label><br>
-                                    <input type="text" class="form-control only-number" id="cpfUserProfile"
-                                        placeholder="___.___.___-__" required minlength='11' maxlength="11"
-                                        value="12345678910">
+                                    <input type="text" class="form-control only-number" id="cpfUserProfile" required
+                                        minlength='11' maxlength="11" value="12345678910">
                                 </div>
                             </div>
                             <div class='row mb-3 '>
                                 <div class="col-12 col-sm mx-2">
                                     <label for="emailUserProfile" class="form-label">Email</label><br>
-                                    <input type="email" class="form-control" id="emailUserProfile"
-                                        placeholder="seuemail@exemplo.com" required value="JoãodeNadaSabe@gmail.com">
+                                    <input type="email" class="form-control" id="emailUserProfile" required
+                                        value="teste@gmail.com" disabled>
                                 </div>
                             </div>
 
                             <div class='d-flex flex-row'>
-                                <a class='btn btn-success mx-2' id="btnProfileConfi">Confirmar</a>
+                                <a class='btn btn-success mx-2' id="btnProfileConfi" onclick="updateData()">Confirmar</a>
 
                                 <a class='btn btn-danger mx-2' id="btnProfileConfi" onclick="disableForm()">Cancelar</a>
                             </div>
@@ -106,7 +105,7 @@
 
                         <div class=" w-100">
 
-                            <button type="submit" class="btn btn-success w-100">Cadastrar Nova Senha</button>
+                            <button class="btn btn-success w-100" onclick='updatePassword()'>Cadastrar Nova Senha</button>
                         </div>
                     </form>
                 </div>
