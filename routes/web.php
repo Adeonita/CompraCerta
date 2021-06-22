@@ -109,6 +109,7 @@ Route::post("/users", [UserController::class, 'create']);
 Route::post("/users/email", [UserController::class, 'getByEmail']);
 Route::post("/users/update", [UserController::class, 'updateUserByEmail']);
 Route::post("/users/password", [UserController::class, 'updateUserPassword']);
+Route::post("/login", [UserController::class, 'login']);
 
 
 
