@@ -13,16 +13,17 @@ class CreateAddressTable extends Migration
      */
     public function up()
     {
-        Schema::create('address', function (Blueprint $table) {
+        Schema::create('addresses', function (Blueprint $table) {
             $table->id();
             $table->string("public_area");
             $table->string("number");
+            $table->string("district");
             $table->string("complement");
             $table->string("cep");
             $table->timestamps();
 
             $table->unsignedBigInteger("user_id");
-            $table->foreign("user_id")->references("id")->on("users")->onDelete('cascade');
+            $table->foreign("user_id")->references("id")->on("users")->onDelete("cascade");
         });
     }
 
@@ -33,6 +34,6 @@ class CreateAddressTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('address');
+        Schema::dropIfExists('addresses');
     }
 }
