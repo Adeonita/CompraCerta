@@ -47,9 +47,7 @@
                                                         <p>Quantidade: 15, Valor: R$ 121.35</p>
                                                         <a data-placement="top" class="btn btn-info" href="{{ url('/cart') }}"
                                                             title="Repetir Compra" id="btnRepetirCompra"><i
-                                                                class="bi bi-arrow-bar-up"></i></a>
-                                                        <button data-placement="top" class="btn btn-danger" title="Apagar" id="btnaPagar"><i
-                                                                class="bi bi-trash"></i></button>
+                                                            class="bi bi-arrow-bar-up"></i></a>
                                                     </div>
                                                     <div class="col-md-12 historic-date">
                                                         <p>Entrega Feita em: 23/02/2021
