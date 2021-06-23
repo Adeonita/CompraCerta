@@ -110,7 +110,7 @@ Route::post("/users/email", [UserController::class, 'getByEmail']);
 Route::post("/users/update", [UserController::class, 'updateUserByEmail']);
 Route::post("/users/password", [UserController::class, 'updateUserPassword']);
 Route::post("/login", [UserController::class, 'login']);
-
+Route::post("/logout", [UserController::class, 'logout']);
 
 
 Route::get("/categories", [CategoryController::class, 'show']);
