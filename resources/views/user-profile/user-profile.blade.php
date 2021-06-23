@@ -15,7 +15,8 @@
                 <div class="menu-user mt-3">
                     <a class="navbar-brand" href="" data-bs-toggle="modal" data-bs-target="#pChagingModal">Trocar
                         Senha</a><br>
-                    <a class="navbar-brand" href="{{ url('/historic-page') }}">Histórico</a>
+                    <a class="navbar-brand" href="{{ url('/historic-page') }}">Histórico</a><br>
+                    <a class="navbar-brand" href="{{ url('/my-address') }}">Meus Endereços</a>
                 </div>
             </div>
         </div>
