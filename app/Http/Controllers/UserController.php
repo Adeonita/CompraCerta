@@ -38,12 +38,12 @@ class UserController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => $users
-            ]);
+            ], 200);
         } catch (Throwable $e) {
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
 
@@ -56,12 +56,12 @@ class UserController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => $users
-            ]);
+            ], 200);
         } catch (Throwable $e) {
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
 
@@ -81,12 +81,12 @@ class UserController extends Controller
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
         return response()->json([
             'success' => true,
             'message' => $newuser
-        ]);
+        ], 200);
     }
 
     public function getById(Request $request, $id)
@@ -105,12 +105,12 @@ class UserController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => $user
-            ]);
+            ], 200);
         } catch (Throwable $e) {
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
 
@@ -126,17 +126,17 @@ class UserController extends Controller
                 return response()->json([
                     'success' => false,
                     'message' => 'User not Found'
-                ]);
+                ], 204);
             }
             return response()->json([
                 'success' => true,
                 'message' => $user
-            ]);
+            ], 200);
         } catch (Throwable $e) {
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
 
@@ -162,12 +162,15 @@ class UserController extends Controller
 
             $user->save();
 
-            return response($user);
+            return response()->json([
+                'success' => true,
+                'message' => $user
+            ], 200);
         } catch (Throwable $e) {
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
 
@@ -187,42 +190,43 @@ class UserController extends Controller
                 return response()->json([
                     'success' => true,
                     'message' => 'Senha alterada',
-                ]);
+                ], 200);
             } else {
                 return response()->json([
                     'success' => false,
                     'message' => 'Senha incorreta'
-                ]);
+                ], 203);
             }
         } catch (Throwable $e) {
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
 
-    public function login(Request $request) {
+    public function login(Request $request)
+    {
         $request->validate([
             "password" => "required",
             "email" => 'required'
         ]);
 
         $user = User::where('email', $request->email)
-        ->where('password', $request->password)
-        ->first();
+            ->where('password', $request->password)
+            ->first();
 
         if (!$user) {
             return response()->json([
                 "message" => "Invalid Credentials"
-            ],404);
+            ], 404);
         }
 
         $now = date('Y-m-d H:i:s');
 
         Session::create([
             "created_at" => $now,
-            "expirated_at" => date('Y-m-d H:i:s', strtotime($now. ' + 2 days')),
+            "expirated_at" => date('Y-m-d H:i:s', strtotime($now . ' + 2 days')),
             "is_valid" => $request->is_valid,
             "user_id" => $user->id,
         ]);

@@ -41,7 +41,6 @@ function updateUser(userData) {
 function checkFields(data) {
     for (let field in data) {
         if (data[field] == '') {
-            console.log(field, data[field]);
             return false;
         }
     }
@@ -60,7 +59,6 @@ async function updatePassword() {
         control_password: document.getElementById("newPasswordCheck").value,
         email: "teste@gmail.com"
     }
-    console.log(passwordData);
     let isCorrectPassword = checkFieldsById("newPassword", "newPasswordCheck");
     let response;
     let feedback = ''
