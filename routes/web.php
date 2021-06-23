@@ -8,6 +8,7 @@ use App\Http\Controllers\StateController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DepartmentsController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AddressController;
 
 /*
 |--------------------------------------------------------------------------
@@ -101,6 +102,7 @@ Route::post("/users", [UserController::class, 'create']);
 Route::post("/users/email", [UserController::class, 'getByEmail']);
 Route::post("/users/update", [UserController::class, 'updateUserByEmail']);
 Route::post("/users/password", [UserController::class, 'updateUserPassword']);
+Route::post("/login", [UserController::class, 'login']);
 
 
 
@@ -113,5 +115,10 @@ Route::get("/employees", [EmployeeController::class, 'show']);
 Route::get("/departments", [DepartmentsController::class, 'show']);
 
 Route::get("/products", [ProductController::class, 'show']);
-Route::post("/products", [ProductController::class, 'getByCategory']);
+Route::get("/products/{category_id}", [ProductController::class, 'getByCategory']);
 Route::post("/products/find", [ProductController::class, 'getByName']);
+
+Route::post("/address", [AddressController::class, 'setAddress']);
+Route::get("/address/{id}", [AddressController::class, 'getByUser']);
+Route::post("/address/update", [AddressController::class, 'updateByUser']);
+Route::delete("/address/delete/{id}", [AddressController::class, 'delete']);

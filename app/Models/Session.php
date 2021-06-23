@@ -5,26 +5,22 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Address extends Model
+class Session extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
+
     protected $fillable = [
-        "public_area",
-        "number",
-        "district",
-        "complement",
-        "cep",
+        "created_at",
+        "expirated_at",
+        "is_valid",
         "user_id",
     ];
 
-    public function user()
+    public function users()
     {
         return $this->belongsTo(User::class);
-    }
-    
-    public function state()
-    {
-        return $this->hasOne(State::class);
     }
 }

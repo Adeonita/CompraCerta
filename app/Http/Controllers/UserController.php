@@ -8,11 +8,12 @@ use Illuminate\Support\Facades\Validator;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Session;
 use App;
 
 class UserController extends Controller
 {
-    //
+
     public function index()
     {
         try {
@@ -199,5 +200,31 @@ class UserController extends Controller
                 'message' => $e
             ]);
         }
+    }
+
+    public function login(Request $request) {
+        $request->validate([
+            "password" => "required",
+            "email" => 'required'
+        ]);
+
+        $user = User::where('email', $request->email)
+        ->where('password', $request->password)
+        ->first();
+
+        if (!$user) {
+            return response()->json([
+                "message" => "Invalid Credentials"
+            ],404);
+        }
+
+        $now = date('Y-m-d H:i:s');
+
+        Session::create([
+            "created_at" => $now,
+            "expirated_at" => date('Y-m-d H:i:s', strtotime($now. ' + 2 days')),
+            "is_valid" => $request->is_valid,
+            "user_id" => $user->id,
+        ]);
     }
 }

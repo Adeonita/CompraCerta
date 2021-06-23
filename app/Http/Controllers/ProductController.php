@@ -11,12 +11,8 @@ class ProductController extends Controller
         return Product::all();
     }
 
-    public function getByCategory(Request $request) {
-        $request->validate([
-            "category_id" => "required"
-        ]);
-        
-        return Product::where('category_id', $request->category_id)->get();
+    public function getByCategory($categoryId) {     
+        return Product::where('category_id', $categoryId)->get();
     }
 
     public function getByName(Request $request) {
