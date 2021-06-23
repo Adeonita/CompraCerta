@@ -208,4 +208,12 @@ class UserController extends Controller
             "department_id" => $user->department_id,
         ]);
     }
+
+    public function logout(Request $request) {
+        Session::where([
+             "user_id" => $request->user_id,
+         ])->update([
+             "is_valid" => 0,
+         ]);
+     }
 }
