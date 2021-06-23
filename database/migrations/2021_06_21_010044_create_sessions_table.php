@@ -18,7 +18,7 @@ class CreateSessionsTable extends Migration
             $table->id();
             $table->date('created_at');
             $table->date('expirated_at');
-            $table->boolean('is_valid');
+            $table->boolean('is_valid')->default(1);
             $table->unsignedBigInteger("user_id");
             $table->foreign("user_id")->references("id")->on("users")->onDelete('cascade');
         });
