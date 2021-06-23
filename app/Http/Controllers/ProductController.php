@@ -11,8 +11,9 @@ class ProductController extends Controller
         return Product::all();
     }
 
-    public function getByCategory($categoryId) {     
-        return Product::where('category_id', $categoryId)->get();
+    public function getByCategory($categoryId) {  
+        $products = Product::where("category_id", $categoryId)->get();
+        return view("/category/index")->with("products", $products);
     }
 
     public function getByName(Request $request) {
