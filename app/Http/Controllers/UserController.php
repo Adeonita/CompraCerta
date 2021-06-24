@@ -230,5 +230,19 @@ class UserController extends Controller
             "is_valid" => $request->is_valid,
             "user_id" => $user->id,
         ]);
+
+        return response()->json([
+            "name" => $user->name,
+            "type" => $user->user_type,
+            "department_id" => $user->department_id,
+        ]);
     }
+
+    public function logout(Request $request) {
+        Session::where([
+             "user_id" => $request->user_id,
+         ])->update([
+             "is_valid" => 0,
+         ]);
+     }
 }
