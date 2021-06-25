@@ -47,7 +47,7 @@
         </form>
         <div class="menu-user mt-3">
             <a class='btn btn-warning mx-2 r-addres-button' href="{{ url('/user-profile') }}">Meu Perfil</a>
-            <a class='btn btn-primary mx-2 r-addres-button' href="{{ url('') }}">Adicionar Endereço</a>
+            <a class='btn btn-primary mx-2 r-addres-button' href="{{ url('#') }}">Adicionar Endereço</a>
         </div>
 </div>
 
