@@ -20,6 +20,7 @@
                         <th scope="col">Cidade</th>
                         <th scope="col">Estado</th>
                         <th scope="col">Complemento</th>
+                        <th scope="col">Alterar Endereço</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,14 +36,18 @@
                             <td id = "UserNeighM">Acupe de Brotas</td>
                             <td id = "UserCityM">Salvador</td>
                             <td id = "UserStateM">Bahia</td>
-                            <td id = "UserComplementM">Em frente a padaria Doce de Mel</td>               
+                            <td id = "UserComplementM">Em frente a padaria Doce de Mel</td>
+                            <td id = "UserAlterM">
+                                <a class='btn btn-outline-success btn-sm mx-2 r-addres-button' href="{{ url('/address-option') }}">Alterar Endereço</a>
+                            </td>                     
                         </tr>
                     @endfor
                 </tbody>
             </table>
         </form>
         <div class="menu-user mt-3">
-            <a class='btn btn-warning mx-2 r-addres-button' href="{{ url('/user-profile') }}">Pagina Usuario</a>
+            <a class='btn btn-warning mx-2 r-addres-button' href="{{ url('/user-profile') }}">Meu Perfil</a>
+            <a class='btn btn-primary mx-2 r-addres-button' href="{{ url('') }}">Adicionar Endereço</a>
         </div>
 </div>
 
