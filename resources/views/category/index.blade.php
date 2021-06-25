@@ -3,7 +3,7 @@
     <div class="row justify-content-around">
         @foreach ($products as $item)
             <div class="card product-card col-xs-6 col-sm-4 col-md-4 col-lg-4 px-auto mb-4 mx-2 " style="width: 15rem;">
-                <a href="{{ url('/product') }}">
+                <a href='{{ url("/product/$item->id") }}'>
                     <div>
                         <img class="card-img-top" src='{{ asset("images/products/$item->imagePath") }}'
                             alt="Imagem de capa do card">
@@ -16,7 +16,7 @@
                     <p class="card-text">{{ $item->name }}</p>
                 </div>
                 <div class="row buttons-product-card">
-                    <a href="{{ url('/product') }}" class="btn main main-btn">Comprar</a>
+                    <a href='{{ url("/product") }}' class="btn main main-btn">Comprar</a>
                 </div>
             </div>
         @endforeach
