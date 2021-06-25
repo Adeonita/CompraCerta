@@ -10,6 +10,7 @@ $.get("http://localhost/states", function(data) {
 
 $('#address-form').on('submit', e => {
     postForm();
+    e.preventDefault();
 })
 
 async function postForm() {
@@ -31,7 +32,11 @@ async function postForm() {
 function createAddress(data) {
     let response = $.post("http://localhost/address/",
         data).done((response) => {
-        console.log(response);
+        if (response.success) {
+            alert("Endereço adicionado com sucesso!")
+        } else {
+            alert("Não foi possível criar novo endereço.")
+        }
     });
     return response;
 }
