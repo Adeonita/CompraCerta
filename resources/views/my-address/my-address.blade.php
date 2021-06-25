@@ -20,7 +20,7 @@
                         <th scope="col">Cidade</th>
                         <th scope="col">Estado</th>
                         <th scope="col">Complemento</th>
-                        <th scope="col">Alterar Endereço</th>
+                        <th scope="col">Editar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -38,7 +38,7 @@
                             <td id = "UserStateM">Bahia</td>
                             <td id = "UserComplementM">Em frente a padaria Doce de Mel</td>
                             <td id = "UserAlterM">
-                                <a class='btn btn-outline-success btn-sm mx-2 r-addres-button' href="{{ url('/address-option') }}">Alterar Endereço</a>
+                                <a class='btn btn-outline-success btn-sm mx-2 r-addres-button' href="{{ url('/address-option') }}"><i class="bi bi-pencil-fill"></i></a>
                             </td>                     
                         </tr>
                     @endfor
