@@ -6,6 +6,7 @@
             </a>
         </div>
         <div>
+            {{ session()->get('userData') }}
             <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#loginModal">
                 <i class="bi bi-person-fill"></i> Entrar
             </button>
@@ -42,16 +43,17 @@
                 <div class='w-100'>
                     <h4 class='text-success text-center'>Bem-vindo!</h4>
                 </div>
-                <form>
+                <form method="POST" action="{{ url('/login') }}">
+                    {!! csrf_field() !!}
                     <div class="mb-3">
                         <label for="emailInput" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="emailInput" placeholder="seuemail@exemplo.com"
-                            required>
+                        <input type="email" class="form-control" id="emailInput" name="emailInput"
+                            placeholder="seuemail@exemplo.com" value='leaskywalker@gmail.com' required>
                     </div>
                     <div class="mb-3">
                         <label for="senhaUser" class="form-label">Senha</label>
-                        <input type="password" class="form-control" id="passwordUser" placeholder="" required
-                            minlength="6" maxlength="20">
+                        <input type="password" class="form-control" id="passwordUser" name="passwordUser" placeholder=""
+                            required minlength="6" maxlength="20" value='123456789'>
                     </div>
                     <div class="mb-3 mx-auto">
                         <a href="{{ url('/recover') }}">Esqueci minha senha</a>

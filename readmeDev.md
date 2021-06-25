@@ -67,6 +67,10 @@ Executar um seed específico
 
     `php artisan db:seed --class=nameSeeder`
 
+-   Resetando o banco as migrations
+
+    `php artisan migrate:reset`
+
 -   Resetando o banco e executando as seeds
 
     `php artisan migrate:refresh --seed`

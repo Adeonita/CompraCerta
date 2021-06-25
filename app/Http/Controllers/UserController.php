@@ -207,13 +207,14 @@ class UserController extends Controller
 
     public function login(Request $request)
     {
+
         $request->validate([
-            "password" => "required",
-            "email" => 'required'
+            "passwordUser" => "required",
+            "emailInput" => 'required'
         ]);
 
-        $user = User::where('email', $request->email)
-            ->where('password', $request->password)
+        $user = User::where('email', $request->emailInput)
+            ->where('password', $request->passwordUser)
             ->first();
 
         if (!$user) {
@@ -227,9 +228,11 @@ class UserController extends Controller
         Session::create([
             "created_at" => $now,
             "expirated_at" => date('Y-m-d H:i:s', strtotime($now . ' + 2 days')),
-            "is_valid" => $request->is_valid,
+            "is_valid" => 1,
             "user_id" => $user->id,
         ]);
+
+        $request->session()->put('userData', $user->id);
 
         return response()->json([
             "name" => $user->name,
@@ -238,11 +241,12 @@ class UserController extends Controller
         ]);
     }
 
-    public function logout(Request $request) {
+    public function logout(Request $request)
+    {
         Session::where([
-             "user_id" => $request->user_id,
-         ])->update([
-             "is_valid" => 0,
-         ]);
-     }
+            "user_id" => $request->user_id,
+        ])->update([
+            "is_valid" => 0,
+        ]);
+    }
 }

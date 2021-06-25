@@ -23,6 +23,9 @@ use App\Http\Controllers\AddressController;
 ##  VIEWS
 
 Route::get("/", function () {
+    $session = session('key');
+
+
     return view('home/products');
 });
 
