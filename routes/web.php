@@ -59,6 +59,10 @@ Route::get("/user-profile", function () {
     return view('user-profile/user-profile');
 });
 
+Route::get("/my-address", function () {
+    return view('/my-address/my-address');
+});
+
 Route::get("/historic-page", function () {
     return view('historic-page/historic-page');
 });
