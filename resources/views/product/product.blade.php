@@ -18,7 +18,7 @@
                 </div>
                 <div class="form-group">
                     <label class = "product-description">Descrição</label>
-                    <textarea class="form-control description-control" id="productDescriptionBox" rows="3" disabled></textarea>
+                    <textarea class="form-control description-control" id="productDescriptionBox" rows="3"disabled>{{$product->description}}</textarea>
                 </div>
                 <div class="row mt-4">
                     <div><label for="quantity" class="quant">
