@@ -14,15 +14,15 @@ class CreateCartTable extends Migration
     public function up()
     {
        Schema::create('carts',  function (Blueprint $table) {
-           $table->id();
-           $table->string("name");
-           $table->json("items");
-           $table->boolean("is_list");
-           $table->string("status");
-           $table->float("amount");
-           $table->unsignedBigInteger("user_id");
+            $table->id();
+            $table->string("name");
+            $table->boolean("is_list");
+            $table->string("status");
+            $table->float("amount");
+            $table->timestamps();
+
+            $table->unsignedBigInteger("user_id");
             $table->foreign("user_id")->references("id")->on("users")->onDelete('cascade');
-           $table->timestamps();
         }
        );
     }
