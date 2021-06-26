@@ -59,13 +59,14 @@ Route::get("/user-profile", function () {
     return view('user-profile/user-profile');
 });
 
+Route::get("/my-address", function () {
+    return view('/my-address/my-address');
+});
+
 Route::get("/historic-page", function () {
     return view('historic-page/historic-page');
 });
 
-Route::get("/product", function () {
-    return view('product/product');
-});
 
 Route::get("/trackingPage", function () {
     return view('tracking/trackingPage');
@@ -115,6 +116,7 @@ Route::get("/employees", [EmployeeController::class, 'show']);
 Route::get("/departments", [DepartmentsController::class, 'show']);
 
 Route::get("/products", [ProductController::class, 'show']);
+Route::get("/product/{id}", [ProductController::class, 'getById']);
 Route::get("/products/{category_id}", [ProductController::class, 'getByCategory']);
 Route::post("/products/find", [ProductController::class, 'getByName']);
 

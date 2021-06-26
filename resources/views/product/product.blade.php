@@ -1,21 +1,20 @@
 @extends('index')
 @section('content')
-
     <div class="container mb-5">
         <div class="row">
             <div class="col-md-6 mt-3">
-                <img src="./images/feijao.png" alt="Imagem do produto" class="product-img">
+                <img src='{{ asset("$product->imagePath") }}' alt="Imagem do produto" class="product-img">
             </div>
             <div class="col-md-6">
                 <div class="row">
                     <div class="col-md-8 mt-3">
-                        <p class="product-name">Feijão Camil</p>
+                        <p class="product-name">{{ $product->name }}</p>
                     </div>
                 </div>
                 <div class="row">
                     &nbsp; &nbsp;
                     <h3><del>De 15,99</del></h3>
-                    <p class="product-price">Por apenas <br> R$ 10,99 a un.</p>
+                    <p class="product-price">Por apenas <br> R$ {{ $product->price }}</p>
                 </div>
                 <div class="form-group">
                     <label class = "product-description">Descrição</label>

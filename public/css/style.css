@@ -230,6 +230,9 @@ a {
 .menu-user{
     text-align: center;
 }
+.r-addres-button{ 
+    float: left;
+}
 .history-screen .user-panel-historic .img-historic{
 	text-align: center;
 	padding-top: 15px;
