@@ -1,7 +1,7 @@
 $.get("http://localhost/states", function(data) {
     data.forEach(item => {
         $('#stateList').append($('<option>', {
-            value: item.initials,
+            value: item.id,
             text: item.name
         }));
     });
@@ -20,9 +20,9 @@ async function postForm() {
         district: document.getElementById("districtUserRegister").value,
         complement: document.getElementById("complementUserRegister").value,
         cep: document.getElementById("cepUserRegister").value,
-        user_id: 6
+        user_id: 6,
+        state_id: document.getElementById("stateList").value,
     };
-    // state: document.getElementById("stateList").value,
     // city: document.getElementById("cityUserRegister").value,
 
     let res = await createAddress(addressData);

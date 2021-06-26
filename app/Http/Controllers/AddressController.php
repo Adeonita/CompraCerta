@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Address;
 use Exception;
+use Throwable;
+
 
 
 class AddressController extends Controller
@@ -64,7 +66,7 @@ class AddressController extends Controller
                     'addresses.district',
                     'addresses.complement',
                     'addresses.cep',
-                    'states.name',
+                    'states.name as state',
                 )
                 ->get();
         } catch (Throwable $e) {
