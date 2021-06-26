@@ -26,11 +26,15 @@ class ProductController extends Controller
     private function formmatPrice($price) {
         $unformmatedPrice = explode('.',$price);
 
-        if(strlen($unformmatedPrice[1]) > 1) {
-            return $price;
+        if(array_key_exists(1, $unformmatedPrice)) {
+            if(strlen($unformmatedPrice[1]) > 1) {
+                return $price;
+            }
+            
+            return $unformmatedPrice[0].",".$unformmatedPrice[1] * 10;
         }
 
-        return $unformmatedPrice[0].",".$unformmatedPrice[1] * 10;
+        return $unformmatedPrice[0].",00";
     }
 
     public function getById($productId){
