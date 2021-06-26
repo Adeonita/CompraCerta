@@ -16,6 +16,7 @@ class Address extends Model
         "complement",
         "cep",
         "user_id",
+        "state_id",
     ];
 
     public function user()

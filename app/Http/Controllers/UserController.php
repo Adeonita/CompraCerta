@@ -207,6 +207,7 @@ class UserController extends Controller
 
     public function login(Request $request)
     {
+
         $request->validate([
             "password" => "required",
             "email" => 'required'
@@ -227,22 +228,26 @@ class UserController extends Controller
         Session::create([
             "created_at" => $now,
             "expirated_at" => date('Y-m-d H:i:s', strtotime($now . ' + 2 days')),
-            "is_valid" => $request->is_valid,
+            "is_valid" => 1,
             "user_id" => $user->id,
         ]);
+
+        // $request->session()->put('userData', $user->id);
 
         return response()->json([
             "name" => $user->name,
             "type" => $user->user_type,
+            "user_id" => $user->id,
             "department_id" => $user->department_id,
-        ]);
+        ], 200);
     }
 
-    public function logout(Request $request) {
+    public function logout(Request $request)
+    {
         Session::where([
-             "user_id" => $request->user_id,
-         ])->update([
-             "is_valid" => 0,
-         ]);
-     }
+            "user_id" => $request->user_id,
+        ])->update([
+            "is_valid" => 0,
+        ]);
+    }
 }

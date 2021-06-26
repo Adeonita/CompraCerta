@@ -18,6 +18,7 @@ class AddressController extends Controller
             "complement" => "required",
             "cep" => "required",
             "user_id" => "required",
+            "state_id" => "required",
         ]);
 
         try {
@@ -54,7 +55,18 @@ class AddressController extends Controller
     public function getByUser($id)
     {
         try {
-            return Address::where('user_id', $id)->get();
+            return  Address::where('user_id', $id)
+                ->join('states', "addresses.state_id", '=', 'states.id')
+                ->select(
+                    'addresses.id',
+                    'addresses.public_area',
+                    'addresses.number',
+                    'addresses.district',
+                    'addresses.complement',
+                    'addresses.cep',
+                    'states.name',
+                )
+                ->get();
         } catch (Throwable $e) {
             return response(['error' => $e], 400);
         }
