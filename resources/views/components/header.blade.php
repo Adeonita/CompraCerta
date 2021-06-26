@@ -2,7 +2,7 @@
     <nav class='navbar navbar-light main w-100 d-flex justify-content-around'>
         <div>
             <a class='mx-2 col-sm-2 d-block d-sm-none logo-header' href="{{ url('/') }}">
-                <img src="./images/logo-sm.png" alt="CompraCerta" width="38" height="40">
+                <img src="{{ asset('/images/logo-sm.png') }}" alt="CompraCerta" width="38" height="40">
             </a>
         </div>
         <div>
@@ -23,7 +23,7 @@
 
 <div class='d-flex flex-row justify-content-center  my-4 mx-2 my-sm-1'>
     <a class='mx-2 col-sm-2 d-sm-block d-none' href="{{ url('/') }}">
-        <img src="./images/logo.png" alt="CompraCerta">
+        <img src="{{ asset('/images/logo.png') }}" alt="CompraCerta">
     </a>
     <div class='my-auto mx-2 row  col-sm-4 col-12'>
         <input type="text" class='form-control col' name="" id="">
@@ -43,8 +43,7 @@
                 <div class='w-100'>
                     <h4 class='text-success text-center'>Bem-vindo!</h4>
                 </div>
-                <form method="POST" action="{{ url('/login') }}">
-                    {!! csrf_field() !!}
+                <form id='login-form'>
                     <div class="mb-3">
                         <label for="emailInput" class="form-label">Email</label>
                         <input type="email" class="form-control" id="emailInput" name="emailInput"
@@ -59,8 +58,7 @@
                         <a href="{{ url('/recover') }}">Esqueci minha senha</a>
                     </div>
                     <div class=" w-100">
-
-                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                        <button type="submit" id='btnLogin-form' class="btn btn-primary w-100">Login</button>
                     </div>
 
                 </form>
@@ -73,3 +71,8 @@
         </div>
     </div>
 </div>
+
+@section('header-scripts')
+    <script src="{{ asset('js/login.js') }}"></script>
+    <script src="{{ asset('js/helpers.js') }}"></script>
+@endsection
