@@ -157,9 +157,6 @@ a {
 .product-img {
     width: 65%;
 }
-.description-control{
-    resize: none;
-}
 .product-description{
     font-size: 25px;
     font-style: unset;
