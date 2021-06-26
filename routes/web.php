@@ -23,8 +23,6 @@ use App\Http\Controllers\AddressController;
 ##  VIEWS
 
 Route::get("/", function () {
-    $session = session('key');
-
 
     return view('home/products');
 });
@@ -35,6 +33,10 @@ Route::get("/cart", function () {
 
 Route::get("/createAccount", function () {
     return view('account/createAccount');
+});
+
+Route::get("/login", function () {
+    return view('account/loginUser');
 });
 
 

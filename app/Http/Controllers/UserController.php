@@ -209,12 +209,12 @@ class UserController extends Controller
     {
 
         $request->validate([
-            "passwordUser" => "required",
-            "emailInput" => 'required'
+            "password" => "required",
+            "email" => 'required'
         ]);
 
-        $user = User::where('email', $request->emailInput)
-            ->where('password', $request->passwordUser)
+        $user = User::where('email', $request->email)
+            ->where('password', $request->password)
             ->first();
 
         if (!$user) {
@@ -232,13 +232,14 @@ class UserController extends Controller
             "user_id" => $user->id,
         ]);
 
-        $request->session()->put('userData', $user->id);
+        // $request->session()->put('userData', $user->id);
 
         return response()->json([
             "name" => $user->name,
             "type" => $user->user_type,
+            "user_id" => $user->id,
             "department_id" => $user->department_id,
-        ]);
+        ], 200);
     }
 
     public function logout(Request $request)
