@@ -2,14 +2,16 @@
     <nav class='navbar navbar-light main w-100 d-flex justify-content-around'>
         <div>
             <a class='mx-2 col-sm-2 d-block d-sm-none logo-header' href="{{ url('/') }}">
-                <img src="./images/logo-sm.png" alt="CompraCerta" width="38" height="40">
+                <img src="{{ asset('/images/logo-sm.png') }}" alt="CompraCerta" width="38" height="40">
             </a>
         </div>
-        <div>
-            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#loginModal">
+        <div id='mainHeader' class='d-flex flex-row'>
+            <p id='user-data'></p>
+            <a type="button" class="btn btn-success" {{-- data-bs-toggle="modal" data-bs-target="#loginModal"> --}} href="{{ url('/login') }}" id='btn-login'>
                 <i class="bi bi-person-fill"></i> Entrar
-            </button>
-            <a href="{{ url('/createAccount') }}" class="btn btn-primary mx-1"> <i class="bi bi-person-plus-fill"></i>
+            </a>
+            <a href="{{ url('/createAccount') }}" class="btn btn-primary mx-1" id='btn-create'> <i
+                    class="bi bi-person-plus-fill"></i>
                 Criar uma conta</a>
         </div>
         <div class='d-inline'>
@@ -22,7 +24,7 @@
 
 <div class='d-flex flex-row justify-content-center  my-4 mx-2 my-sm-1'>
     <a class='mx-2 col-sm-2 d-sm-block d-none' href="{{ url('/') }}">
-        <img src="./images/logo.png" alt="CompraCerta">
+        <img src="{{ asset('/images/logo.png') }}" alt="CompraCerta">
     </a>
     <div class='my-auto mx-2 row  col-sm-4 col-12'>
         <input type="text" class='form-control col' name="" id="">
@@ -31,7 +33,7 @@
 </div>
 
 
-<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+{{-- <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -42,23 +44,22 @@
                 <div class='w-100'>
                     <h4 class='text-success text-center'>Bem-vindo!</h4>
                 </div>
-                <form>
+                <form id='login-form'>
                     <div class="mb-3">
                         <label for="emailInput" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="emailInput" placeholder="seuemail@exemplo.com"
-                            required>
+                        <input type="email" class="form-control" id="emailInput" name="emailInput"
+                            placeholder="seuemail@exemplo.com" value='leaskywalker@gmail.com' required>
                     </div>
                     <div class="mb-3">
                         <label for="senhaUser" class="form-label">Senha</label>
-                        <input type="password" class="form-control" id="passwordUser" placeholder="" required
-                            minlength="6" maxlength="20">
+                        <input type="password" class="form-control" id="passwordUser" name="passwordUser" placeholder=""
+                            required minlength="6" maxlength="20" value='123456789'>
                     </div>
                     <div class="mb-3 mx-auto">
                         <a href="{{ url('/recover') }}">Esqueci minha senha</a>
                     </div>
                     <div class=" w-100">
-
-                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                        <button type="submit" id='btnLogin-form' class="btn btn-primary w-100">Login</button>
                     </div>
 
                 </form>
@@ -70,4 +71,38 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
+
+
+<script>
+    $(document).ready(function() {
+        let user = getUser();
+        if (user) {
+            setLoggedHeader()
+            $('#user-data').text('Olá, ' + user + "!");
+        }
+    });
+
+    function getUser() {
+        return localStorage.getItem('userName');
+    }
+
+    function logout() {
+        localStorage.clear();
+        location.reload();
+    }
+
+    function setLoggedHeader() {
+        $('#mainHeader').html(
+            `
+            <p id='user-data' class='my-auto mx-2'></p>
+            <a type="button" class="btn btn-success" href="{{ url('/user-profile') }}" id='btn-login'>
+                <i class="bi bi-person-fill"></i> Meu Perfil
+            </a>
+            <a onclick="logout()" class="btn btn-danger mx-1" id='btn-create'> <i class="bi bi-person-x-fill"></i>
+                Sair</a>
+        `
+        );
+    }
+
+</script>
