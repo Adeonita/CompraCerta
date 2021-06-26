@@ -10,14 +10,16 @@ class CartController extends Controller
     public function create(Request $request) {
         $request->validate([
             "name" => "required",
-            "items" => "required",
             "is_list" => "required",
             "status" => "required",
             "amount" => "required",
+            "user_id" => "required",
         ]);
-        
-        $order = Cart::create([
-            
-        ]);
+
+        try {
+            return Cart::create($request->all());
+        } catch(Exception $e){
+            return $e;
+        }
     }
 }
