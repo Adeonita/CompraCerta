@@ -6,30 +6,46 @@ $(document).ready(() => {
     }
 });
 
+var addressess = [];
 
 function getAddresses(id) {
     let data;
+    // let urlAddress = "{{ url('/address-option') }}";
     let table = $("#address-table");
     $.get("/address/" + id, response => {
         data = response.message;
-        console.log(data);
     }).done(() => {
         data.forEach(item => {
+            addressess.push(item);
             let row = `
-            <tr>
-            <td >${item.cep}</td>
-            <td >${item.public_area}</td>
-            <td >${item.number}</td>
-            <td >${item.district}</td>
-            <td >${item.city}</td>
-            <td >${item.state}</td>
-            <td >${item.complement}</td>
-            <td ><a class='btn btn-outline-success btn-sm mx-2 r-addres-button'
-            href='{{ url("/address-option") }}'><i class='bi bi-pencil-fill'></i></a>
+            <tr class='mx-1'>
+            <td>${item.cep}</td>
+            <td>${item.public_area}</td>
+            <td>${item.number}</td>
+            <td>${item.district}</td>
+            <td>${item.city}</td>
+            <td>${item.state}</td>
+            <td>${item.complement}</td>
+            <td><a class='btn btn-outline-success btn-sm mx-2 r-addres-button' onclick='myFunction(${item.id})'>
+            <i class='bi bi-pencil-fill'></i>
+            </a>
             </td>
             </tr>
             `;
             table.append(row);
         })
     });
+}
+
+
+function myFunction(addressId) {
+    //GET ROUTE TO REDIRECT
+    // console.log('tre')
+    // $.get(`/address/user/${addressId}`, data => {
+    // });
+    console.log(addressId);
+    console.log(addressess);
+    var qs = $.param(addressess[addressId - 1]);
+    // window.location = 'http://localhost/address-option';
+    window.location.href = '/address-option?' + qs;
 }

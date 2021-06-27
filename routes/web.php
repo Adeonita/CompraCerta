@@ -45,7 +45,7 @@ Route::get("/recover", function () {
 });
 
 Route::get("/address-option", function () {
-    return view('address-option/address-option');
+    return view('address-option/index');
 });
 
 Route::get("/purchasing-management", function () {
@@ -129,3 +129,4 @@ Route::post("/address", [AddressController::class, 'setAddress']);
 Route::get("/address/{id}", [AddressController::class, 'getByUser']);
 Route::post("/address/update", [AddressController::class, 'updateByUser']);
 Route::delete("/address/delete/{id}", [AddressController::class, 'delete']);
+Route::get("/address/user/{id}", [AddressController::class, 'getAddress']);

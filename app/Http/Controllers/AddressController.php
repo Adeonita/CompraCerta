@@ -53,6 +53,28 @@ class AddressController extends Controller
         }
     }
 
+    public function getAddress($id)
+    {
+        try {
+            $address = Address::where('id', $id)
+                ->first();
+            if ($address) {
+                return redirect()->route("address-option/index")->with("address", $address);
+                return response()->json([
+                    'success' => 'true',
+                    'message' => $address
+                ], 200);
+            } else {
+                return response()->json([
+                    'success' => 'false',
+                    'message' => "not adress"
+                ], 200);
+            }
+        } catch (Exception $e) {
+            return response()->json(['error' => "message"], 400);
+        }
+    }
+
     public function getByUser($id)
     {
         try {
@@ -67,6 +89,7 @@ class AddressController extends Controller
                     'addresses.cep',
                     'addresses.city',
                     'states.name as state',
+                    'states.id as state_id'
                 )
                 ->get();
             return response()->json([
