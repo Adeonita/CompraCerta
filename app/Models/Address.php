@@ -15,6 +15,7 @@ class Address extends Model
         "district",
         "complement",
         "cep",
+        "city",
         "user_id",
         "state_id",
     ];
@@ -23,7 +24,7 @@ class Address extends Model
     {
         return $this->belongsTo(User::class);
     }
-    
+
     public function state()
     {
         return $this->hasOne(State::class);

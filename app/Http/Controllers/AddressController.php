@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Address;
 use Exception;
+use Throwable;
+
 
 
 class AddressController extends Controller
@@ -17,6 +19,7 @@ class AddressController extends Controller
             "district" => "required",
             "complement" => "required",
             "cep" => "required",
+            "city" => "required",
             "user_id" => "required",
             "state_id" => "required",
         ]);
@@ -45,17 +48,79 @@ class AddressController extends Controller
             $address->cep = $request->cep ? $request->cep : $address->cep;
 
             $address->save();
-
-            return response()->json(['message' => 'ok'], 200);
         } catch (Throwable $e) {
             return response(['error' => $e], 400);
+        }
+    }
+
+
+    public function updateAddress(Request $request)
+    {
+        $request->validate([
+            "public_area" => "required",
+            "number" => "required",
+            "district" => "required",
+            "complement" => "required",
+            "cep" => "required",
+            "city" => "required",
+            "state_id" => "required",
+            "address_id" => "required",
+
+        ]);
+        try {
+            $address = Address::where('id', $request->address_id)->first();
+
+            if (!$address) {
+                return response()->json([
+                    'sucess' => 'false',
+                    'message' => 'endereco não encontrado'
+                ]);
+            } else {
+
+                $address->number = $request->number;
+                $address->public_area = $request->public_area;
+                $address->district = $request->district;
+                $address->complement = $request->complement;
+                $address->cep = $request->cep;
+                $address->city = $request->city;
+                $address->state_id = $request->state_id;
+
+                $address->save();
+                return response()->json([
+                    'success' => 'true',
+                    'message' => $address
+                ]);
+            }
+        } catch (Exception $e) {
+            return response(['error' => $e], 400);
+        }
+    }
+    public function getAddress($id)
+    {
+        try {
+            $address = Address::where('id', $id)
+                ->first();
+            if ($address) {
+                return redirect()->route("address-option/index")->with("address", $address);
+                return response()->json([
+                    'success' => 'true',
+                    'message' => $address
+                ], 200);
+            } else {
+                return response()->json([
+                    'success' => 'false',
+                    'message' => "not adress"
+                ], 200);
+            }
+        } catch (Exception $e) {
+            return response()->json(['error' => "message"], 400);
         }
     }
 
     public function getByUser($id)
     {
         try {
-            return  Address::where('user_id', $id)
+            $address = Address::where('user_id', $id)
                 ->join('states', "addresses.state_id", '=', 'states.id')
                 ->select(
                     'addresses.id',
@@ -64,9 +129,15 @@ class AddressController extends Controller
                     'addresses.district',
                     'addresses.complement',
                     'addresses.cep',
-                    'states.name',
+                    'addresses.city',
+                    'states.name as state',
+                    'states.id as state_id'
                 )
                 ->get();
+            return response()->json([
+                'success' => 'true',
+                'message' => $address
+            ], 200);
         } catch (Throwable $e) {
             return response(['error' => $e], 400);
         }

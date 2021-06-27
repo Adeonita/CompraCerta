@@ -3,10 +3,10 @@ const onlyLetter = document.querySelectorAll(".only-letter");
 
 onlyNumber.forEach(input => {
     input.addEventListener(
-        "keypress", 
-        function(e){
+        "keypress",
+        function(e) {
             const isDigit = /\d/u.test(e.key);
-            
+
             if (!isDigit) {
                 e.preventDefault();
             }
@@ -16,10 +16,10 @@ onlyNumber.forEach(input => {
 
 onlyLetter.forEach(input => {
     input.addEventListener(
-        "keypress", 
-        function(e){
-            const isLetter = /[A-Za-z]/u.test(e.key);   
-            
+        "keypress",
+        function(e) {
+            const isLetter = /[A-Za-z]/u.test(e.key);
+
             if (!isLetter) {
                 e.preventDefault();
             }
@@ -39,4 +39,12 @@ function checkFieldsById(field, fieldControl) {
         fieldValueControl.classList.remove("is-invalid");
     }
     return isValid;
+}
+
+function getLocalUser() {
+    return localStorage.getItem('userName');
+}
+
+function getLocalUserId() {
+    return localStorage.getItem('userId');
 }
