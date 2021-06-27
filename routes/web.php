@@ -25,6 +25,7 @@ use App\Http\Controllers\CartController;
 ##  VIEWS
 
 Route::get("/", function () {
+
     return view('home/products');
 });
 
@@ -34,6 +35,10 @@ Route::get("/cart", function () {
 
 Route::get("/createAccount", function () {
     return view('account/createAccount');
+});
+
+Route::get("/login", function () {
+    return view('account/loginUser');
 });
 
 

@@ -16,6 +16,10 @@
                     <h3><del>De 15,99</del></h3>
                     <p class="product-price">Por apenas <br> R$ {{ $product->price }}</p>
                 </div>
+                <div class="form-group">
+                    <label>Descrição</label>
+                    <textarea class="form-control" id="productDescription" rows="2"></textarea>
+                </div>
                 <div class="row mt-4">
                     <div><label for="quantity" class="quant">
                             <p>Quantidade</p>

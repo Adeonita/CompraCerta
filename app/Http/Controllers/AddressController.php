@@ -9,7 +9,8 @@ use Exception;
 
 class AddressController extends Controller
 {
-    public function setAddress(Request $request, Exception $e) {
+    public function setAddress(Request $request, Exception $e)
+    {
         $request->validate([
             "public_area" => "required",
             "number" => "required",
@@ -17,18 +18,20 @@ class AddressController extends Controller
             "complement" => "required",
             "cep" => "required",
             "user_id" => "required",
+            "state_id" => "required",
         ]);
 
         try {
-            
-            return Address::create($request->all());
-        }
-        catch (Throwable $e) {
+
+            Address::create($request->all());
+            return response()->json(['success' => true], 201);
+        } catch (Throwable $e) {
             return response()->json(['error' => $e], 400);
         }
     }
 
-    public function updateByUser(Request $request) {
+    public function updateByUser(Request $request)
+    {
         $request->validate([
             "user_id" => "required",
         ]);
@@ -42,27 +45,39 @@ class AddressController extends Controller
             $address->cep = $request->cep ? $request->cep : $address->cep;
 
             $address->save();
-            
-            return response()->json([ 'message'=> 'ok' ], 200);
-        }catch(Throwable $e) {
-            return response([ 'error' => $e ], 400);
+
+            return response()->json(['message' => 'ok'], 200);
+        } catch (Throwable $e) {
+            return response(['error' => $e], 400);
         }
     }
 
-    public function getByUser($id) {
+    public function getByUser($id)
+    {
         try {
-            return Address::where('user_id', $id)->get();
-        }catch (Throwable $e) { 
-            return response([ 'error' => $e ], 400);
+            return  Address::where('user_id', $id)
+                ->join('states', "addresses.state_id", '=', 'states.id')
+                ->select(
+                    'addresses.id',
+                    'addresses.public_area',
+                    'addresses.number',
+                    'addresses.district',
+                    'addresses.complement',
+                    'addresses.cep',
+                    'states.name',
+                )
+                ->get();
+        } catch (Throwable $e) {
+            return response(['error' => $e], 400);
         }
     }
 
-    public function delete($id) {
+    public function delete($id)
+    {
         try {
             return Address::where('id', $id)->delete();
-        }catch (Throwable $e) { 
-            return response([ 'error' => $e ], 400);
+        } catch (Throwable $e) {
+            return response(['error' => $e], 400);
         }
     }
 }
-
