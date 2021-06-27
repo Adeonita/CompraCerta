@@ -44,7 +44,7 @@ function getAddresses(id) {
 
 
 function myFunction(addressId) {
-    console.log(addressId);
+    // console.log(addressId);
     // console.log(addressess);
     var qs = $.param(addressess[addressId]);
     window.location.href = '/address-option?' + qs;

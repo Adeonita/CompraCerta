@@ -1,3 +1,41 @@
+var adressData;
+
+function getParams() {
+    var result = {};
+    var tmp = [];
+    var reg = /\+/g;
+
+    location.search
+        .substr(1)
+        .split("&")
+        .forEach(function(item) {
+            tmp = item.split("=");
+            result[tmp[0]] = decodeURIComponent(tmp[1]);
+        });
+    Object.entries(result).forEach(([key, item]) => {
+        result[key] = item.replace(reg, ' ');
+    })
+    return result;
+}
+
+location.getParams = getParams;
+
+$(document).ready(() => {
+
+    addressData = location.getParams();
+    console.log(addressData);
+    if (Object.entries(addressData).length > 1) {
+
+        document.getElementById("streetUserRegister").value = addressData.public_area;
+        document.getElementById("numberUserRegister").value = addressData.number;
+        document.getElementById("districtUserRegister").value = addressData.district;
+        document.getElementById("complementUserRegister").value = addressData.complement;
+        document.getElementById("cepUserRegister").value = addressData.cep;
+        document.getElementById("cityUserRegister").value = addressData.city;
+    }
+});
+
+
 $('#address-form').on('submit', e => {
     postForm();
     e.preventDefault();
@@ -30,11 +68,12 @@ async function postForm() {
     };
 
     if (addressData.id) {
-        addressForm = {...addressForm, id: addressData.id }
-        updateAddress(addressForm);
+        addressForm = {...addressForm, address_id: addressData.id }
+        await updateAddress(addressForm);
     } else {
-        let res = await createAddress(addressForm);
+        await createAddress(addressForm);
     }
+    window.location.href = '/my-address';
 
 }
 
@@ -52,50 +91,13 @@ function createAddress(data) {
 
 
 function updateAddress(data) {
-    let response = $.post("http://localhost/address/",
+    let response = $.post("http://localhost/address/update/",
         data).done((response) => {
         if (response.success) {
-            alert("Endereço adicionado com sucesso!")
+            alert("Endereço atualizado com sucesso!")
         } else {
-            alert("Não foi possível criar novo endereço.")
+            alert("Não foi atualizar o endereço.")
         }
     });
     return response;
 }
-
-
-function getParams() {
-    var result = {};
-    var tmp = [];
-    var reg = /\+/g;
-
-    location.search
-        .substr(1)
-        .split("&")
-        .forEach(function(item) {
-            tmp = item.split("=");
-            result[tmp[0]] = decodeURIComponent(tmp[1]);
-        });
-    Object.entries(result).forEach(([key, item]) => {
-        result[key] = item.replace(reg, ' ');
-    })
-    return result;
-}
-
-location.getParams = getParams;
-
-var adressData;
-$(document).ready(() => {
-
-
-    addressData = location.getParams();
-    if (Object.entries(addressData).length > 1) {
-
-        document.getElementById("streetUserRegister").value = addressData.public_area;
-        document.getElementById("numberUserRegister").value = addressData.number;
-        document.getElementById("districtUserRegister").value = addressData.district;
-        document.getElementById("complementUserRegister").value = addressData.complement;
-        document.getElementById("cepUserRegister").value = addressData.cep;
-        document.getElementById("cityUserRegister").value = addressData.city;
-    }
-});
