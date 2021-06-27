@@ -10,6 +10,8 @@ use App\Http\Controllers\DepartmentsController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AddressController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\PaymentController;
+
 
 
 /*
@@ -136,3 +138,8 @@ Route::get("/address/user/{id}", [AddressController::class, 'getAddress']);
 
 Route::post("/cart/create", [CartController::class, 'create']);
 Route::get("/cart/get/{userId}", [CartController::class, 'getByUser']);
+<<<<<<< HEAD
+=======
+
+Route::post("/payment", [PaymentController::class, 'create']);
+>>>>>>> 94f66611101b8fc9f9b72ff2915994eda50c1be9

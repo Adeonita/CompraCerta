@@ -18,7 +18,7 @@ class CartController extends Controller
         ]);
         
         try {
-
+            //TODO: Gerar registro na tabela de entrada e saída
             $cart = Cart::create($request->all());
     
             $items = $request->items;
