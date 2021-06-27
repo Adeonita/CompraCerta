@@ -10,7 +10,7 @@
         <div class="col-md-3">
         </div>
         <form action="" class="form-control p-4">
-            <table id="my-address" class="table table-hover">
+            <table id="address-table" class="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col">Número do CEP</th>
@@ -24,7 +24,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @for ($i = 0; $i < 5; $i++)
+                    @for ($i = 0; $i < 2; $i++)
                         <tr>
                             <td id="UserCepM">45912643</td>
                             <td scope="row" id="UserStreetM">
@@ -52,14 +52,5 @@
             <a class='btn btn-primary mx-2 r-addres-button' href="{{ url('/address-option') }}">Adicionar Endereço</a>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
+    <script src="{{ asset('js/userAddressess.js') }}"></script>
 @endsection

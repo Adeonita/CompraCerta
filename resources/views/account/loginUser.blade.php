@@ -9,7 +9,7 @@
             <div class="mb-3">
                 <label for="emailInput" class="form-label">Email</label>
                 <input type="email" class="form-control" id="emailInput" name="emailInput"
-                    placeholder="seuemail@exemplo.com" value='leaskywalker@gmail.com' required>
+                    placeholder="seuemail@exemplo.com" value='lukeskywalker@gmail.com' required>
             </div>
             <div class="mb-3">
                 <label for="senhaUser" class="form-label">Senha</label>
@@ -27,5 +27,4 @@
     </div>
 
     <script src="{{ asset('js/login.js') }}"></script>
-    <script src="{{ asset('js/helpers.js') }}"></script>
 @endsection

@@ -89,7 +89,7 @@
 
     function logout() {
         localStorage.clear();
-        location.reload();
+        window.location.href = '/';
     }
 
     function setLoggedHeader() {
