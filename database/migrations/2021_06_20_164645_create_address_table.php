@@ -20,6 +20,7 @@ class CreateAddressTable extends Migration
             $table->string("district");
             $table->string("complement");
             $table->string("cep");
+            $table->string("city");
             $table->timestamps();
 
             $table->unsignedBigInteger("user_id");

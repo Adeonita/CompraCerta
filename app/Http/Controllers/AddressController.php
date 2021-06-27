@@ -19,6 +19,7 @@ class AddressController extends Controller
             "district" => "required",
             "complement" => "required",
             "cep" => "required",
+            "city" => "required",
             "user_id" => "required",
             "state_id" => "required",
         ]);
@@ -47,8 +48,6 @@ class AddressController extends Controller
             $address->cep = $request->cep ? $request->cep : $address->cep;
 
             $address->save();
-
-            return response()->json(['message' => 'ok'], 200);
         } catch (Throwable $e) {
             return response(['error' => $e], 400);
         }
@@ -57,7 +56,7 @@ class AddressController extends Controller
     public function getByUser($id)
     {
         try {
-            return  Address::where('user_id', $id)
+            $address = Address::where('user_id', $id)
                 ->join('states', "addresses.state_id", '=', 'states.id')
                 ->select(
                     'addresses.id',
@@ -66,9 +65,14 @@ class AddressController extends Controller
                     'addresses.district',
                     'addresses.complement',
                     'addresses.cep',
+                    'addresses.city',
                     'states.name as state',
                 )
                 ->get();
+            return response()->json([
+                'success' => 'true',
+                'message' => $address
+            ], 200);
         } catch (Throwable $e) {
             return response(['error' => $e], 400);
         }

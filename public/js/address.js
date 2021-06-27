@@ -22,8 +22,8 @@ async function postForm() {
         cep: document.getElementById("cepUserRegister").value,
         user_id: 6,
         state_id: document.getElementById("stateList").value,
+        city: document.getElementById("cityUserRegister").value,
     };
-    // city: document.getElementById("cityUserRegister").value,
 
     let res = await createAddress(addressData);
 
