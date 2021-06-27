@@ -133,3 +133,4 @@ Route::post("/address/update", [AddressController::class, 'updateByUser']);
 Route::delete("/address/delete/{id}", [AddressController::class, 'delete']);
 
 Route::post("/cart/create", [CartController::class, 'create']);
+Route::get("/cart/get/{userId}", [CartController::class, 'getByUser']);
