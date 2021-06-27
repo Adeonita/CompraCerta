@@ -10,15 +10,11 @@ class Payment extends Model
     use HasFactory;
 
     protected $fillable = [
-        "date",
         "number",
         "cvv",
-        "name",
+        "nameUser",
         "dueDate",
+        "nicknameCard",
+        "cart_id"
     ];
-
-    public function cart()
-    {
-        return $this->hasOne(Cart::class);
-    }
 }
