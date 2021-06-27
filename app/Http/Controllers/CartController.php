@@ -48,4 +48,11 @@ class CartController extends Controller
             ], 400);
         }
     }
+
+    public function getByUser($userId){
+        return Cart::where("user_id", $userId)
+        ->join("items_orders", "carts.id", "=", "items_orders.cart_id")
+        ->join("products", "products.id", "=", "items_orders.product_id")
+        ->get();
+    }
  }
