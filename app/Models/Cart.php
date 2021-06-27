@@ -11,10 +11,10 @@ class Cart extends Model
 
     protected $fillable = [
         "name",
-        "items",
-        "isList",
+        "is_list",
         "status",
         "amount",
+        "user_id",
     ];
 
     public function user()

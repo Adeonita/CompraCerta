@@ -24,6 +24,9 @@ class CreateAddressTable extends Migration
 
             $table->unsignedBigInteger("user_id");
             $table->foreign("user_id")->references("id")->on("users")->onDelete("cascade");
+
+            $table->unsignedBigInteger("state_id");
+            $table->foreign("state_id")->references("id")->on("states")->onDelete("cascade");
         });
     }
 

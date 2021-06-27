@@ -18,7 +18,7 @@
                 </div>
                 <div class="form-group">
                     <label class = "product-description">Descrição</label><br>
-                    <h5>{{$product->description}}</h5>
+                    <h5>{{$product->description}}</h5>             
                 </div>
                 <div class="row mt-4">
                     <div><label for="quantity" class="quant">

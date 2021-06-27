@@ -9,6 +9,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\DepartmentsController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AddressController;
+use App\Http\Controllers\CartController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +25,7 @@ use App\Http\Controllers\AddressController;
 ##  VIEWS
 
 Route::get("/", function () {
+
     return view('home/products');
 });
 
@@ -32,6 +35,10 @@ Route::get("/cart", function () {
 
 Route::get("/createAccount", function () {
     return view('account/createAccount');
+});
+
+Route::get("/login", function () {
+    return view('account/loginUser');
 });
 
 
@@ -124,3 +131,6 @@ Route::post("/address", [AddressController::class, 'setAddress']);
 Route::get("/address/{id}", [AddressController::class, 'getByUser']);
 Route::post("/address/update", [AddressController::class, 'updateByUser']);
 Route::delete("/address/delete/{id}", [AddressController::class, 'delete']);
+
+Route::post("/cart/create", [CartController::class, 'create']);
+Route::get("/cart/get/{userId}", [CartController::class, 'getByUser']);

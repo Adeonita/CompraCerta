@@ -7,7 +7,8 @@ use App\Models\State;
 
 class StateController extends Controller
 {
-    public function show(){
-        return State::all("name", "initials");
+    public function show()
+    {
+        return State::all("id", "name", "initials");
     }
 }
