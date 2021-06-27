@@ -7,7 +7,7 @@
         </div>
         <div id='mainHeader' class='d-flex flex-row'>
             <p id='user-data'></p>
-            <a type="button" class="btn btn-success" {{-- data-bs-toggle="modal" data-bs-target="#loginModal"> --}} href="{{ url('/login') }}" id='btn-login'>
+            <a type="button" class="btn btn-success" href="{{ url('/login') }}" id='btn-login'>
                 <i class="bi bi-person-fill"></i> Entrar
             </a>
             <a href="{{ url('/createAccount') }}" class="btn btn-primary mx-1" id='btn-create'> <i
@@ -31,47 +31,6 @@
         <button class="btn main main-btn col-4 col-sm-4"><i class="bi bi-search"></i> Buscar</button>
     </div>
 </div>
-
-
-{{-- <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="loginModalLabel">Login</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class='w-100'>
-                    <h4 class='text-success text-center'>Bem-vindo!</h4>
-                </div>
-                <form id='login-form'>
-                    <div class="mb-3">
-                        <label for="emailInput" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="emailInput" name="emailInput"
-                            placeholder="seuemail@exemplo.com" value='leaskywalker@gmail.com' required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="senhaUser" class="form-label">Senha</label>
-                        <input type="password" class="form-control" id="passwordUser" name="passwordUser" placeholder=""
-                            required minlength="6" maxlength="20" value='123456789'>
-                    </div>
-                    <div class="mb-3 mx-auto">
-                        <a href="{{ url('/recover') }}">Esqueci minha senha</a>
-                    </div>
-                    <div class=" w-100">
-                        <button type="submit" id='btnLogin-form' class="btn btn-primary w-100">Login</button>
-                    </div>
-
-                </form>
-            </div>
-            <div class="modal-footer">
-                <a href="{{ url('/createAccount') }}" class="btn btn-outline-secondary w-100">
-                    Cadastrar
-                </a>
-            </div>
-        </div>
-    </div>
-</div> --}}
 
 
 <script>

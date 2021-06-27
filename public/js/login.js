@@ -40,7 +40,3 @@ function saveUser(userData) {
     localStorage.setItem("userName", userData.name);
     localStorage.setItem("departmentId", userData.department_id);
 }
-
-function logoutUser() {
-
-}

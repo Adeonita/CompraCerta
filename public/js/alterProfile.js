@@ -1,3 +1,33 @@
+$(document).ready(() => {
+
+    let userId = getLocalUserId();
+    getUserData(userId);
+    if (userData) {
+        document.getElementById("nameUserProfile").value = userData.name
+        document.getElementById("lastNameUserProfile").value = userData.last_name
+        document.getElementById("cpfUserProfile").value = userData.cpf
+        document.getElementById("emailUserProfile").value = userData.email
+        document.getElementById("birthUserProfile").value = userData.birth_date
+    }
+});
+
+var userData;
+
+function getUserData(userId) {
+    $.get(`http://localhost/users/${userId}`, response => {
+        if (response.success) {
+            userData = response.message[0];
+            if (userData) {
+                document.getElementById("nameUserProfile").value = userData.name
+                document.getElementById("lastNameUserProfile").value = userData.last_name
+                document.getElementById("cpfUserProfile").value = userData.cpf
+                document.getElementById("emailUserProfile").value = userData.email
+                document.getElementById("birthUserProfile").value = userData.birth_date
+            }
+        }
+    });
+}
+
 function disableForm() {
 
     if (document.getElementById("formProfile").disabled == true) {
@@ -20,6 +50,8 @@ async function updateData() {
     let res;
     if (isValid) {
         res = await updateUser(userData);
+        updateUserName(userData.name);
+        disableForm();
     } else {
         alert('Existe campo(s) inválido(s)');
     }
@@ -57,7 +89,7 @@ async function updatePassword() {
         password: document.getElementById("passwordActual").value,
         new_password: document.getElementById("newPassword").value,
         control_password: document.getElementById("newPasswordCheck").value,
-        email: "teste@gmail.com"
+        email: document.getElementById("emailUserProfile").value
     }
     let isCorrectPassword = checkFieldsById("newPassword", "newPasswordCheck");
     let response;

@@ -45,6 +45,10 @@ function getLocalUser() {
     return localStorage.getItem('userName');
 }
 
+function updateUserName(username) {
+    localStorage.setItem('userName', username);
+}
+
 function getLocalUserId() {
     return localStorage.getItem('userId');
 }
