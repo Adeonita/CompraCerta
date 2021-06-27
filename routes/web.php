@@ -70,6 +70,10 @@ Route::get("/my-address", function () {
     return view('/my-address/my-address');
 });
 
+Route::get("/my-stored-carts", function () {
+    return view('/my-stored-carts/my-stored-carts');
+});
+
 Route::get("/historic-page", function () {
     return view('historic-page/historic-page');
 });
@@ -134,3 +138,6 @@ Route::delete("/address/delete/{id}", [AddressController::class, 'delete']);
 
 Route::post("/cart/create", [CartController::class, 'create']);
 Route::get("/cart/get/{userId}", [CartController::class, 'getByUser']);
+
+
+
