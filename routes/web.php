@@ -9,6 +9,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\DepartmentsController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AddressController;
+use App\Http\Controllers\CartController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -131,3 +133,6 @@ Route::post("/address/update/user", [AddressController::class, 'updateByUser']);
 Route::post("/address/update", [AddressController::class, 'updateAddress']);
 Route::delete("/address/delete/{id}", [AddressController::class, 'delete']);
 Route::get("/address/user/{id}", [AddressController::class, 'getAddress']);
+
+Route::post("/cart/create", [CartController::class, 'create']);
+Route::get("/cart/get/{userId}", [CartController::class, 'getByUser']);
