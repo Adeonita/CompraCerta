@@ -16,7 +16,8 @@ function getAddresses(id) {
         data = response.message;
     }).done(() => {
         data.forEach(item => {
-            addressess.push(item);
+            addressess[item.id] = item;
+
             let row = `
             <tr class='mx-1'>
             <td>${item.cep}</td>
@@ -35,17 +36,16 @@ function getAddresses(id) {
             table.append(row);
         })
     });
+    // if (addressess.length == 0) {
+    //     let row = `<td class='mx-auto'>Você não possui Endereços Cadastrados</td>`;
+    //     table.append(row);
+    // }
 }
 
 
 function myFunction(addressId) {
-    //GET ROUTE TO REDIRECT
-    // console.log('tre')
-    // $.get(`/address/user/${addressId}`, data => {
-    // });
     console.log(addressId);
-    console.log(addressess);
-    var qs = $.param(addressess[addressId - 1]);
-    // window.location = 'http://localhost/address-option';
+    // console.log(addressess);
+    var qs = $.param(addressess[addressId]);
     window.location.href = '/address-option?' + qs;
 }
