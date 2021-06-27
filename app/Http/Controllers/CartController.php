@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cart;
+use App\Models\ItemsOrder;
 
 class CartController extends Controller
 {
@@ -15,11 +16,36 @@ class CartController extends Controller
             "amount" => "required",
             "user_id" => "required",
         ]);
-
+        
         try {
-            return Cart::create($request->all());
-        } catch(Exception $e){
-            return $e;
+
+            $cart = Cart::create($request->all());
+    
+            $items = $request->items;
+            
+            $this->addItems($cart->id, $items);
+
+        }catch(Exception $e){
+            response()->json([
+                'message' => $e
+            ], 400);
         }
     }
-}
+
+    private function addItems($cartId, $items) {
+        
+        try {
+            for ($i = 0; $i < count($items); $i++) {
+                ItemsOrder::create([
+                    "amount" => $items[$i]["amount"],
+                    "product_id" => $items[$i]["product_id"],
+                    "cart_id" => $cartId,
+                ]);
+            }
+        } catch(Exception $e) {
+            response()->json([
+                'message' => $e
+            ], 400);
+        }
+    }
+ }
