@@ -7,27 +7,51 @@ $.get("http://localhost/states", function(data) {
     data.forEach(item => {
         $('#stateList').append($('<option>', {
             value: item.id,
-            text: item.name
+            text: item.name,
         }));
     });
+    if (addressData) {
+        $("#stateList").val(addressData.state_id);
+    }
 });
+
+
 async function postForm() {
-    addressData = {
+
+    addressForm = {
         public_area: document.getElementById("streetUserRegister").value,
         number: document.getElementById("numberUserRegister").value,
         district: document.getElementById("districtUserRegister").value,
         complement: document.getElementById("complementUserRegister").value,
         cep: document.getElementById("cepUserRegister").value,
-        user_id: 6,
+        user_id: getLocalUserId(),
         state_id: document.getElementById("stateList").value,
         city: document.getElementById("cityUserRegister").value,
     };
 
-    let res = await createAddress(addressData);
+    if (addressData.id) {
+        addressForm = {...addressForm, id: addressData.id }
+        updateAddress(addressForm);
+    } else {
+        let res = await createAddress(addressForm);
+    }
 
 }
 
 function createAddress(data) {
+    let response = $.post("http://localhost/address/",
+        data).done((response) => {
+        if (response.success) {
+            alert("Endereço adicionado com sucesso!")
+        } else {
+            alert("Não foi possível criar novo endereço.")
+        }
+    });
+    return response;
+}
+
+
+function updateAddress(data) {
     let response = $.post("http://localhost/address/",
         data).done((response) => {
         if (response.success) {
@@ -59,19 +83,19 @@ function getParams() {
 }
 
 location.getParams = getParams;
+
+var adressData;
 $(document).ready(() => {
 
 
-    let address = location.getParams();
-    if (Object.entries(address).length > 1) {
+    addressData = location.getParams();
+    if (Object.entries(addressData).length > 1) {
 
-        document.getElementById("streetUserRegister").value = address.public_area;
-        document.getElementById("numberUserRegister").value = address.number;
-        document.getElementById("districtUserRegister").value = address.district;
-        document.getElementById("complementUserRegister").value = address.complement;
-        document.getElementById("cepUserRegister").value = address.cep;
-        document.getElementById("cityUserRegister").value = address.city;
-        $("#stateList").val(address.state_id).change();
+        document.getElementById("streetUserRegister").value = addressData.public_area;
+        document.getElementById("numberUserRegister").value = addressData.number;
+        document.getElementById("districtUserRegister").value = addressData.district;
+        document.getElementById("complementUserRegister").value = addressData.complement;
+        document.getElementById("cepUserRegister").value = addressData.cep;
+        document.getElementById("cityUserRegister").value = addressData.city;
     }
-    // user_id: 6,
 });
