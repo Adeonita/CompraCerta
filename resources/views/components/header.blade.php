@@ -55,7 +55,7 @@
         $('#mainHeader').html(
             `
             <p id='user-data' class='my-auto mx-2'></p>
-            <a type="button" class="btn btn-success" href="{{ url('/user-profile') }}" id='btn-login'>
+            <a type="button" class="btn btn-success" href="{{ url('/profile') }}" id='btn-login'>
                 <i class="bi bi-person-fill"></i> Meu Perfil
             </a>
             <a onclick="logout()" class="btn btn-danger mx-1" id='btn-create'> <i class="bi bi-person-x-fill"></i>

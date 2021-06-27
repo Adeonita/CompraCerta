@@ -64,7 +64,7 @@ Route::get("/evaluate-purchase", function () {
     return view('evaluate-purchase/index');
 });
 
-Route::get("/user-profile", function () {
+Route::get("/profile", function () {
     return view('user-profile/user-profile');
 });
 

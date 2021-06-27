@@ -2,12 +2,9 @@ $(document).ready(() => {
 
     let userId = getLocalUserId();
     getUserData(userId);
-    if (userData) {
-        document.getElementById("nameUserProfile").value = userData.name
-        document.getElementById("lastNameUserProfile").value = userData.last_name
-        document.getElementById("cpfUserProfile").value = userData.cpf
-        document.getElementById("emailUserProfile").value = userData.email
-        document.getElementById("birthUserProfile").value = userData.birth_date
+    if (!userId) {
+        window.location.href = '/';
+
     }
 });
 
