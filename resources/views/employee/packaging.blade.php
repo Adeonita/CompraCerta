@@ -13,7 +13,7 @@
                     <tr>
                         <th scope="col">Quantidade</th>
                         <th scope="col">Produto</th>
-                        <th scope="col">Separado</th>
+                        <th scope="col">Empacotado</th>
                     </tr>
                 </thead>
                 <tbody>
