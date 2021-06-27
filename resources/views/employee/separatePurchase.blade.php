@@ -34,10 +34,10 @@
                 </tbody>
             </table>
             <div class="d-flex flex-row-reverse">
-                <a href="{{ asset('packaging') }}" class="btn btn-success btn-sm disabled"
+                <a href="{{ asset('purchasing-management') }}" class="btn btn-success btn-sm disabled"
                     id="complete-separate-purchase">
                     <i class="bi bi-check"></i>
-                    Enviar para Separação
+                    Finalizar
                 </a>
             </div>
         </form>
