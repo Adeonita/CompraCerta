@@ -53,6 +53,48 @@ class AddressController extends Controller
         }
     }
 
+
+    public function updateAddress(Request $request)
+    {
+        $request->validate([
+            "public_area" => "required",
+            "number" => "required",
+            "district" => "required",
+            "complement" => "required",
+            "cep" => "required",
+            "city" => "required",
+            "state_id" => "required",
+            "address_id" => "required",
+
+        ]);
+        try {
+            $address = Address::where('id', $request->address_id)->first();
+
+            if (!$address) {
+                return response()->json([
+                    'sucess' => 'false',
+                    'message' => 'endereco não encontrado'
+                ]);
+            } else {
+
+                $address->number = $request->number;
+                $address->public_area = $request->public_area;
+                $address->district = $request->district;
+                $address->complement = $request->complement;
+                $address->cep = $request->cep;
+                $address->city = $request->city;
+                $address->state_id = $request->state_id;
+
+                $address->save();
+                return response()->json([
+                    'success' => 'true',
+                    'message' => $address
+                ]);
+            }
+        } catch (Exception $e) {
+            return response(['error' => $e], 400);
+        }
+    }
     public function getAddress($id)
     {
         try {

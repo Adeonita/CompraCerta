@@ -127,6 +127,7 @@ Route::post("/products/find", [ProductController::class, 'getByName']);
 
 Route::post("/address", [AddressController::class, 'setAddress']);
 Route::get("/address/{id}", [AddressController::class, 'getByUser']);
-Route::post("/address/update", [AddressController::class, 'updateByUser']);
+Route::post("/address/update/user", [AddressController::class, 'updateByUser']);
+Route::post("/address/update", [AddressController::class, 'updateAddress']);
 Route::delete("/address/delete/{id}", [AddressController::class, 'delete']);
 Route::get("/address/user/{id}", [AddressController::class, 'getAddress']);
