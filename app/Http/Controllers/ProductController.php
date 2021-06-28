@@ -20,7 +20,10 @@ class ProductController extends Controller
     }
 
     public function getByName(Request $request) {
-        return Product::where('name', 'like', '%' . $request->name . '%')->get();
+        $search = $_POST['name'];
+
+        $products = Product::where('name', 'like', '%' . $search . '%')->get();
+        return view("/category/index")->with("products", $products);
     }
 
     private function formmatPrice($price) {
