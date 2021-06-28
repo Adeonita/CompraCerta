@@ -25,6 +25,7 @@ creditCardNumber.addEventListener(
 );
 
 $("#paymentForm").on('submit', () => {
-    alert('Compra Realizada!');
 
+    alert('Compra Realizada!');
+    localStorage.removeItem("cestaCart");
 })
