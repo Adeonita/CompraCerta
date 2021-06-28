@@ -5,27 +5,42 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Payment;
 use App\Models\Cart;
+use App\Http\Services\CartService;
 use Exception;
 
 
 class PaymentController extends Controller
 {
     public function create(Request $request){
-        $request->validate([
+        $data = $request->validate([
             "number" => "required",
             "cvv" => "required",
             "nameUser" => "required",
             "dueDate" => "required",
-            "nicknameCard" => "required",
-            "cart_id" => "required",
+            "cart" => "required",
+            "user_id" => "required"
         ]);
 
         try {
-            Payment::create($request->all());
+            $cartItems = json_decode($request->input('cart'), true);
+            $total = 0;
 
-            //TODO: Gerar registro na tabela de entrada e saída
-            Cart::where(["id" => $request->cart_id])
-            ->update(["status" => "in_separation"]);
+            foreach( $cartItems as $item ) {
+                $total += $item['product']['price'];
+            }
+
+            $cart = CartService::create([
+                "user_id" => $request->input('user_id'),
+                "cart" => $request->input('cart'),
+                "name" => "",
+                "total" => $total,
+            ]);
+            
+            $data['cart_id'] = $cart->id;
+
+            $payment = Payment::create($data);
+
+            return redirect('/');
 
         } catch(Exception $e) {
             return $e;
