@@ -28,11 +28,13 @@
                 </div>
                 <div class="row mt-4">
                     <div>
-                        <a href="{{ url('/') }}" class="btn btn-success"><i class="bi bi-cart-plus"></i> Comprar</a>             
+                        <button product="{{ $product }}" id="purchase-button" class="btn btn-success">
+                            <i class="bi bi-cart-plus"></i> Comprar
+                        </button>             
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+    <script src="{{ asset('js/product.js') }}"></script>
 @endsection
