@@ -13,7 +13,7 @@ class Cart extends Model
         "name",
         "is_list",
         "status",
-        "amount",
+        "total",
         "user_id",
     ];
 
