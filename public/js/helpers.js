@@ -57,3 +57,8 @@ function getLocalUserDepartment() {
 function updateUserName(username) {
     localStorage.setItem('userName', username);
 }
+
+
+function getDeliveryAddress() {
+    return localStorage.getItem("deliveryAddress");
+}

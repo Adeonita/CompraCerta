@@ -51,6 +51,9 @@ Route::get("/recover", function () {
 Route::get("/address-option", function () {
     return view('address-option/index');
 });
+Route::get("/address-select", function () {
+    return view('address-option/address-select');
+});
 
 Route::get("/department/Adminstracao", function () {
     return (view('employee/purchasingManagement'));
