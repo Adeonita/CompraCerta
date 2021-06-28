@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Services\CartService;
+use App\Models\Cart;
 
 class CartController extends Controller
 {
@@ -19,20 +20,9 @@ class CartController extends Controller
         
         try {
             //TODO: Gerar registro na tabela de entrada e saída
-            CartService::create($request->all())
+            CartService::create($request->all());
 
         }catch(Exception $e){
-            response()->json([
-                'message' => $e
-            ], 400);
-        }
-    }
-
-    private function addItems() {
-        
-        try {
-            
-        } catch(Exception $e) {
             response()->json([
                 'message' => $e
             ], 400);
