@@ -6,6 +6,69 @@
         "image": "feijao-camil.png"
     },
     {
+        "cat_id": 1,
+        "name": "Melancia",
+        "description": "Melancia inteira Frescas",
+        "price": 8.7,
+        "image": "melancia.png"
+    },
+    {
+        "cat_id": 1,
+        "name": "Tomate",
+        "description": "Tomates Frescos, valor do kilo",
+        "price": 4.2,
+        "image": "tomate.jpg"
+    },
+    {
+        "cat_id": 1,
+        "name": "Cebola",
+        "description": "Cebolas Frescas, valor do kilo",
+        "price": 3.5,
+        "image": "cebola.png"
+    },
+    {
+        "cat_id": 2,
+        "name": "Skol Beats Senses",
+        "description": "Skol beats Senses, valor unitario",
+        "price": 3,
+        "image": "skol.png"
+    },
+    {
+        "cat_id": 2,
+        "name": "Guarana Antarctica",
+        "description": "Guarana Antarctica 2 litros",
+        "price": 5.2,
+        "image": "guarana.png"
+    },
+    {
+        "cat_id": 2,
+        "name": "Suco de Uva Del Vale",
+        "description": "Suco de Uva Del Vale 2 litros",
+        "price": 6.5,
+        "image": "suco.jpg"
+    },
+    {
+        "cat_id": 3,
+        "name": "Biscoito Bis",
+        "description": "Biscoito Bis sempre vale repetir",
+        "price": 3.2,
+        "image": "bis.png"
+    },
+    {
+        "cat_id": 3,
+        "name": "Biscoito Maria",
+        "description": "Biscoito Maria, otimo com café",
+        "price": 4.2,
+        "image": "biscoito-maria.png"
+    },
+    {
+        "cat_id": 3,
+        "name": "Biscoito Recheado Vilma",
+        "description": "Biscoito recheado sabor chocolate",
+        "price": 3,
+        "image": "biscoito-vilma.jpg"
+    },
+    {
         "cat_id": 4,
         "name": "Acém Bovino",
         "description": "Acém Bovino, 500g",
