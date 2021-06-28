@@ -26,10 +26,7 @@ use App\Http\Controllers\PaymentController;
 */
 ##  VIEWS
 
-Route::get("/", function () {
-
-    return view('home/products');
-});
+Route::get("/", [ProductController::class, 'show']);
 
 Route::get("/cart", function () {
     return view('cart/cart');
