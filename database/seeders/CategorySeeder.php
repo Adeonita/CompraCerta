@@ -21,7 +21,7 @@ class CategorySeeder extends Seeder
             "Carnes",
             "Cereais",
             "Congelados",
-            "laticínios",
+            "Laticínios",
             "Higiene",
             "Mercearia",
         ];

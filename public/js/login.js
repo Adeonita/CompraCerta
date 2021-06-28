@@ -31,7 +31,7 @@ function postLogin(loginData) {
             return false;
         }
     }).fail(() => {
-        alert("credenciais incorretas");
+        alert("credenciais invalidas");
 
     });
 

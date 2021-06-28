@@ -22,7 +22,9 @@ function getHistory(userId) {
             let items = data.filter(value => {
                 return value.cart_id == item.cart_id;
             });
-            total = items.reduce((a, b) => a + b.total, 0);
+            console.log(items);
+            let total = 0
+            items.forEach(item => total += item.price * item.amount);
             let row = `
                                     <div class="historic-body mt-3">
                                         <div class="row user-panel-historic">
@@ -41,13 +43,13 @@ function getHistory(userId) {
                                                                     <fieldset>
                                                             </label>
                                                         </div>
-                                                        <p>Pedido nº ${item.cart_id},Valor: R$ ${item.total}</p>
+                                                        <p>Pedido nº ${item.cart_id},Valor: R$ ${total.toFixed(2).replace('.', ',')}</p>
                                                         <a data-placement="top" class="btn btn-info"
                                                             href="#" title="Repetir Compra"
                                                             id="btnRepetirCompra"><i class="bi bi-arrow-bar-up"></i></a>
                                                     </div>
                                                     <div class="col-md-12 historic-date">
-                                                        <p>Pagamento feito em: ${item.created_at.toLocaleString().slice(0,16).replace('T', ' ') }
+                                                        <p>Pagamento feito em: ${item.created_at.toLocaleString().slice(0,10).replace(/\-/g, '/') }
                                                         <p>
                                                     </div>
                                                 </div>
