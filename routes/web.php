@@ -52,19 +52,27 @@ Route::get("/address-option", function () {
     return view('address-option/index');
 });
 
-Route::get("/purchasing-management", function () {
+Route::get("/department/Adminstracao", function () {
     return (view('employee/purchasingManagement'));
 });
 
-Route::get("/separate-purchasing", function () {
+Route::get("/department/Separacao", function () {
     return (view('employee/separatePurchase'));
+});
+
+Route::get("/department/Empacotamento", function () {
+    return view('/employee/packaging');
+});
+
+Route::get("/department/Entrega", function () {
+    return (view('employee/purchasingManagement'));
 });
 
 Route::get("/evaluate-purchase", function () {
     return view('evaluate-purchase/index');
 });
 
-Route::get("/user-profile", function () {
+Route::get("/profile", function () {
     return view('user-profile/user-profile');
 });
 
@@ -83,10 +91,6 @@ Route::get("/trackingPage", function () {
 
 Route::get("/payment", function () {
     return view('/payment/payment');
-});
-
-Route::get("/packaging", function () {
-    return view('/employee/packaging');
 });
 
 Route::get("/dashboard", function () {
