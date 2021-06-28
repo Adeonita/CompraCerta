@@ -1,15 +1,12 @@
 @extends('index')
 @section('content')
-
-    <div class="mb-5">
+    <div class='mb-5'>
         <div class="my-3">
             <h3>
-                <i class="bi bi-book-half"></i> Meus Endereços
+                <i class="bi bi-house"></i> Endereço
             </h3>
         </div>
-        <div class="col-md-3">
-        </div>
-        <form action="" class="form-control p-4">
+        <div class='form-control'>
             <table id="address-table" class="table table-hover">
                 <thead>
                     <tr>
@@ -20,18 +17,21 @@
                         <th scope="col">Cidade</th>
                         <th scope="col">Estado</th>
                         <th scope="col">Complemento</th>
-                        <th scope="col">Editar</th>
+                        <th scope="col">Escolher</th>
                     </tr>
                 </thead>
                 <tbody>
                 </tbody>
             </table>
-        </form>
-        <div class="menu-user mt-3">
-            <a class='btn btn-warning mx-2 r-addres-button' href="{{ url('/profile') }}">
-                Meu Perfil</a>
-            <a class='btn btn-primary mx-2 r-addres-button' href="{{ url('/address-option') }}">Adicionar Endereço</a>
+
+        </div>
+
+        <div class="ms-2 my-4">
+            <a href="{{ url('/my-address') }}" class="btn btn-primary btn-sm"><i class="bi bi-house"></i> Meus
+                Endereços</a>
         </div>
     </div>
-    <script src="{{ asset('js/userAddressess.js') }}"></script>
+
+    <script src="{{ asset('js/addressSelection.js') }}"></script>
+
 @endsection

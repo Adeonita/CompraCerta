@@ -17,8 +17,7 @@
                     <p class="product-price">Por apenas <br> R$ {{ $product->price }}</p>
                 </div>
                 <div class="form-group">
-                    <label>Descrição</label>
-                    <textarea class="form-control" id="productDescription" rows="2"></textarea>
+                    <p> {{ $product->description }}</p>
                 </div>
                 <div class="row mt-4">
                     <div><label for="quantity" class="quant">
@@ -29,11 +28,13 @@
                 </div>
                 <div class="row mt-4">
                     <div>
-                        <a href="{{ url('/') }}" class="btn btn-success"><i class="bi bi-cart-plus"></i> Comprar</a>             
+                        <button product="{{ $product }}" id="purchase-button" class="btn btn-success">
+                            <i class="bi bi-cart-plus"></i> Comprar
+                        </button>             
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+    <script src="{{ asset('js/product.js') }}"></script>
 @endsection

@@ -19,7 +19,6 @@ class CreatePaymentTable extends Migration
             $table->string("cvv");
             $table->string("nameUser");
             $table->string("dueDate");
-            $table->string("nicknameCard");
 
             $table->unsignedBigInteger("cart_id");
             $table->foreign("cart_id")->references("id")->on("carts")->onDelete('cascade');

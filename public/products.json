@@ -1,7 +1,7 @@
 [{
         "cat_id": 1,
-        "name": "exemplo",
-        "description": "exemplo descricao",
+        "name": "Feijão Camil",
+        "description": "Feijão Camil, 1kg",
         "price": 13.2,
         "image": "feijao-camil.png"
     },
@@ -289,21 +289,21 @@
         "cat_id": 9,
         "name": "Arroz",
         "description": "Arroz Branco",
-        "price": 6.50,
+        "price": 6.5,
         "image": "arroz.jpg"
     },
     {
         "cat_id": 9,
         "name": "Azeite de Oliva Gallo",
         "description": "Azeite extra virgem",
-        "price": 18.50,
+        "price": 18.5,
         "image": "azeite-gallo.png"
     },
     {
         "cat_id": 9,
         "name": "Macarrão Barilla",
         "description": "Macarrão italiano",
-        "price": 6.50,
+        "price": 6.5,
         "image": "macarrao-barilla.jpg"
     },
     {
@@ -317,30 +317,28 @@
         "cat_id": 9,
         "name": "Molho de Tomate Heinz",
         "description": "Molho de tomate Heinz com pedaços de tomate",
-        "price": 3.20,
+        "price": 3.2,
         "image": "molho-tomate.png"
     },
     {
         "cat_id": 9,
         "name": "Palmito Ipanema",
         "description": "Direto do Rio, pupunha em conserva",
-        "price": 6.50,
+        "price": 6.5,
         "image": "palmito.png"
     },
     {
         "cat_id": 9,
         "name": "Maionese Helmans",
         "description": "A verdadeira maiosene",
-        "price": 5.50,
+        "price": 5.5,
         "image": "maionese.png"
     },
     {
         "cat_id": 9,
         "name": "Ketchup Heinz",
         "description": "O verdadeio Ketchup",
-        "price": 6.20,
+        "price": 6.2,
         "image": "ketchup.jpg"
     }
-
-
 ]

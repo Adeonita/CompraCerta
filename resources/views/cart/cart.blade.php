@@ -12,21 +12,10 @@
                             <th scope="col">Quantidade</th>
                             <th scope="col">Produto</th>
                             <th scope="col">Valor unitário</th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
-                        @for ($i = 0; $i < 5; $i++)
-                            <tr class="align-middle line-cart">
-                                <td>
-                                    <input type="number" min="1" max="10" value="1">
-                                </td>
-                                <td scope="row">
-                                    <img src="{{ asset('images/feijao.png') }}" class="rounded float-left product" alt="Produto"> 
-                                    Feijao Camil tipo 1
-                                </td>
-                                <td>10.99</td>
-                            </tr>
-                        @endfor
                     </tbody>
                 </table>
                 <div class="row mt-5">
@@ -34,13 +23,16 @@
                         <a href="{{ url('/') }}" class="btn btn-outline-primary btn-sm">Continuar comprando</a>
                     </div>
                     <div class="col" id="next-btn">
-                        <a href="{{ url('/address-option') }}" class="btn btn-primary btn-sm">Continuar para o endereço</a>
+                        <h5 class="mb-3">Total: <span id="totalCart"></span></h5>
+                        <a href="{{ url('/address-select') }}" class="btn btn-primary btn-sm">Continuar para o
+                            endereço</a>
                     </div>
                 </div>
                 <div class="col mt-5">
-                        <a href="{{ url('/historic-page') }}" class="btn btn-outline-warning btn-sm">Salvar Carrinho</a>
+                    <a href="{{ url('/historic-page') }}" class="btn btn-outline-warning btn-sm">Salvar Carrinho</a>
                 </div>
             </form>
         </div>
     </div>
+    <script src="{{ asset('js/cart.js') }}"></script>
 @endsection

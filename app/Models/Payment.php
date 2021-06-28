@@ -14,7 +14,6 @@ class Payment extends Model
         "cvv",
         "nameUser",
         "dueDate",
-        "nicknameCard",
         "cart_id"
     ];
 }

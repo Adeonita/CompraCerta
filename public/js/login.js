@@ -5,27 +5,35 @@ async function login() {
     }
     let logged = await postLogin(loginData);
     if (logged) {
+        console.log(logged)
         saveUser(logged);
+    } else {
+        alert("credenciais incorretas");
+
     }
     window.location.href = '/';
 
 }
 
 function postLogin(loginData) {
-    return res = $.post("http://localhost/login", loginData)
-        .done(response => {
-            if (response.name) {
-                return user = {
-                    name: response.name,
-                    user_type: response.type,
-                    user_id: response.user_id,
-                    department_id: response.department_id
-                };
-            } else {
-                alert("usuário não encontrado");
-                return false;
-            }
-        });
+    return res = $.post("http://localhost/login", loginData, response => {
+
+
+    }).done(response => {
+        if (response.name) {
+            return user = {
+                name: response.name,
+                user_type: response.type,
+                user_id: response.user_id,
+                department_id: response.department_id
+            };
+        } else {
+            return false;
+        }
+    }).fail(() => {
+        alert("credenciais invalidas");
+
+    });
 
 }
 
@@ -38,9 +46,8 @@ $('#login-post').on('submit', e => {
 function saveUser(userData) {
     localStorage.setItem("userId", userData.user_id);
     localStorage.setItem("userName", userData.name);
-    localStorage.setItem("departmentId", userData.department_id);
-}
+    if (userData.department_id) {
 
-function logoutUser() {
-
+        localStorage.setItem("departmentId", userData.department_id);
+    }
 }

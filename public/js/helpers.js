@@ -48,3 +48,22 @@ function getLocalUser() {
 function getLocalUserId() {
     return localStorage.getItem('userId');
 }
+
+function getLocalUserDepartment() {
+    return localStorage.getItem('departmentId');
+
+}
+
+function updateUserName(username) {
+    localStorage.setItem('userName', username);
+}
+
+
+function getDeliveryAddress() {
+    return localStorage.getItem("deliveryAddress");
+}
+
+function statusCart(status) {
+    if (status === "in_separation")
+        return "Separação"
+}

@@ -115,6 +115,5 @@
     </div>
 
     <script src="{{ asset('js/alterProfile.js') }}"></script>
-    <script src="{{ asset('js/createAccount.js') }}"></script>
 
 @endsection
