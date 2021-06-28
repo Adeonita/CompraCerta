@@ -10,7 +10,7 @@
         <div class="col-md-3">
         </div>
         <form action="" class="form-control p-4">
-            <table id="my-address" class="table table-hover">
+            <table id="address-table" class="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col">Número do CEP</th>
@@ -24,25 +24,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @for ($i = 0; $i < 5; $i++)
-                        <tr>
-                            <td id="UserCepM">45912643</td>
-                            <td scope="row" id="UserStreetM">
-                                <div class="row">
-                                    Rua das Violetas Cabral
-                                </div>
-                            </td>
-                            <td id="UserNumberM">142</td>
-                            <td id="UserNeighM">Acupe de Brotas</td>
-                            <td id="UserCityM">Salvador</td>
-                            <td id="UserStateM">Bahia</td>
-                            <td id="UserComplementM">Em frente a padaria Doce de Mel</td>
-                            <td id="UserAlterM">
-                                <a class='btn btn-outline-success btn-sm mx-2 r-addres-button'
-                                    href="{{ url('/address-option') }}"><i class="bi bi-pencil-fill"></i></a>
-                            </td>
-                        </tr>
-                    @endfor
                 </tbody>
             </table>
         </form>
@@ -52,14 +33,5 @@
             <a class='btn btn-primary mx-2 r-addres-button' href="{{ url('/address-option') }}">Adicionar Endereço</a>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
+    <script src="{{ asset('js/userAddressess.js') }}"></script>
 @endsection
