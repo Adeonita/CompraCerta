@@ -27,8 +27,11 @@
         <img src="{{ asset('/images/logo.png') }}" alt="CompraCerta">
     </a>
     <div class='my-auto mx-2 row  col-sm-4 col-12'>
-        <input type="text" class='form-control col' name="" id="">
+    <form method="POST" class="form-inline" action="{{ action('App\Http\Controllers\ProductController@getByName') }}">
+        @csrf
+        <input type="text" class='form-control col' name="name" id="">
         <button class="btn main main-btn col-4 col-sm-4"><i class="bi bi-search"></i> Buscar</button>
+    </form>
     </div>
 </div>
 

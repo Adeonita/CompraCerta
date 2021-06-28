@@ -4,23 +4,51 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use DB;
 
 class ProductController extends Controller
 {
     public function show() {
-        return Product::all();
+        $products = Product::all();
+
+        
+        $meat = DB::table('products')
+        ->join('categories', 'categories.id', '=', 'products.category_id')
+        ->where("categories.name", "carnes")
+        ->limit(4)
+        ->get();
+
+        $frozen = DB::table('products')
+        ->join('categories', 'categories.id', '=', 'products.category_id')
+        ->where("categories.name", "congelados")
+        ->limit(4)
+        ->get();
+
+        $cereals = DB::table('products')
+        ->join('categories', 'categories.id', '=', 'products.category_id')
+        ->where("categories.name", "cereais")
+        ->limit(4)
+        ->get();
+
+        return view("/home/products")->with(
+            [
+                "products"=> $products,
+                "meat" => $meat,
+                "frozen" => $frozen,
+                "cereals" => $cereals,
+            ]);
     }
 
     public function getByCategory($categoryId) {  
         $products = Product::where("category_id", $categoryId)->get();
         return view("/category/index")->with("products", $products);
-        //TODO: Reutilizar a view de componentes de product card
-        // return view("/components/productCard")->with("products", $products);
-
     }
 
     public function getByName(Request $request) {
-        return Product::where('name', 'like', '%' . $request->name . '%')->get();
+        $search = $_POST['name'];
+
+        $products = Product::where('name', 'like', '%' . $search . '%')->get();
+        return view("/category/index")->with("products", $products);
     }
 
 
