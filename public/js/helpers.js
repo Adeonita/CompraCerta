@@ -62,3 +62,8 @@ function updateUserName(username) {
 function getDeliveryAddress() {
     return localStorage.getItem("deliveryAddress");
 }
+
+function statusCart(status) {
+    if (status === "in_separation")
+        return "Separação"
+}
