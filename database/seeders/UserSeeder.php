@@ -67,7 +67,27 @@ class UserSeeder extends Seeder
                 "user_type" => "CLIENT",
                 "birth_date" => Carbon::create('2000', '01', '01'),
                 "department_id" => NULL
-            ]
+            ],
+            [
+                "name" => "Nome",
+                "last_name" => "De teste",
+                "cpf" =>  "12345678913",
+                "email" => "teste" . "@gmail.com",
+                "password" => "123456789",
+                "user_type" => "CLIENT",
+                "birth_date" => Carbon::create('2000', '01', '01'),
+                "department_id" => NULL
+            ],
+            [
+                "name" => "Teste Employee",
+                "last_name" => "De Luca",
+                "cpf" =>  "12345678914",
+                "email" => "teste2" . "@gmail.com",
+                "password" => "123456789",
+                "user_type" => "EMPLOYEE",
+                "birth_date" => Carbon::create('2000', '01', '01'),
+                "department_id" => 1
+            ],
         ];
 
         return $clients;
