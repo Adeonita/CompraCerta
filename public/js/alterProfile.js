@@ -4,8 +4,8 @@ $(document).ready(() => {
     getUserData(userId);
     if (!userId) {
         window.location.href = '/';
-
     }
+
 });
 
 var userData;
@@ -33,6 +33,13 @@ function disableForm() {
         document.getElementById("formProfile").disabled = true;
     }
 }
+
+function validatePassoword() {
+
+    return checkFieldsById('newPassword', 'newPasswordCheck');
+
+}
+
 
 async function updateData() {
 

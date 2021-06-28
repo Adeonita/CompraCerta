@@ -46,5 +46,8 @@ $('#login-post').on('submit', e => {
 function saveUser(userData) {
     localStorage.setItem("userId", userData.user_id);
     localStorage.setItem("userName", userData.name);
-    localStorage.setItem("departmentId", userData.department_id);
+    if (userData.department_id) {
+
+        localStorage.setItem("departmentId", userData.department_id);
+    }
 }

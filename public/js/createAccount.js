@@ -1,3 +1,10 @@
+$(document).ready(() => {
+    let userId = getLocalUserId();
+    if (userId) {
+        window.location.href = '/';
+    }
+});
+
 function validateRegister() {
 
     let isPasswordsValid = checkFieldsById('passwordUserRegister', 'passwordControlUserRegister');
@@ -39,12 +46,6 @@ async function postForm() {
 
     return res;
 
-}
-
-function validatePassoword() {
-
-    let isPasswordsEqual = checkFieldsById('newPassword', 'newPasswordCheck');
-    return isPasswordsEqual;
 }
 
 function createClient(data) {
