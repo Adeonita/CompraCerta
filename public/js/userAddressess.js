@@ -36,10 +36,6 @@ function getAddresses(id) {
             table.append(row);
         })
     });
-    // if (addressess.length == 0) {
-    //     let row = `<td class='mx-auto'>Você não possui Endereços Cadastrados</td>`;
-    //     table.append(row);
-    // }
 }
 
 

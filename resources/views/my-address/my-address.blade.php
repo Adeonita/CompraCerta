@@ -28,7 +28,7 @@
             </table>
         </form>
         <div class="menu-user mt-3">
-            <a class='btn btn-warning mx-2 r-addres-button' href="{{ url('/user-profile') }}">
+            <a class='btn btn-warning mx-2 r-addres-button' href="{{ url('/profile') }}">
                 Meu Perfil</a>
             <a class='btn btn-primary mx-2 r-addres-button' href="{{ url('/address-option') }}">Adicionar Endereço</a>
         </div>

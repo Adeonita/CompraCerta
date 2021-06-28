@@ -26,25 +26,12 @@ class ProductController extends Controller
         return view("/category/index")->with("products", $products);
     }
 
-    private function formmatPrice($price) {
-        $unformmatedPrice = explode('.',$price);
-
-        if(array_key_exists(1, $unformmatedPrice)) {
-            if(strlen($unformmatedPrice[1]) > 1) {
-                return $price;
-            }
-            
-            return $unformmatedPrice[0].",".$unformmatedPrice[1] * 10;
-        }
-
-        return $unformmatedPrice[0].",00";
-    }
 
     public function getById($productId){
         $product = Product::where("id", $productId)->get()[0];
 
         $product->imagePath = "images/products/$product->imagePath";
-        $product->price = $this->formmatPrice($product->price);
+        $product->price = $product->price;
 
         return view("/product/product")->with("product", $product);
     }

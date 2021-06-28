@@ -3,27 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Cart;
-use App\Models\ItemsOrder;
+use App\Http\Services\CartService;
 
 class CartController extends Controller
 {
     public function create(Request $request) {
         $request->validate([
-            "name" => "required",
+            "name" => "optional",
             "is_list" => "required",
             "status" => "required",
-            "amount" => "required",
+            "total" => "required",
             "user_id" => "required",
+            "cart" => "required"
         ]);
         
         try {
             //TODO: Gerar registro na tabela de entrada e saída
-            $cart = Cart::create($request->all());
-    
-            $items = $request->items;
-            
-            $this->addItems($cart->id, $items);
+            CartService::create($request->all())
 
         }catch(Exception $e){
             response()->json([
@@ -32,16 +28,10 @@ class CartController extends Controller
         }
     }
 
-    private function addItems($cartId, $items) {
+    private function addItems() {
         
         try {
-            for ($i = 0; $i < count($items); $i++) {
-                ItemsOrder::create([
-                    "amount" => $items[$i]["amount"],
-                    "product_id" => $items[$i]["product_id"],
-                    "cart_id" => $cartId,
-                ]);
-            }
+            
         } catch(Exception $e) {
             response()->json([
                 'message' => $e

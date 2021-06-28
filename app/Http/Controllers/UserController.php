@@ -116,7 +116,6 @@ class UserController extends Controller
 
     public function getByEmail(Request $request)
     {
-        $data = $request->all();
 
         try {
 
