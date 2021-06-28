@@ -15,10 +15,10 @@ class CreateCartTable extends Migration
     {
        Schema::create('carts',  function (Blueprint $table) {
             $table->id();
-            $table->string("name");
-            $table->boolean("is_list");
-            $table->string("status");
-            $table->float("amount");
+            $table->string("name")->nullable()->default(NULL);
+            $table->boolean("is_list")->nullable()->default(NULL);
+            $table->string("status")->nullable()->default("in_separation");
+            $table->float("total");
             $table->timestamps();
 
             $table->unsignedBigInteger("user_id");

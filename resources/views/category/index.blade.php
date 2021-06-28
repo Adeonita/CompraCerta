@@ -16,7 +16,7 @@
                     <p class="card-text">{{ $item->name }}</p>
                 </div>
                 <div class="row buttons-product-card">
-                    <a href='{{ url("/product") }}' class="btn main main-btn">Comprar</a>
+                    <a href='{{ url("/product/$item->id") }}' class="btn main main-btn">Comprar</a>
                 </div>
             </div>
         @endforeach
