@@ -23,12 +23,13 @@
                         <a href="{{ url('/') }}" class="btn btn-outline-primary btn-sm">Continuar comprando</a>
                     </div>
                     <div class="col" id="next-btn">
-                    <h5 class="mb-3">Total: <span id="totalCart"></span></h5>
-                        <a href="{{ url('/address-option') }}" class="btn btn-primary btn-sm">Continuar para o endereço</a>
+                        <h5 class="mb-3">Total: <span id="totalCart"></span></h5>
+                        <a href="{{ url('/address-select') }}" class="btn btn-primary btn-sm">Continuar para o
+                            endereço</a>
                     </div>
                 </div>
                 <div class="col mt-5">
-                        <a href="{{ url('/historic-page') }}" class="btn btn-outline-warning btn-sm">Salvar Carrinho</a>
+                    <a href="{{ url('/historic-page') }}" class="btn btn-outline-warning btn-sm">Salvar Carrinho</a>
                 </div>
             </form>
         </div>
