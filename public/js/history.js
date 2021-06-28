@@ -43,11 +43,11 @@ function getHistory(userId) {
                                                         </div>
                                                         <p>Pedido nº ${item.cart_id},Valor: R$ ${item.total}</p>
                                                         <a data-placement="top" class="btn btn-info"
-                                                            href="{{ url('/cart') }}" title="Repetir Compra"
+                                                            href="#" title="Repetir Compra"
                                                             id="btnRepetirCompra"><i class="bi bi-arrow-bar-up"></i></a>
                                                     </div>
                                                     <div class="col-md-12 historic-date">
-                                                        <p>Pagamento feito em: ${item.created_at.toLocaleString().slice(0,16).replace('T', ' ')}
+                                                        <p>Pagamento feito em: ${item.created_at.toLocaleString().slice(0,16).replace('T', ' ') }
                                                         <p>
                                                     </div>
                                                 </div>
@@ -60,11 +60,3 @@ function getHistory(userId) {
 
     });
 }
-
-
-// function myFunction(addressId) {
-//     // console.log(addressId);
-//     // console.log(addressess);
-//     var qs = $.param(addressess[addressId]);
-//     window.location.href = '/address-option?' + qs;
-// }
