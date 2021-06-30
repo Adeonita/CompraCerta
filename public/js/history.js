@@ -37,7 +37,7 @@ function getHistory(userId) {
                                                                     <div class="form-group">
                                                                         <select class="form-control"
                                                                             id="historicStateControl">
-                                                                            <option id="complete">${statusCart(item.status)}</option>
+                                                                            <option id="complete">${item.status}</option>
                                                                         </select>
                                                                     </div>
                                                                     <fieldset>
@@ -46,7 +46,7 @@ function getHistory(userId) {
                                                         <p>Pedido nº ${item.cart_id},Valor: R$ ${formatMoney(total)}</p>
                                                         <a data-placement="top" class="btn btn-info"
                                                             href="#" title="Repetir Compra"
-                                                            id="btnRepetirCompra"><i class="bi bi-arrow-bar-up"></i></a>
+                                                            id="btnRepetirCompra"><i class="bi bi-arrow-counterclockwise"></i></a>
                                                     </div>
                                                     <div class="col-md-12 historic-date">
                                                         <p>Pagamento feito em: ${item.created_at.toLocaleString().slice(0,10).replace(/\-/g, '/') }
