@@ -1,9 +1,8 @@
-
 function loadCart() {
     const myCart = document.querySelector('#my-cart tbody')
     myCart.innerHTML = "";
     const cart = JSON.parse(localStorage.getItem('cestaCart'))
-    for(const item of cart) {
+    for (const item of cart) {
         const total = Number(item.quantity) * Number(item.product.price)
         myCart.innerHTML = `
             ${myCart.innerHTML}
@@ -12,10 +11,10 @@ function loadCart() {
                     <input class="change-quantity-button" type="number" min="1" max="10" value="${item.quantity}" product-id="${item.product.id}">
                 </td>
                 <td scope="row">
-                    <img src="${item.product.imagePath}" class="rounded float-left product" alt="Produto"> 
+                    <img src="${item.product.imagePath}" class="rounded float-left product" alt="Produto">
                     ${item.product.name}
                 </td>
-                <td class="total">R$ ${total.toFixed(2).replace('.', ',')}</td>
+                <td class="total">R$ ${formatMoney(total)}</td>
                 <td>
                     <button class="btn btn-danger btn-sm product-delete" product-id="${item.product.id}">
                         Excluir
@@ -34,13 +33,13 @@ function changeQuantity(product_id, quantity) {
     oldItems[index] = item;
     const total = document.querySelector(`#item-${product_id} .total`);
     const newPrice = Number(quantity) * item.product.price;
-    total.innerHTML = `R$ ${newPrice.toFixed(2)}`;
+    total.innerHTML = `R$ ${formatMoney(newPrice)}`;
     localStorage.setItem('cestaCart', JSON.stringify(oldItems));
 }
 
 function loadChangeQuantityButtons() {
     const changeButtons = document.getElementsByClassName("change-quantity-button")
-    for(const button of changeButtons) {
+    for (const button of changeButtons) {
         button.onchange = function(e) {
             changeQuantity(Number(button.getAttribute("product-id")), e.target.value)
             showTotalCart()
@@ -50,7 +49,7 @@ function loadChangeQuantityButtons() {
 
 function loadButtonDeleteProduct() {
     const deleteButtons = document.getElementsByClassName("product-delete")
-    for(const button of deleteButtons) {
+    for (const button of deleteButtons) {
         button.addEventListener('click', function() {
             deleteItemCart(Number(button.getAttribute("product-id")))
             loadAllCart()
@@ -70,7 +69,7 @@ function calcTotalCart() {
 }
 
 function showTotalCart() {
-    document.querySelector('#totalCart').innerHTML = `R$ ${calcTotalCart().toFixed(2).replace('.', ',')}`
+    document.querySelector('#totalCart').innerHTML = `R$ ${formatMoney(calcTotalCart())}`
 }
 
 function loadAllCart() {

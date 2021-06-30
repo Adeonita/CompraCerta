@@ -1,5 +1,7 @@
+@include('helpers-php')
 @extends('index')
 @section('content')
+
     <div class="container mb-5">
         <div class="row">
             <div class="col-md-6 mt-3">
@@ -13,8 +15,8 @@
                 </div>
                 <div class="row">
                     &nbsp; &nbsp;
-                    <h3><del>De 15,99</del></h3>
-                    <p class="product-price">Por apenas <br> R$ {{ $product->price }}</p>
+                    {{-- <h3><del>De 15,99</del></h3> --}}
+                    <p class="product-price">Por apenas <br> R$ {{ formatMoney($product->price) }}</p>
                 </div>
                 <div class="form-group">
                     <p> {{ $product->description }}</p>
@@ -30,11 +32,12 @@
                     <div>
                         <button product="{{ $product }}" id="purchase-button" class="btn btn-success">
                             <i class="bi bi-cart-plus"></i> Comprar
-                        </button>             
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <script src="{{ asset('js/product.js') }}"></script>
+    <script src="{{ asset('js/helpers.js') }}"></script>
 @endsection

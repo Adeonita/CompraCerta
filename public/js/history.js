@@ -43,7 +43,7 @@ function getHistory(userId) {
                                                                     <fieldset>
                                                             </label>
                                                         </div>
-                                                        <p>Pedido nº ${item.cart_id},Valor: R$ ${total.toFixed(2).replace('.', ',')}</p>
+                                                        <p>Pedido nº ${item.cart_id},Valor: R$ ${formatMoney(total)}</p>
                                                         <a data-placement="top" class="btn btn-info"
                                                             href="#" title="Repetir Compra"
                                                             id="btnRepetirCompra"><i class="bi bi-arrow-bar-up"></i></a>

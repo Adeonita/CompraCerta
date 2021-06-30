@@ -67,3 +67,7 @@ function statusCart(status) {
     if (status === "in_separation")
         return "Separação"
 }
+
+function formatMoney(input) {
+    return input.toFixed(2).replace('.', ',');
+}
