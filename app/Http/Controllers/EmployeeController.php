@@ -58,5 +58,14 @@ class EmployeeController extends Controller
             ->update([
                 "status" => $this->getNextStatus($status),
             ]);
+        
+        if($status !== "finalizado") {
+            $department = $statusId + 1;
+            
+            return redirect("/department/$department");
+        }
+
+        return redirect("/department/Adminstracao");
+
     }
 }
