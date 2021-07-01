@@ -44,7 +44,7 @@ class PaymentController extends Controller
 
             $departmentId = Departments::where("name", "Separacao")->get()[0]['id'];
 
-            return EntryOut::create([
+            EntryOut::create([
                 "department_id" => $departmentId,
                 "cart_id" => $cart->id,
             ]);
