@@ -11,6 +11,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AddressController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\PurchaseController;
 
 
 
@@ -52,9 +53,7 @@ Route::get("/address-select", function () {
     return view('address-option/address-select');
 });
 
-Route::get("/department/Adminstracao", function () {
-    return (view('employee/purchasingManagement'));
-});
+Route::get("/department/Adminstracao", [EmployeeController::class, "showAllPurchases"]);
 
 Route::get("/department/Separacao", function () {
     return (view('employee/separatePurchase'));
@@ -144,3 +143,7 @@ Route::post("/cart/create", [CartController::class, 'create']);
 Route::get("/cart/get/{userId}", [CartController::class, 'getByUser']);
 
 Route::post("/payment", [PaymentController::class, 'create']);
+
+Route::get("/department/{departmentId}", [PurchaseController::class, 'getByDepartment']);
+
+Route::get("/cart/update/{statusId}/{cartId}", [EmployeeController::class, 'sendToNextDepartment']);
