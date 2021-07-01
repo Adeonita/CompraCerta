@@ -14,7 +14,7 @@ $(document).ready(() => {
     } else {
         $.get("http://localhost/departments", function(data) {
             data.forEach(element => {
-                if (element.id === 1) {
+                if (element.name === "Adminstracao") {
                     const item = document.createElement("a");
                     item.setAttribute("href", `http://localhost/department/Adminstracao`);
                     item.classList.add(...["swiper-item", "department", "px-3", "py-2"]);
