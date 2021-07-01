@@ -10,7 +10,6 @@ var addressess = [];
 
 function getAddresses(id) {
     let data;
-    // let urlAddress = "{{ url('/address-option') }}";
     let table = $("#address-table");
     $.get("/address/" + id, response => {
         data = response.message;
@@ -40,8 +39,6 @@ function getAddresses(id) {
 
 
 function myFunction(addressId) {
-    // console.log(addressId);
-    // console.log(addressess);
     var qs = $.param(addressess[addressId]);
     window.location.href = '/address-option?' + qs;
 }

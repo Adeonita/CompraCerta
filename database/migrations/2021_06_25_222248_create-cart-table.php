@@ -17,7 +17,7 @@ class CreateCartTable extends Migration
             $table->id();
             $table->string("name")->nullable()->default(NULL);
             $table->boolean("is_list")->nullable()->default(NULL);
-            $table->string("status")->nullable()->default("in_separation");
+            $table->string("status")->nullable()->default("separação");
             $table->float("total");
             $table->timestamps();
 

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Payment;
 use App\Models\Cart;
+use App\Models\Payment;
+use App\Models\EntryOut;
+use App\Models\Departments;
 use App\Http\Services\CartService;
 use Exception;
 
@@ -39,6 +41,13 @@ class PaymentController extends Controller
             $data['cart_id'] = $cart->id;
 
             $payment = Payment::create($data);
+
+            $departmentId = Departments::where("name", "Separacao")->get()[0]['id'];
+
+            EntryOut::create([
+                "department_id" => $departmentId,
+                "cart_id" => $cart->id,
+            ]);
 
             return redirect('/');
 
