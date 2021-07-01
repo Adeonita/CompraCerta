@@ -18,6 +18,6 @@ class PurchaseController extends Controller
             "users.name",
         )->get();
 
-        return $purchases;
+        return view("backoffice/index")->with("purchases", $purchases);
     }
 }
