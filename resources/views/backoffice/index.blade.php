@@ -1,24 +1,25 @@
 @extends('index')
 @section('content')
 @php
-    function getBtnByStatus($status){
+    function getBtnByStatus($status, $purchaseId) {
+        $url = "/cart/update/$status/$purchaseId";
 
         switch($status) {
             case 'separação':
-                echo "<a href='#' class='btn btn-warning btn-sm'> Enviar para empacotamento </a>";
+                echo "<a href='$url' class='btn btn-warning btn-sm'> Enviar para empacotamento </a>";
                 break;
 
             case 'rota de entrega':
-                echo "<a href='#' class='btn btn-primary btn-sm'> Em $status</a>";
+                echo "<a href='$url' class='btn btn-primary btn-sm'> Finalizar</a>";
                 break;
 
             case 'empacotamento':
-                echo "<a href='#' class='btn btn-info btn-sm'> Enviar para entrega </a>";
+                echo "<a href='$url' class='btn btn-info btn-sm'> Enviar para entrega </a>";
                 break;
 
             case 'finalizado':
                 $formmatedStatus = ucfirst($status);
-                echo "<a href='#' class='btn btn-success btn-sm'> $formmatedStatus </a>";
+                echo "<a href='http://localhost/department/Adminstracao' class='btn btn-success btn-sm'> $formmatedStatus </a>";
                 break;
         }
     }
@@ -47,7 +48,7 @@
                                     Cliente {{ $purchase->name }} 
                                 </div>
                             </td>
-                             <td>{{ getBtnByStatus($purchase->status) }}</td>
+                             <td>{{ getBtnByStatus($purchase->status, $purchase->id) }}</td>
                         </tr>
                         @endforeach
                 </tbody>
