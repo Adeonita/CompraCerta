@@ -52,9 +52,7 @@ Route::get("/address-select", function () {
     return view('address-option/address-select');
 });
 
-Route::get("/department/Adminstracao", function () {
-    return (view('employee/purchasingManagement'));
-});
+Route::get("/department/Adminstracao", [EmployeeController::class, "showAllPurchases"]);
 
 Route::get("/department/Separacao", function () {
     return (view('employee/separatePurchase'));

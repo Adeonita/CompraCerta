@@ -1,5 +1,28 @@
 @extends('index')
 @section('content')
+@php
+    function getBtnByStatus($status){
+        $formmatedStatus = ucfirst($status);
+
+        switch($status) {
+            case 'separação':
+                echo "<a href='#' class='btn btn-warning btn-sm'> $formmatedStatus </a>";
+                break;
+
+            case 'rota de entrega':
+                echo "<a href='#' class='btn btn-primary btn-sm'> $formmatedStatus </a>";
+                break;
+
+            case 'empacotamento':
+                echo "<a href='#' class='btn btn-info btn-sm'> $formmatedStatus </a>";
+                break;
+
+            case 'finalizado':
+                echo "<a href='#' class='btn btn-success btn-sm'> $formmatedStatus </a>";
+                break;
+        }
+    }
+@endphp
     <div class="mb-5">
         <div class="my-3">
             <h3>
@@ -13,48 +36,20 @@
                         <th scope="col">Número da compra</th>
                         <th scope="col">Dados do cliente</th>
                         <th scope="col">Status da compra</th>
-                        <th scope="col">Visualizar</th>
-
                     </tr>
                 </thead>
                 <tbody>
-                    @for ($i = 0; $i < 5; $i++)
+                    @foreach ($purchases as $purchase)
                         <tr>
-                            <td>Compra {{ $i + 1 }}</td>
+                            <td>Compra {{ $purchase->id }}</td>
                             <td scope="row">
                                 <div class="row">
-                                    Cliente {{ $i + 1 }} da Silva
+                                    Cliente {{ $purchase->name }} 
                                 </div>
                             </td>
-                            @if ($i < 1)
-                                <td><a href="#" class="btn btn-warning btn-sm">Em separação</a></td>
-                            @endif
-                            @if ($i > 0 && $i < 3)
-                                <td><a href="#" class="btn btn-secondary btn-sm">Empacotamento</a></td>
-                            @endif
-                            @if ($i > 2 && $i < 4)
-                                <td><a href="#" class="btn btn-info btn-sm">Em rota de entrega</a></td>
-                            @endif
-                            @if ($i == 4)
-                                <td><a href="#" class="btn btn-success btn-sm">Entregue</a></td>
-                            @endif
-
-                            @if ($i < 1)
-                                <td><a href="{{ asset('/separate-purchasing') }}"><i class="bi bi-eye"
-                                            id="view-purchase"></i></a></td>
-                            @endif
-                            @if ($i > 0 && $i < 3)
-                                <td><a href="{{ asset('/packaging') }}"><i class="bi bi-eye" id="view-purchase"></i></a>
-                                </td>
-                            @endif
-                            @if ($i > 2 && $i < 4)
-                                <td><a href=#><i class="bi bi-eye" id="view-purchase"></i></a></td>
-                            @endif
-                            @if ($i == 4)
-                                <td><a href=#><i class="bi bi-eye" id="view-purchase"></i></a></td>
-                            @endif
+                             <td>{{ getBtnByStatus($purchase->status) }}</td>
                         </tr>
-                    @endfor
+                        @endforeach
                 </tbody>
             </table>
         </form>
