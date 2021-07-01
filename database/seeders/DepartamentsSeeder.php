@@ -16,9 +16,10 @@ class DepartamentsSeeder extends Seeder
     {
         $departments = [
             "Adminstracao",
-            "Empacotamento",
             "Separacao",
-            "Entrega",
+            "Empacotamento",
+            "Rota de Entrega",
+            "Finalizado",
         ];
 
         foreach ($departments as $key =>  $value) {
