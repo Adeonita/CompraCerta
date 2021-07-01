@@ -11,6 +11,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AddressController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\PurchaseController;
 
 
 
@@ -142,3 +143,5 @@ Route::post("/cart/create", [CartController::class, 'create']);
 Route::get("/cart/get/{userId}", [CartController::class, 'getByUser']);
 
 Route::post("/payment", [PaymentController::class, 'create']);
+
+Route::get("/purchases/{departmentId}", [PurchaseController::class, 'getByDepartment']);
