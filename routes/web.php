@@ -130,6 +130,7 @@ Route::get("/departments", [DepartmentsController::class, 'show']);
 
 Route::get("/products", [ProductController::class, 'show']);
 Route::get("/product/{id}", [ProductController::class, 'getById']);
+Route::get("/product/json/{id}", [ProductController::class, 'getJsonById']);
 Route::get("/products/{category_id}", [ProductController::class, 'getByCategory']);
 Route::post("/products/find", [ProductController::class, 'getByName']);
 

@@ -2,18 +2,21 @@ $(document).ready(() => {
     let userId = getLocalUserId();
     if (userId) {
         addressData = getHistory(userId);
-        console.log(historyCart);
+        console.log("end",
+            historyCart);
 
     }
 });
 
 var historyCart = [];
+var historyData = [];
 
 function getHistory(userId) {
     let data;
     let table = $("#myHistoric");
     $.get(`/cart/get/${userId}/`, response => {
         data = response;
+        historyData = data;
     }).done(() => {
         data.forEach(item => {
             historyCart[item.cart_id] = item;
@@ -22,7 +25,7 @@ function getHistory(userId) {
             let items = data.filter(value => {
                 return value.cart_id == item.cart_id;
             });
-            console.log(items);
+            console.log("items", items);
             let total = 0
             items.forEach(item => total += item.price * item.amount);
             let row = `
@@ -45,7 +48,7 @@ function getHistory(userId) {
                                                         </div>
                                                         <p>Pedido nº ${item.cart_id},Valor: R$ ${formatMoney(total)}</p>
                                                         <a data-placement="top" class="btn btn-info"
-                                                            href="#" title="Repetir Compra"
+                                                            title="Repetir Compra" onclick="printCart(${item.cart_id})"
                                                             id="btnRepetirCompra"><i class="bi bi-arrow-counterclockwise"></i></a>
                                                     </div>
                                                     <div class="col-md-12 historic-date">
@@ -62,3 +65,33 @@ function getHistory(userId) {
 
     });
 }
+
+function printCart(cartId) {
+    let cartItems = []
+    for (let item in historyData) {
+        if (historyData[item].cart_id == cartId) {
+            cartItems.push(historyData[item]);
+        }
+    }
+    if (cartItems.length > 0) {
+        console.log("cart", cartItems);
+        localStorage.removeItem("cestaCart");
+        cartItems.forEach(product => {
+            cartProduct = {
+                id: product.id,
+                category_id: product.category_id,
+                decription: product.decription,
+                imagePath: "images/products/" + product.imagePath,
+                name: product.name,
+                price: product.price,
+            };
+
+            addItemToCart(cartProduct, product.amount);
+
+        })
+        alert('Sua compra foi para o carrinho');
+        window.location.href = '/cart';
+    }
+}
+
+//category_id, decription, id, imagePath, name, price, quatity

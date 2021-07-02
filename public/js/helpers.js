@@ -71,3 +71,26 @@ function statusCart(status) {
 function formatMoney(input) {
     return input.toFixed(2).replace('.', ',');
 }
+
+
+function addItemToCart(product, quantity) {
+
+
+    let cart = JSON.parse(localStorage.getItem('cestaCart'));
+    if (!cart) {
+        cart = []
+    }
+    const productExist = cart.find(i => i.product.id === product.id)
+    if (productExist) {
+        const index = cart.indexOf(productExist)
+        productExist.quantity = Number(productExist.quantity) + Number(quantity)
+        cart[index] = productExist;
+    } else {
+        cart.push({
+            product,
+            quantity
+        })
+    }
+    localStorage.setItem('cestaCart', JSON.stringify(cart));
+
+}
