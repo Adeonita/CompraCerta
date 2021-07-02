@@ -15,7 +15,6 @@
                 </div>
                 <div class="row">
                     &nbsp; &nbsp;
-                    {{-- <h3><del>De 15,99</del></h3> --}}
                     <p class="product-price">Por apenas <br> R$ {{ formatMoney($product->price) }}</p>
                 </div>
                 <div class="form-group">
