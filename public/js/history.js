@@ -82,16 +82,9 @@ function printCart(cartId) {
     if (cartItems.length > 0) {
         localStorage.removeItem("cestaCart");
         cartItems.forEach(product => {
-            cartProduct = {
-                id: product.id,
-                category_id: product.category_id,
-                decription: product.decription,
-                imagePath: "images/products/" + product.imagePath,
-                name: product.name,
-                price: product.price,
-            };
+            product.imagePath = "images/products/" + product.imagePath;
+            addItemToCart(product, product.amount);
 
-            addItemToCart(cartProduct, product.amount);
 
         })
         alert('Sua compra foi para o carrinho');
@@ -100,7 +93,6 @@ function printCart(cartId) {
 }
 
 function showCart(cartId) {
-    console.log(cartId)
     let cartItems = [];
     let table = $("#cart-table-rows");
     let tableTmp = '';
@@ -138,7 +130,3 @@ function showCart(cartId) {
     table.html(tableTmp);
     $("#cart-total").val(`Total: R$ ${total}`)
 }
-
-
-
-//category_id, decription, id, imagePath, name, price, quatity
