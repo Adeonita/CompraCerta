@@ -1,10 +1,8 @@
+@include('helpers-php')
 @extends('index')
 @section('content')
-@php 
-
-@endphp
-   <h1 class="text-center">Semana de Inauguração</h1>
-   <div class="row justify-content-around mt-5">
+    <h1 class="text-center">Semana de Inauguração</h1>
+    <div class="row justify-content-around mt-5">
         <h2>Carnes</h2>
         @foreach ($meat as $item)
             <div class="card product-card col-xs-6 col-sm-4 col-md-4 col-lg-4 px-auto mb-4 mx-2 " style="width: 15rem;">
@@ -13,7 +11,7 @@
                         <img class="card-img-top" src='{{ asset("images/products/$item->imagePath") }}'
                             alt="Imagem de capa do card">
                         <div class='price-tags d-flex flex-column align-items-start'>
-                            <p class="badge main">R$ {{ $item->price }}</p>
+                            <p class="badge main">R$ {{ formatMoney($item->price) }}</p>
                         </div>
                     </div>
                 </a>
@@ -25,9 +23,9 @@
                 </div>
             </div>
         @endforeach
-            <hr>
-   </div>
-   <div class="row justify-content-around mt-5">
+        <hr>
+    </div>
+    <div class="row justify-content-around mt-5">
         <h2>Congelados</h2>
         @foreach ($frozen as $item)
             <div class="card product-card col-xs-6 col-sm-4 col-md-4 col-lg-4 px-auto mb-4 mx-2 " style="width: 15rem;">
@@ -36,7 +34,7 @@
                         <img class="card-img-top" src='{{ asset("images/products/$item->imagePath") }}'
                             alt="Imagem de capa do card">
                         <div class='price-tags d-flex flex-column align-items-start'>
-                            <p class="badge main">R$ {{ $item->price }}</p>
+                            <p class="badge main">R$ {{ formatMoney($item->price) }}</p>
                         </div>
                     </div>
                 </a>
@@ -49,8 +47,8 @@
             </div>
         @endforeach
         <hr>
-   </div>
-   <div class="row justify-content-around mt-5">
+    </div>
+    <div class="row justify-content-around mt-5">
         <h2>Cereais</h2>
         @foreach ($cereals as $item)
             <div class="card product-card col-xs-6 col-sm-4 col-md-4 col-lg-4 px-auto mb-4 mx-2 " style="width: 15rem;">
@@ -59,7 +57,7 @@
                         <img class="card-img-top" src='{{ asset("images/products/$item->imagePath") }}'
                             alt="Imagem de capa do card">
                         <div class='price-tags d-flex flex-column align-items-start'>
-                            <p class="badge main">R$ {{ $item->price }}</p>
+                            <p class="badge main">R$ {{ formatMoney($item->price) }}</p>
                         </div>
                     </div>
                 </a>
@@ -72,5 +70,5 @@
             </div>
         @endforeach
         <hr>
-   </div>
+    </div>
 @endsection

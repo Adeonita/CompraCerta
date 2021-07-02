@@ -33,6 +33,35 @@
             </div>
         </div>
     </div>
-    <script src="{{ asset('js/history.js') }}"></script>
+    {{-- modal --}}
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Carrinho</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
 
-@endsection
+                    <table id="cart-table" class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Quantidade</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Preço un.</th>
+                                <th scope="col">Valor a pagar</th>
+                            </tr>
+                        </thead>
+                        <tbody id='cart-table-rows'>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="{{ asset('js/history.js') }}"></script>
+
+    @endsection
