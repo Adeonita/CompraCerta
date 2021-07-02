@@ -87,7 +87,7 @@ function printCart(cartId) {
 
 
         })
-        alert('Sua compra foi para o carrinho');
+        alert('Seus itens foram adicionados ao carrinho');
         window.location.href = '/cart';
     }
 }
