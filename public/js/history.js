@@ -62,6 +62,9 @@ function getHistory(userId) {
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
             `;
             table.append(row);
         })

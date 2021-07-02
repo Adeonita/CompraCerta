@@ -11,6 +11,6 @@ class DepartmentsController extends Controller
 {
     public function show()
     {
-        return Departments::all("name");
+        return Departments::all();
     }
 }
