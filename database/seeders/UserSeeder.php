@@ -48,7 +48,7 @@ class UserSeeder extends Seeder
     private function generateClients()
     {
         $domainUser = "@gmail.com";
-        $domainEmployee = "@compraCerta.com";
+        $domainEmployee = "@compracerta.com";
         $password = "123456789";
         $birthDate = Carbon::create('2000', '01', '01');
 
