@@ -31,17 +31,17 @@ class ReviewController extends Controller
     public function getByCart($cartId)
     {
         return Review::where("cart_id", $cartId)
-            ->join("cart", "cart.id", "=", "cart_id")
+            ->join("carts", "carts.id", "=", "cart_id")
             ->get();
     }
 
     public function setCartReview(Request $request)
     {
-        // $request->validate([
-        //     "score" => "required",
-        //     "comment" => "required",
-        //     "cart_id" => "required",
-        // ]);
+        $request->validate([
+            "score" => "required",
+            "comment" => "required",
+            "cart_id" => "required",
+        ]);
         try {
 
             $review = Review::create($request->all());
