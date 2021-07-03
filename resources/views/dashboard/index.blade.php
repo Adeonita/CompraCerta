@@ -19,7 +19,7 @@
                         </h3>
                     </div>
                     <div class="card-body">
-                        <p class="card-text card-dashboard-text text-center text-success ">209</p>
+                        <p class="card-text card-dashboard-text text-center text-success ">{{ $totalPurchases }}</p>
                     </div>
                 </a>
             </div>

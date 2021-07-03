@@ -12,6 +12,7 @@ use App\Http\Controllers\AddressController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\DashboardController;
 
 
 
@@ -92,9 +93,7 @@ Route::get("/payment", function () {
     return view('/payment/payment');
 });
 
-Route::get("/dashboard", function () {
-    return view('/dashboard/index');
-});
+Route::get("/dashboard", [DashboardController::class, "index"]);
 
 Route::get("/dashboard-purchases", function () {
     return view('/dashboard/purchases');
