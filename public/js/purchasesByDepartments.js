@@ -14,7 +14,7 @@ $.get("http://localhost/purchasesByDepartments").done((items) => {
         data: {
             labels: products,
             datasets: [{
-                label: "Produtos mais vendidos",
+                label: "Itens por setor",
                 backgroundColor: [
                     'rgb(255, 99, 132)',
                     'rgb(54, 162, 235)',
