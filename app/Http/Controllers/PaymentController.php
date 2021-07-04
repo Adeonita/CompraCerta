@@ -28,7 +28,7 @@ class PaymentController extends Controller
             $total = 0;
 
             foreach( $cartItems as $item ) {
-                $total += $item['product']['price'];
+                $total += $item['product']['price'] * $item['quantity'];
             }
 
             $cart = CartService::create([
