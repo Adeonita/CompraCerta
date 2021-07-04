@@ -149,3 +149,4 @@ Route::get("/cart/update/{statusId}/{cartId}", [EmployeeController::class, 'send
 
 Route::get("/topProducts", [DashboardController::class, 'topProducts']);
 Route::get("/purchasesByDepartments", [DashboardController::class, 'getpurchasesByDepartments']);
+Route::get("/purchasesByCategories", [DashboardController::class, 'getPurchasesByCategories']);
