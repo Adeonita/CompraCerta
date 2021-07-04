@@ -29,16 +29,20 @@
                     <div class='card-img-top'>
                         <h3 class=" w-100">
                             <span class='badge bg-success w-100'>
-                                Total de compras
+                                Valor total vendido
                             </span>
                         </h3>
                     </div>
                     <div class="card-body">
-                        <p class="card-text card-dashboard-text text-center text-success ">209</p>
+                        <p class="card-text card-dashboard-text text-center text-success ">R$ {{ $valueTotalPurchases }}</p>
                     </div>
                 </a>
             </div>
-
-
+            
+            <div class="col-sm-8 col-12 mt-5">
+            <h1 class="text-center mb-5">Produtos - Top 10</h1>
+                <canvas id="top-products" width="100" height="50"></canvas>
+            </div>
+            <script src="{{ asset('js/dashboardTopProducts.js') }}"></script>
         </div>
     @endsection
