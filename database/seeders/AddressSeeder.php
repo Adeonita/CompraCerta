@@ -36,7 +36,7 @@ class AddressSeeder extends Seeder
     public function run()
     {
         //
-        $users = 11; //max states
+        $users = 11; //max users
 
         for ($i = 0; $i < $users; $i++) {
             $address = $this->generateAddress($i + 1);
