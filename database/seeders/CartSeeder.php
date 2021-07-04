@@ -87,7 +87,6 @@ class CartSeeder extends Seeder
     public function run()
     {
         for ($i = 0; $i < 10; $i++) {
-            echo "cartId:" . $i . ":\n";
             $this->createCart();
         }
     }
