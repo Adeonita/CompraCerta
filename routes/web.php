@@ -146,3 +146,5 @@ Route::post("/payment", [PaymentController::class, 'create']);
 Route::get("/department/{departmentId}", [PurchaseController::class, 'getByDepartment']);
 
 Route::get("/cart/update/{statusId}/{cartId}", [EmployeeController::class, 'sendToNextDepartment']);
+
+Route::get("/topProducts", [DashboardController::class, 'topProducts']);
