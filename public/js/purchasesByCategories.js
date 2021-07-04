@@ -1,18 +1,18 @@
-const a = document.getElementById('purchases-categories').getContext('2d');;
+const purchaseCategories = document.getElementById('purchases-categories').getContext('2d');;
 
 $.get("http://localhost/purchasesByCategories").done((items) => {
-    let products = [];
+    let categories = [];
     let amount = [];
 
     items.forEach(item => {
-        products.push(item.name);
+        categories.push(item.name);
         amount.push(item.amount);
     });
     
-    new Chart(a, {
+    new Chart(purchaseCategories, {
         type: 'bar',
         data: {
-            labels: products,
+            labels: categories,
             datasets: [{
                 label: "Categorias mais vendidas",
                 backgroundColor: [
