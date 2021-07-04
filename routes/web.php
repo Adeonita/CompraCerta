@@ -12,6 +12,7 @@ use App\Http\Controllers\AddressController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ReviewController;
 
 
@@ -93,9 +94,7 @@ Route::get("/payment", function () {
     return view('/payment/payment');
 });
 
-Route::get("/dashboard", function () {
-    return view('/dashboard/index');
-});
+Route::get("/dashboard", [DashboardController::class, "index"]);
 
 Route::get("/dashboard-purchases", function () {
     return view('/dashboard/purchases');
@@ -149,6 +148,9 @@ Route::post("/payment", [PaymentController::class, 'create']);
 Route::get("/department/{departmentId}", [PurchaseController::class, 'getByDepartment']);
 
 Route::get("/cart/update/{statusId}/{cartId}", [EmployeeController::class, 'sendToNextDepartment']);
+
+Route::get("/topProducts", [DashboardController::class, 'topProducts']);
+Route::get("/purchasesByDepartments", [DashboardController::class, 'getpurchasesByDepartments']);
 
 Route::get("/reviews", [ReviewController::class, 'index']);
 Route::get("/reviews/{id}", [ReviewController::class, 'getByCart']);
