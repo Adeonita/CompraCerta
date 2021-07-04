@@ -12,6 +12,7 @@ use App\Http\Controllers\AddressController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\ReviewController;
 
 
 
@@ -148,3 +149,7 @@ Route::post("/payment", [PaymentController::class, 'create']);
 Route::get("/department/{departmentId}", [PurchaseController::class, 'getByDepartment']);
 
 Route::get("/cart/update/{statusId}/{cartId}", [EmployeeController::class, 'sendToNextDepartment']);
+
+Route::get("/reviews", [ReviewController::class, 'index']);
+Route::get("/reviews/{id}", [ReviewController::class, 'getByCart']);
+Route::post("/reviews", [ReviewController::class, 'setCartReview']);
