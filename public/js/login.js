@@ -5,13 +5,15 @@ async function login() {
     }
     let logged = await postLogin(loginData);
     if (logged) {
-        console.log(logged)
         saveUser(logged);
     } else {
         alert("credenciais incorretas");
-
     }
-    window.location.href = '/';
+    if (logged.type === "EMPLOYEE") {
+        window.location.href = '/department/Adminstracao';
+    } else {
+        window.location.href = '/';
+    }
 
 }
 
@@ -31,7 +33,7 @@ function postLogin(loginData) {
             return false;
         }
     }).fail(() => {
-        alert("credenciais invalidas");
+        alert("Credenciais invalidas");
 
     });
 
