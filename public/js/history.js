@@ -7,6 +7,7 @@ $(document).ready(() => {
 
 var historyCart = [];
 var historyData = [];
+let actualCart = 0;
 
 function getHistory(userId) {
     let data;
@@ -24,6 +25,19 @@ function getHistory(userId) {
             });
             let total = 0
             items.forEach(item => total += item.price * item.amount);
+            let review = `
+                <a data-placement="top" class="btn btn-outline-primary disabled"
+                title="Avaliar Compra" onclick="evaluateCart(${item.cart_id})"
+                ><i class="bi bi-star"></i></a>
+                `;
+            if (item.status == 'finalizado') {
+                review = `
+                <a data-placement="top" class="btn btn-primary"
+                title="Avaliar Compra" onclick="evaluateCart(${item.cart_id})"
+                data-bs-toggle="modal" data-bs-target="#evaluateModal"
+                ><i class="bi bi-star"></i></a>
+                `
+            }
             let row = `
                                     <div class="historic-body mt-3">
                                         <div class="row user-panel-historic">
@@ -47,8 +61,8 @@ function getHistory(userId) {
                                                         <a data-placement="top" class="btn btn-info"
                                                             title="Repetir Compra" onclick="printCart(${item.cart_id})"
                                                             id="btnRepetirCompra"><i class="bi bi-arrow-counterclockwise"></i></a>
-
-                                                             <a data-placement="top" class="btn btn-secondddary"
+                                                            ${review}
+                                                             <a data-placement="top" class="btn btn-secondary"
                                                             title="Visualizar Compra" onclick="showCart(${item.cart_id})"
                                                             data-bs-toggle="modal" data-bs-target="#cartModal"
                                                             ><i class="bi bi-eye"></i></a>
@@ -130,3 +144,56 @@ function showCart(cartId) {
     table.html(tableTmp);
     $("#cart-total").val(`Total: R$ ${total}`)
 }
+
+function evaluateCart(cartId) {
+    actualCart = cartId;
+    $.get(`/reviews/${cartId}`, response => {
+        if (response.success && response.message != "Not Found") {
+            $("#evaluate").addClass("d-none");
+            $("#evaluated").removeClass("d-none");
+            $(`#my_star-${response.message.score}`).attr("checked", "checked");
+            if (response.message.comment) {
+
+                $("#my-comment").text(response.message.comment);
+            } else {
+                $("#my-comment").text("Avaliação sem comentários.");
+
+            }
+        } else {
+            $("#evaluated").addClass("d-none");
+            $("#evaluate").removeClass("d-none");
+        }
+    })
+}
+
+function sendEvaluate() {
+    let scores = document.getElementsByName("fb");
+    let score = 0;
+    for (let item = 0; item < 6; item++) {
+        if (scores[item].checked == true) {
+            score = item;
+        }
+    }
+    let review = {
+        comment: document.getElementById('commentEvaluate').value,
+        cart_id: actualCart,
+        score: score
+    }
+    if (review.score > 0 && review.score < 6) {
+
+        $.post('/reviews', review).done(response => {
+            if (response.success == true) {
+                alert("Avaliação Salva!");
+            } else {
+                alert("Não foi possível salvar sua avaliação.");
+            }
+        });
+        window.location.href = '/historic-page';
+    } else {
+        alert("Selecione sua avaliação");
+    }
+}
+
+$("#btnSendEvaluate").click(() => sendEvaluate())
+
+$("#evaluated").click(false);

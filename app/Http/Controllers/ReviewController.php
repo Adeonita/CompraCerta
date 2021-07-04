@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Models\Review;
 use App\Models\Session;
 use App;
+use Exception;
 
 class ReviewController extends Controller
 {
@@ -30,18 +31,29 @@ class ReviewController extends Controller
 
     public function getByCart($cartId)
     {
-        return Review::where("cart_id", $cartId)
-            ->join("carts", "carts.id", "=", "cart_id")
-            ->get();
+        try {
+
+            $review = Review::where("cart_id", $cartId)
+                ->join("carts", "carts.id", "=", "cart_id")
+                ->first();
+            if ($review) {
+
+                return response()->json(['success' => true, 'message' => $review], 200);
+            } else {
+                return response()->json(['success' => true, 'message' => "Not Found"], 200);
+            }
+        } catch (Exception $e) {
+            return response()->json(['success' => false, 'message' => $e], 500);
+        }
     }
 
     public function setCartReview(Request $request)
     {
-        $request->validate([
-            "score" => "required",
-            "comment" => "required",
-            "cart_id" => "required",
-        ]);
+        // $request->validate([
+        //     "score" => "required",
+        //     "cart_id" => "required",
+        //     "comment" => "optional",
+        // ]);
         try {
 
             $review = Review::create($request->all());
