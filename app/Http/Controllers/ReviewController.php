@@ -4,12 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Exceptions\InvalidOrderException;
 use Throwable;
-use Illuminate\Support\Facades\Validator;
 
 use Illuminate\Http\Request;
 use App\Models\Review;
-use App\Models\Session;
-use App;
 use Exception;
 
 class ReviewController extends Controller
@@ -40,7 +37,7 @@ class ReviewController extends Controller
 
                 return response()->json(['success' => true, 'message' => $review], 200);
             } else {
-                return response()->json(['success' => true, 'message' => "Not Found"], 200);
+                return response()->json(['success' => true, 'message' => "Not Found"], 404);
             }
         } catch (Exception $e) {
             return response()->json(['success' => false, 'message' => $e], 500);
