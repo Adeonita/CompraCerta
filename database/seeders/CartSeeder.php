@@ -17,50 +17,57 @@ class CartSeeder extends Seeder
      * @return void
      */
 
-    private function getTotal($items) {
+    private function getTotal($items)
+    {
+        $total = 0;
         foreach ($items as $item => $value) {
             $unityPriceByProduct = $value['product']['price'];
             $amount = $value['quantity'];
-
-            return $unityPriceByProduct * $amount; 
+            $total = $total + $unityPriceByProduct * $amount;
         }
+        return $total;
     }
 
-    private function getRandomUser() {
+    private function getRandomUser()
+    {
         $clients = User::where("user_type", "CLIENT")->select("users.id")->get();
-        $quantityClients = count($clients) -1 ;
+        $quantityClients = count($clients) - 1;
         $randomNumberInclusive = mt_rand(0, $quantityClients);
 
-        return $clients[$randomNumberInclusive ]['id'];
+        return $clients[$randomNumberInclusive]['id'];
     }
 
-    private function getRandomProduct() {
+    private function getRandomProduct()
+    {
         $products = Product::all();
-        $quantityProducts = count($products) -1 ;
+        $quantityProducts = count($products) - 1;
         $randomNumberInclusive = mt_rand(0, $quantityProducts);
 
         return $products[$randomNumberInclusive];
     }
 
-    private function getRandomQuantity(){
+    private function getRandomQuantity()
+    {
         return mt_rand(1, 10);
     }
 
-    private function getRandomStatusCart(){
+    private function getRandomStatusCart()
+    {
         $status = ["separação", "empacotamento", "rota de entrega", "finalizado"];
 
         return $status[mt_rand(0, 3)];
     }
 
-    private function createCart() {
+    private function createCart()
+    {
         $itemsFromCart = [
             [
                 "product" => json_decode($this->getRandomProduct(), true),
                 "quantity" => $this->getRandomQuantity(),
             ],
             [
-               "product" => json_decode($this->getRandomProduct(), true),
-               "quantity" => $this->getRandomQuantity(),
+                "product" => json_decode($this->getRandomProduct(), true),
+                "quantity" => $this->getRandomQuantity(),
             ],
             [
                 "product" => json_decode($this->getRandomProduct(), true),
@@ -78,8 +85,9 @@ class CartSeeder extends Seeder
     }
 
     public function run()
-    {    
+    {
         for ($i = 0; $i < 10; $i++) {
+            echo "cartId:" . $i . ":\n";
             $this->createCart();
         }
     }
