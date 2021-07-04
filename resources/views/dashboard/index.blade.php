@@ -39,10 +39,20 @@
                 </a>
             </div>
             
-            <div class="col-sm-8 col-12 mt-5">
-            <h1 class="text-center mb-5">Produtos - Top 10</h1>
+            
+        </div>
+        <div class="row justify-content-around">
+            <div class="col-sm-8 col-6 mt-5">
+                <h1 class="text-center mb-5">Produtos - Top 10</h1>
                 <canvas id="top-products" width="100" height="50"></canvas>
             </div>
-            <script src="{{ asset('js/dashboardTopProducts.js') }}"></script>
         </div>
+        <div class="row justify-content-around">
+            <div class="col-sm-8 col-6 mt-5">
+                <h1 class="text-center mb-5">Itens por setor</h1>
+                <canvas id="purchases-departments" width="100" height="50"></canvas>
+            </div>
+        </div>
+            <script src="{{ asset('js/dashboardTopProducts.js') }}"></script>
+            <script src="{{ asset('js/purchasesByDepartments.js') }}"></script>
     @endsection
