@@ -49,11 +49,6 @@ class ReviewController extends Controller
 
     public function setCartReview(Request $request)
     {
-        // $request->validate([
-        //     "score" => "required",
-        //     "cart_id" => "required",
-        //     "comment" => "optional",
-        // ]);
         try {
 
             $review = Review::create($request->all());
