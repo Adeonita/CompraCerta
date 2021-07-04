@@ -13,6 +13,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ReviewController;
 
 
 
@@ -128,6 +129,7 @@ Route::get("/departments", [DepartmentsController::class, 'show']);
 
 Route::get("/products", [ProductController::class, 'show']);
 Route::get("/product/{id}", [ProductController::class, 'getById']);
+Route::get("/product/json/{id}", [ProductController::class, 'getJsonById']);
 Route::get("/products/{category_id}", [ProductController::class, 'getByCategory']);
 Route::post("/products/find", [ProductController::class, 'getByName']);
 
@@ -150,3 +152,7 @@ Route::get("/cart/update/{statusId}/{cartId}", [EmployeeController::class, 'send
 Route::get("/topProducts", [DashboardController::class, 'topProducts']);
 Route::get("/purchasesByDepartments", [DashboardController::class, 'getpurchasesByDepartments']);
 Route::get("/purchasesByCategories", [DashboardController::class, 'getPurchasesByCategories']);
+
+Route::get("/reviews", [ReviewController::class, 'index']);
+Route::get("/reviews/{id}", [ReviewController::class, 'getByCart']);
+Route::post("/reviews", [ReviewController::class, 'setCartReview']);

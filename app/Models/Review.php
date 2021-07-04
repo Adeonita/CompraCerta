@@ -12,6 +12,7 @@ class Review extends Model
     protected $fillable = [
         "score",
         "comment",
+        "cart_id"
     ];
 
 
