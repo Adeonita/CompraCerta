@@ -148,3 +148,4 @@ Route::get("/department/{departmentId}", [PurchaseController::class, 'getByDepar
 Route::get("/cart/update/{statusId}/{cartId}", [EmployeeController::class, 'sendToNextDepartment']);
 
 Route::get("/topProducts", [DashboardController::class, 'topProducts']);
+Route::get("/purchasesByDepartments", [DashboardController::class, 'getpurchasesByDepartments']);

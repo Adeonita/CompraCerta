@@ -29,4 +29,10 @@ class DashboardController extends Controller
         ->orderBy("amount", "desc")
         ->get();
     }
+
+    public function getPurchasesByDepartments() {
+        return DB::table('carts')
+        ->select('status', DB::raw('count(*) as total'))
+        ->groupBy('status')->get();
+    }
 }
