@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use DB;
+use Exception;
 
 class ProductController extends Controller
 {
@@ -73,6 +74,37 @@ class ProductController extends Controller
         $products = Product::where('name', 'like', '%' . $search . '%')->get();
         return view("/category/index")->with("products", $products);
     }
+
+    public function getJsonById($id)
+    {
+
+        try {
+            $product = Product::where('id', $id)->get();
+
+            if ($product) {
+
+
+                return response()->json([
+                    'success' => true,
+                    'message' => $product
+                ], 200);
+            } else {
+
+                return response()->json([
+                    'success' => true,
+                    'message' => 'Product Not Found'
+                ], 200);
+            }
+        } catch (Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => $e
+            ], 400);
+        }
+    }
+
+
+
 
 
     public function getById($productId)

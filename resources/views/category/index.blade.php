@@ -1,3 +1,4 @@
+@include('helpers-php')
 @extends('index')
 @section('content')
     <div class="row justify-content-around">
@@ -8,7 +9,7 @@
                         <img class="card-img-top" src='{{ asset("images/products/$item->imagePath") }}'
                             alt="Imagem de capa do card">
                         <div class='price-tags d-flex flex-column align-items-start'>
-                            <p class="badge main">R$ {{ $item->price }}</p>
+                            <p class="badge main">R$ {{ formatMoney($item->price) }}</p>
                         </div>
                     </div>
                 </a>
