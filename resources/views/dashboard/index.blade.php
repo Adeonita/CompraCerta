@@ -49,10 +49,16 @@
         </div>
         <div class="row justify-content-around">
             <div class="col-sm-8 col-6 mt-5">
-                <h1 class="text-center mb-5">Itens por setor</h1>
+                <h1 class="text-center mb-5">Itens por Setor</h1>
                 <canvas id="purchases-departments" width="100" height="50"></canvas>
+            </div>
+        </div><div class="row justify-content-around">
+            <div class="col-sm-8 col-6 mt-5">
+                <h1 class="text-center mb-5">Categorias mais vendidas</h1>
+                <canvas id="purchases-categories" width="100" height="50"></canvas>
             </div>
         </div>
             <script src="{{ asset('js/dashboardTopProducts.js') }}"></script>
             <script src="{{ asset('js/purchasesByDepartments.js') }}"></script>
+            <script src="{{ asset('js/purchasesByCategories.js') }}"></script>
     @endsection

@@ -33,6 +33,17 @@ class DashboardController extends Controller
     public function getPurchasesByDepartments() {
         return DB::table('carts')
         ->select('status', DB::raw('count(*) as total'))
-        ->groupBy('status')->get();
+        ->groupBy('status')
+        ->get();
+    }
+
+    public function getPurchasesByCategories() {
+        return DB::table('items_orders')
+        ->select('categories.name', DB::raw('count(amount) as amount'))
+        ->join('products', 'items_orders.product_id', '=', 'products.id')
+        ->join('categories', 'products.category_id', '=', 'categories.id')
+        ->groupBy('category_id')
+        ->orderBy('amount', 'desc')
+        ->get();
     }
 }
